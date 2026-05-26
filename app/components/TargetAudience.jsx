@@ -1,0 +1,165 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+export default function TargetAudience() {
+    const cards = [
+        {
+            num: "01",
+            title: "Final Year B.Com Students",
+            pain: "Unsure how to enter the corporate finance world after graduation.",
+            trans: "Graduate already trained and placement-ready.",
+            outcome: "Step into a corporate finance role straight out of college."
+        },
+        {
+            num: "02",
+            title: "Fresh B.Com Graduates",
+            pain: "Stuck in low-paid clerical accounting jobs with no growth path.",
+            trans: "Build practical exposure and a professional identity.",
+            outcome: "Move into structured finance roles with real career growth."
+        },
+        {
+            num: "03",
+            title: "Trapped Under ₹30k/Month",
+            pain: "Stuck in same salary for years, no real corporate skill upgrade in years.",
+            trans: "Rebuild capability around what companies actually pay for.",
+            outcome: "Reposition for higher-paying, higher-responsibility finance roles."
+        },
+        {
+            num: "04",
+            title: "ACCA/CMA Students Lacking Practical Exposure",
+            pain: "Theoretically strong but lacking practical exposure that companies demand.",
+            trans: "Gain industry-relevant practical exposure, mentorship, and career guidance.",
+            outcome: "A serious, long-term professional finance trajectory."
+        },
+        {
+            num: "05",
+            title: "Career-Oriented Finance Aspirants",
+            pain: "Want corporate finance careers but don't know where to begin.",
+            trans: "Curated curriculum, mentorship and industry pathways.",
+            outcome: "A serious, long-term professional finance trajectory."
+        },
+        {
+            num: "06",
+            title: "Theoretically Strong, Practically Weak",
+            pain: "Top of the class, but lacking real-world business confidence.",
+            trans: "Train in live corporate environments with real case work.",
+            outcome: "Enter the market with the confidence of an experienced hire."
+        }
+    ];
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.08,
+            }
+        }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 25 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.55,
+                ease: [0.215, 0.61, 0.355, 1],
+            }
+        }
+    };
+
+    return (
+        <section className="w-full bg-white font-inter py-8 md:py-16 lg:py-24">
+            {/* Shared layout width container */}
+            <div className="mx-auto px-3 md:px-8 lg:px-10">
+
+                {/* Top Split Header */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-16">
+                    <div className="lg:col-span-7 flex flex-col space-y-3">
+                        <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase">
+                            Who Should Apply
+                        </span>
+                        <h2 className="text-[#242424] font-md text-3xl md:text-[48px] md:leading-[57px] tracking-normal">
+                            Built for serious commerce graduates ready for a real career.
+                        </h2>
+                    </div>
+
+                    <div className="lg:col-span-5 lg:pt-8">
+                        <p className="text-[#555454] font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal">
+                            SPECIAL40 selects ambitious individuals who want more than a job—they want a professional finance identity.
+                        </p>
+                    </div>
+                </div>
+
+                {/* 6-Card Presentation Grid */}
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px 0px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    {cards.map((card, index) => (
+                        <motion.div
+                            key={index}
+                            variants={cardVariants}
+                            whileHover={{
+                                y: -6,
+                                boxShadow: "0 12px 30px -10px rgba(249, 165, 60, 0.14)",
+                                borderColor: "rgba(249, 165, 60, 0.35)",
+                                backgroundColor: "rgba(251, 244, 234, 0.8)",
+                            }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                            className="bg-[#FBF4EA]/50 p-3 md:p-8 flex flex-col space-y-4 md:space-y-5 border border-transparent transition-colors cursor-pointer"
+                        >
+                            {/* Card Numbering & Heading */}
+                            <div className="space-y-2">
+                                <span className="text-[#F9A53C] block font-light text-[18px] leading-none">
+                                    {card.num}
+                                </span>
+                                <h3 className="text-[#242424] font-md text-[22px] leading-tight tracking-tight min-h-[56px] flex items-start">
+                                    {card.title}
+                                </h3>
+                            </div>
+
+                            {/* Data Rows Content Split */}
+                            <div className="space-y-4 text-xs md:text-[13px] leading-relaxed flex-grow">
+                                {/* Pain Block */}
+                                <div className="space-y-1">
+                                    <span className="text-[#09636E] block font-md uppercase tracking-wider text-[11px]">
+                                        Current Pain
+                                    </span>
+                                    <p className="text-[#555454] font-normal">
+                                        {card.pain}
+                                    </p>
+                                </div>
+
+                                {/* Transformation Block */}
+                                <div className="space-y-1">
+                                    <span className="text-[#09636E] block font-md uppercase tracking-wider text-[11px]">
+                                        Transformation
+                                    </span>
+                                    <p className="text-[#555454] font-normal">
+                                        {card.trans}
+                                    </p>
+                                </div>
+
+                                {/* Outcome Block (Utilizing your new #FF383C hex color assignment) */}
+                                <div className="space-y-1">
+                                    <span className="text-[#FF383C] block font-md uppercase tracking-wider text-[11px]">
+                                        Career Outcome
+                                    </span>
+                                    <p className="text-[#555454] font-normal">
+                                        {card.outcome}
+                                    </p>
+                                </div>
+                            </div>
+
+                        </motion.div>
+                    ))}
+                </motion.div>
+
+            </div>
+        </section>
+    );
+}
