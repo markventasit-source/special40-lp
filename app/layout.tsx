@@ -3,7 +3,7 @@ import { Inter, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,13 +18,36 @@ const geistMono = Geist_Mono({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://join.special40.com"),
   title: "SPECIAL40 | Premium Corporate Finance Program for Commerce Graduates",
   description: "SPECIAL40 is a selective career transformation ecosystem by CAPITAIRE. We turn ambitious commerce graduates and ACCA/CMA students into corporate-ready finance professionals through practical, CA-led training in a real office environment.",
   icons: {
     icon: "/favicon-spl.png",
+  },
+  openGraph: {
+    title: "SPECIAL40 | Premium Corporate Finance Program",
+    description: "Turn your commerce degree into a corporate finance career. Kerala's most selective CA-led transformation program — practical, placement-focused, real office environment.",
+    url: "https://join.special40.com",
+    siteName: "SPECIAL40",
+    images: [
+      {
+        url: "/favicon-spl.png",
+        width: 512,
+        height: 512,
+        alt: "SPECIAL40 — Corporate Finance Program by Capitaire",
+      },
+    ],
+    type: "website",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SPECIAL40 | Premium Corporate Finance Program",
+    description: "Turn your commerce degree into a corporate finance career. Kerala's most selective CA-led transformation program.",
+    images: ["/favicon-spl.png"],
   },
 };
 
