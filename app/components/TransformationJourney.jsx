@@ -62,12 +62,17 @@ export default function TransformationJourney() {
                             <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase block">
                                 The Transformation Journey
                             </span>
-                            <h2 className="text-[#242424] font-medium text-3xl md:text-[48px] md:leading-[57px] tracking-normal">
+                            <h2 className="text-[#242424] font-semibold
+               text-[32px] leading-[38px] tracking-normal
+               md:text-[48px] md:leading-[57px]">
                                 4.5 months. Intensive. Built like a corporate finance function.
                             </h2>
                         </motion.div>
 
-                        <motion.p variants={leftItemVariants} className="text-[#555454] font-light text-sm md:text-[16px] md:leading-[24px] tracking-normal">
+                        <motion.p variants={leftItemVariants}
+                            className="text-[#555454] font-normal tracking-normal
+                     text-[16px] leading-[22px]
+                     md:leading-[24px]">
                             The SPECIAL40 curriculum mirrors the real workflow inside a modern finance team from practical accounting and ERP tooling to corporate communication, GST compliance and live business projects.
                         </motion.p>
 
@@ -112,17 +117,21 @@ export default function TransformationJourney() {
                     </motion.div>
 
                     {/* Right Column: Curriculum */}
-                    <div className="lg:col-span-7 bg-white border border-[#F9A53C]/30 p-6 md:p-10 shadow-sm">
+                    <div className="lg:col-span-7 bg-white border border-[#F9A53C]/30 p-3 md:p-10 shadow-sm">
 
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-100 pb-5 mb-2 gap-4">
-                            <h3 className="text-[#09636E] font-bold text-xl md:text-[22px]">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between items-center border-b border-gray-100 pb-5 mb-2 gap-4">
+                            <h3 className="text-[#09636E] font-bold capitalize tracking-normal
+               max-[450px]:text-[26px] max-[450px]:leading-[100%]
+               min-[451px]:text-[26px] min-[451px]:leading-[100%]">
                                 Curriculum Modules
                             </h3>
                             <div className="flex items-center gap-3 text-[11px] font-light tracking-wider uppercase">
-                                <span className="bg-[#FBF4EA] text-[#F9A53C] px-2.5 py-1">
+                                <span className="bg-[#FBF4EA] text-[#F9A53C] px-2.5 py-1 font-semibold
+                 text-[13px] leading-[24px] tracking-normal">
                                     Offline • 2.5 Months
                                 </span>
-                                <span className="bg-[#FBF4EA] text-[#F9A53C] px-2.5 py-1">
+                                <span className="bg-[#FBF4EA] text-[#F9A53C] px-2.5 py-1 font-semibold
+                 text-[13px] leading-[24px] tracking-normal">
                                     Online • 2 Months
                                 </span>
                             </div>
@@ -163,14 +172,19 @@ export default function TransformationJourney() {
                                 >
                                     {/* Mobile: stacked layout */}
                                     <div className="flex items-start gap-3 sm:hidden">
-                                        <span className="text-[#F9A53C] font-light text-sm min-w-[24px]">
+                                        <span className="text-[#F9A53C] font-normal uppercase
+                text-[15px] leading-[100%] tracking-[0.1em]
+                min-w-[24px]">
                                             {mod.id}
                                         </span>
                                         <div className="flex flex-col space-y-1">
-                                            <span className="text-[#242424] font-light text-sm leading-snug">
+                                            <span className="text-[#242424] capitalize tracking-normal
+                max-[450px]:text-[21px] max-[450px]:leading-snug
+                min-[451px]:text-[18px] min-[451px]:leading-snug">
                                                 {mod.name}
                                             </span>
-                                            <span className="text-gray-400 font-normal text-[10px] tracking-widest uppercase">
+                                            <span className="text-gray-400 font-normal uppercase
+                text-[13px] leading-[100%] tracking-[0.11em]">
                                                 {mod.tag}
                                             </span>
                                         </div>

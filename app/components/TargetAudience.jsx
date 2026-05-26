@@ -76,16 +76,22 @@ export default function TargetAudience() {
                 {/* Top Split Header */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-16">
                     <div className="lg:col-span-7 flex flex-col space-y-3">
-                        <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase">
+                        <span className="text-[#F9A53C] uppercase font-normal
+                max-[450px]:text-[15px] max-[450px]:leading-[100%] max-[450px]:tracking-[0.1em]
+                min-[451px]:text-[15px] min-[451px]:leading-[100%] min-[451px]:tracking-[0.1em]">
                             Who Should Apply
                         </span>
-                        <h2 className="text-[#242424] font-md text-3xl md:text-[48px] md:leading-[57px] tracking-normal">
+                        <h2 className="text-[#242424] font-semibold tracking-normal max-w-xl
+               max-[450px]:text-[32px] max-[450px]:leading-[38px]
+               min-[451px]:text-[48px] min-[451px]:leading-[57px]">
                             Built for serious commerce graduates ready for a real career.
                         </h2>
                     </div>
 
                     <div className="lg:col-span-5 lg:pt-8">
-                        <p className="text-[#555454] font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal">
+                        <p className="text-[#555454] font-normal tracking-normal
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                             SPECIAL40 selects ambitious individuals who want more than a job—they want a professional finance identity.
                         </p>
                     </div>
@@ -114,10 +120,14 @@ export default function TargetAudience() {
                         >
                             {/* Card Numbering & Heading */}
                             <div className="space-y-2">
-                                <span className="text-[#F9A53C] block font-light text-[18px] leading-none">
+                                <span className="text-[#F9A53C] block font-light
+                text-[26px] leading-[100%] tracking-normal">
                                     {card.num}
                                 </span>
-                                <h3 className="text-[#242424] font-md text-[22px] leading-tight tracking-tight min-h-[56px] flex items-start">
+                                <h3 className="text-[#242424] font-semibold tracking-normal
+               max-[450px]:text-[21px] max-[450px]:leading-[100%]
+               min-[451px]:text-[26px] min-[451px]:leading-[100%]
+               min-h-[56px] flex items-start">
                                     {card.title}
                                 </h3>
                             </div>
@@ -126,30 +136,42 @@ export default function TargetAudience() {
                             <div className="space-y-4 text-xs md:text-[13px] leading-relaxed flex-grow">
                                 {/* Pain Block */}
                                 <div className="space-y-1">
-                                    <span className="text-[#09636E] block font-md uppercase tracking-wider text-[11px]">
+                                    <span className="text-[#09636E] block uppercase font-normal tracking-[0.1em]
+                max-[450px]:text-[15px] max-[450px]:leading-[100%]
+                min-[451px]:text-[15px] min-[451px]:leading-[100%]">
                                         Current Pain
                                     </span>
-                                    <p className="text-[#555454] font-normal">
+                                    <p className="text-[#555454] font-normal tracking-normal
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                                         {card.pain}
                                     </p>
                                 </div>
 
                                 {/* Transformation Block */}
                                 <div className="space-y-1">
-                                    <span className="text-[#09636E] block font-md uppercase tracking-wider text-[11px]">
+                                    <span className="text-[#09636E] block uppercase font-normal tracking-[0.1em]
+                max-[450px]:text-[15px] max-[450px]:leading-[100%]
+                min-[451px]:text-[15px] min-[451px]:leading-[100%]">
                                         Transformation
                                     </span>
-                                    <p className="text-[#555454] font-normal">
+                                    <p className="text-[#555454] font-normal tracking-normal
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                                         {card.trans}
                                     </p>
                                 </div>
 
                                 {/* Outcome Block (Utilizing your new #FF383C hex color assignment) */}
                                 <div className="space-y-1">
-                                    <span className="text-[#FF383C] block font-md uppercase tracking-wider text-[11px]">
+                                    <span className="text-[#FF383C] block uppercase font-normal tracking-[0.1em]
+                max-[450px]:text-[15px] max-[450px]:leading-[100%]
+                min-[451px]:text-[15px] min-[451px]:leading-[100%]">
                                         Career Outcome
                                     </span>
-                                    <p className="text-[#555454] font-normal">
+                                    <p className="text-[#555454] font-normal tracking-normal
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                                         {card.outcome}
                                     </p>
                                 </div>

@@ -84,7 +84,14 @@ export default function HeroSection() {
                         {/* Animated Main Title */}
                         <motion.h1
                             variants={itemVariants}
-                            className="text-4xl md:text-5xl lg:text-[62px] font-semibold text-gray-900 lg:leading-[69px] tracking-normal"
+                            className="font-inter font-bold text-[46px] leading-[49px] tracking-normal
+             md:font-semibold md:text-5xl 
+             lg:text-[62px] lg:leading-[69px] lg:tracking-normal"
+                            style={{
+                                fontFamily: 'Inter',
+                                fontStyle: 'normal',
+                                letterSpacing: '0%',
+                            }}
                         >
                             Become an <span className="text-[#09636E]">irreplaceable</span> finance professional.
                         </motion.h1>
@@ -92,7 +99,7 @@ export default function HeroSection() {
                         {/* Sub-heading */}
                         <motion.p
                             variants={itemVariants}
-                            className="text-[#09636E] mt-2 h-6 flex items-center opacity-100 tracking-normal"
+                            className="text-[#09636E] my-6 h-6 flex items-center opacity-100 tracking-normal"
                             style={{
                                 fontFamily: 'Inter',
                                 fontWeight: '500',
@@ -108,7 +115,10 @@ export default function HeroSection() {
                         {/* Exact Typography Description */}
                         <motion.p
                             variants={itemVariants}
-                            className="text-gray-600 mt-2 font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal max-w-2xl"
+                            className="text-gray-600 mt-2 font-normal 
+             max-[450px]:text-[16px] max-[450px]:leading-[23px]
+             min-[451px]:text-[16px] min-[451px]:leading-[24px]
+             tracking-normal"
                         >
                             SPECIAL40 is an exclusive finance career acceleration program that
                             transforms commerce graduates into corporate-ready professionals through

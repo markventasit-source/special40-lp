@@ -18,7 +18,7 @@ export default function WhyWeExist() {
             <div className="mx-auto px-3 md:px-8 lg:px-10">
 
                 {/* Upper Grid Area: Main statement vs descriptions */}
-                <div className="grid mt-16 lg:mt-20 grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <div className="grid mt-16 lg:mt-20 grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start">
 
                     {/* Left Column: Mission Title Statement */}
                     <motion.div
@@ -28,10 +28,14 @@ export default function WhyWeExist() {
                         variants={blockVariants}
                         className="flex flex-col space-y-3 md:space-y-4"
                     >
-                        <span className="text-[#F9A53C] font-sm text-[15px] leading-none tracking-[0.1em] uppercase">
+                        <span className="text-[#F9A53C] uppercase font-normal
+                max-[450px]:text-[15px] max-[450px]:leading-[100%] max-[450px]:tracking-[0.1em]
+                min-[451px]:text-[15px] min-[451px]:leading-[100%] min-[451px]:tracking-[0.1em]">
                             Why We Exist
                         </span>
-                        <h2 className="text-[#242424] font-md text-2xl md:text-3xl lg:text-[48px] lg:leading-[57px] tracking-normal max-w-xl">
+                        <h2 className="text-[#242424] font-semibold tracking-normal max-w-xl
+               max-[450px]:text-[32px] max-[450px]:leading-[38px]
+               min-[451px]:text-[48px] min-[451px]:leading-[57px]">
                             Degrees no longer guarantee careers. Capability does.
                         </h2>
                     </motion.div>
@@ -51,13 +55,17 @@ export default function WhyWeExist() {
                         }}
                         className="flex flex-col space-y-4 md:space-y-6 lg:pt-8 text-[#555454]"
                     >
-                        <p className="font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal">
+                        <p className="text-[#555454] font-normal tracking-normal
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                             Most commerce graduates struggle not because they lack talent but
                             because they lack practical exposure to how finance actually works
                             inside a real business. Companies don't hire degrees. They hire
                             professionals who can think, execute and deliver from day one.
                         </p>
-                        <p className="font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal">
+                        <p className="text-[#555454] font-normal tracking-normal
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                             SPECIAL40 was built to close that gap. It is not a coaching center. It is
                             not a Tally class. It is not mass-market education. It is a selective
                             transformation ecosystem engineered to turn ambitious commerce
@@ -76,7 +84,9 @@ export default function WhyWeExist() {
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
                     className="mt-8 md:mt-16 lg:mt-24 pt-2 md:pt-4 lg:ml-30"
                 >
-                    <p className="text-[#F9A53C] italic font-light text-lg md:text-xl lg:text-[32px] leading-[28px] md:leading-[32px] lg:leading-[43px] tracking-[0%] max-w-4xl">
+                    <p className="text-[#F9A53C] italic font-normal tracking-normal max-w-4xl
+              max-[450px]:text-[26px] max-[450px]:leading-[30px]
+              min-[451px]:text-[32px] min-[451px]:leading-[43px]">
                         "We don't create job seekers. We build finance professionals companies cannot ignore."
                     </p>
                 </motion.div>

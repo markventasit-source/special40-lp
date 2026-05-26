@@ -230,7 +230,9 @@ export default function ProgramFeatures() {
                         <span className="text-[#F9A53C] font-sm text-[15px] leading-none tracking-[0.1em] uppercase">
                             Inside the Program
                         </span>
-                        <h2 className="text-[#242424] max-w-[500px] font-md text-3xl md:text-[48px] md:leading-[57px] tracking-normal">
+                        <h2 className="text-[#242424] max-w-[500px] font-semibold tracking-normal
+               max-[450px]:text-[32px] max-[450px]:leading-[38px]
+               min-[451px]:text-[48px] min-[451px]:leading-[57px]">
                             A premium corporate classroom not a coaching center.
                         </h2>
                     </motion.div>
@@ -243,7 +245,9 @@ export default function ProgramFeatures() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
                         className="lg:col-span-5 lg:pt-8"
                     >
-                        <p className="text-[#555454] font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal">
+                        <p className="text-[#555454] font-normal tracking-normal
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                             Step inside SPECIAL40. Real corporate environments, focused batch and
                             CA-led sessions designed to feel like work, not class.
                         </p>
@@ -288,9 +292,14 @@ export default function ProgramFeatures() {
                         >
                             <div className="flex items-center gap-2">
                                 <div className="w-6 h-[1px] bg-[#F9A53C]" />
-                                <span className="text-[#F9A53C] text-xs font-sm uppercase tracking-wider">Corporate</span>
+                                <span className="text-[#F9A53C] 
+                text-[15px] leading-[100%] tracking-[0.1em] uppercase
+                font-normal">
+                                    Corporate
+                                </span>
                             </div>
-                            <h4 className="text-[#09636E] font-md text-base md:text-lg">
+                            <h4 className="text-[#09636E] font-semibold 
+               text-[18px] leading-[24px] tracking-normal">
                                 Real office-like training environment
                             </h4>
                         </motion.div>
@@ -303,9 +312,12 @@ export default function ProgramFeatures() {
                         >
                             <div className="flex items-center gap-2">
                                 <div className="w-6 h-[1px] bg-[#F9A53C]" />
-                                <span className="text-[#F9A53C] text-xs font-sm uppercase tracking-wider">Live</span>
+                                <span className="text-[#F9A53C] 
+                text-[15px] leading-[100%] tracking-[0.1em] uppercase
+                font-normal">Live</span>
                             </div>
-                            <h4 className="text-[#09636E] font-md text-base md:text-lg">
+                            <h4 className="text-[#09636E] font-semibold 
+               text-[18px] leading-[24px] tracking-normal">
                                 Industry projects and case work
                             </h4>
                         </motion.div>
@@ -318,9 +330,12 @@ export default function ProgramFeatures() {
                         >
                             <div className="flex items-center gap-2">
                                 <div className="w-6 h-[1px] bg-[#F9A53C]" />
-                                <span className="text-[#F9A53C] text-xs font-sm uppercase tracking-wider">Mentor-Led</span>
+                                <span className="text-[#F9A53C] 
+                text-[15px] leading-[100%] tracking-[0.1em] uppercase
+                font-normal">Mentor-Led</span>
                             </div>
-                            <h4 className="text-[#09636E] font-md text-base md:text-lg">
+                            <h4 className="text-[#09636E] font-semibold 
+               text-[18px] leading-[24px] tracking-normal">
                                 Chartered Accountants from CAPITAIRE
                             </h4>
                         </motion.div>
@@ -333,9 +348,13 @@ export default function ProgramFeatures() {
                         >
                             <div className="flex items-center gap-2">
                                 <div className="w-6 h-[1px] bg-[#F9A53C]" />
-                                <span className="text-[#F9A53C] text-xs font-sm uppercase tracking-wider">Atmosphere</span>
+                                <span className="text-[#F9A53C] 
+                text-[15px] leading-[100%] tracking-[0.1em] uppercase
+                font-normal">Atmosphere</span>
                             </div>
-                            <p className="text-gray-100 font-normal text-sm md:text-base leading-relaxed">
+                            <p className="text-gray-100 font-medium tracking-normal
+              max-[450px]:text-[21px] max-[450px]:leading-[27px]
+              min-[451px]:text-[20px] min-[451px]:leading-[25px]">
                                 Glass-walled training rooms, live dashboards, focused peers built to mirror real corporate finance teams.
                             </p>
                         </motion.div>

@@ -84,10 +84,14 @@ export default function TheProblem() {
                     <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase">
                         The Problem
                     </span>
-                    <h2 className="text-white font-md text-3xl md:text-[48px] md:leading-[57px] tracking-normal">
+                    <h2 className="text-white font-semibold
+               text-[32px] leading-[38px] tracking-normal
+               md:text-[48px] md:leading-[57px]">
                         Why most commerce graduates struggle in the job market.
                     </h2>
-                    <p className="text-gray-200/90 font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal pt-2">
+                    <p className="text-gray-200/90 font-normal tracking-normal pt-2
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                         The gap between what is taught in classrooms and what companies actually need has
                         widened sharply. SPECIAL40 was built to close it deliberately and selectively.
                     </p>
@@ -113,7 +117,8 @@ export default function TheProblem() {
                             className="bg-[#42878F]/20 border border-white/10 p-6 md:p-8 flex flex-col space-y-3 transition-colors cursor-pointer"
                         >
                             {/* Issue Number Subheading */}
-                            <span className="text-[#F9A53C] font-light text-[13px] tracking-wider uppercase">
+                            <span className="text-[#F9A53C] font-light uppercase
+                text-[15px] leading-[100%] tracking-[0.1em]">
                                 {issue.num}
                             </span>
 
@@ -122,7 +127,9 @@ export default function TheProblem() {
                                 <h3 className="text-white font-md text-[22px] leading-tight tracking-tight">
                                     {issue.title}
                                 </h3>
-                                <p className="text-gray-200/80 font-normal text-sm md:text-[15px] leading-relaxed">
+                                <p className="text-gray-200/90 font-normal tracking-normal pt-2
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                                     {issue.desc}
                                 </p>
                             </div>

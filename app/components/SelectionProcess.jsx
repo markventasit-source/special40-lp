@@ -71,12 +71,16 @@ export default function SelectionProcess() {
                             <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase block">
                                 Our Selection Process
                             </span>
-                            <h2 className="text-[#242424] font-md text-3xl md:text-[48px] md:leading-[57px] tracking-normal">
+                            <h2 className="text-[#242424] font-semibold
+               text-[32px] leading-[38px] tracking-normal
+               md:text-[48px] md:leading-[57px]">
                                 Selective by design.
                             </h2>
                         </div>
 
-                        <p className="text-[#555454] font-normal text-sm md:text-[16px] md:leading-[24px] tracking-normal max-w-md">
+                        <p className="text-[#555454] font-normal tracking-normal pt-2
+              max-[450px]:text-[16px] max-[450px]:leading-[22px]
+              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                             We believe serious career transformation begins with selecting serious candidates. Every seat is earned, not bought.
                         </p>
 

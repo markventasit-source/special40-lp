@@ -142,7 +142,9 @@ export default function OutcomeComparison() {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     className="md:mt-16 md:ml-24 border-l-2 border-[#F9A53C]/40 pl-6"
                 >
-                    <blockquote className="text-[#F9A53C] max-w-200 font-normal italic text-2xl md:text-[32px] leading-normal md:leading-[43px] tracking-normal">
+                    <blockquote className="text-[#F9A53C] italic font-normal tracking-normal max-w-200
+                      max-[450px]:text-[26px] max-[450px]:leading-[33px]
+                      min-[451px]:text-[32px] min-[451px]:leading-[43px]">
                         &ldquo;The goal is not just getting a job. The goal is becoming valuable enough that companies want to retain you.&rdquo;
                     </blockquote>
                 </motion.div>
