@@ -96,7 +96,7 @@ export default function StatsStrip() {
                         className="text-[#09636E] text-[32px] leading-none font-semibold"
                         style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
                     >
-                        <AnimatedNumber value="4.5 mo" uniqueKey="mobile-duration" />
+                        <AnimatedNumber value="4.5 month" uniqueKey="mobile-duration" />
                     </span>
                     <span
                         className="text-[#242424] text-[14.74px] leading-none font-normal"
