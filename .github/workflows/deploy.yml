@@ -17,6 +17,7 @@ jobs:
           host: ${{ secrets.LINODE_HOST }}
           username: ${{ secrets.LINODE_USER }}
           key: ${{ secrets.LINODE_SSH_KEY }}
+          port: 4974
           script: |
             cd /var/www/special40-lp
             git pull origin main
