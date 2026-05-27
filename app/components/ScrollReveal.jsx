@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 export default function ScrollReveal({ children, className = "", delay = 0 }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px 0px -50px 0px" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "0px" }}
             transition={{
-                duration: 0.75,
-                ease: [0.215, 0.61, 0.355, 1], // Premium easeOutCubic curve for highly responsive, organic acceleration
+                duration: 0.5,
+                ease: "easeOut",
                 delay: delay / 1000
             }}
             className={className}
