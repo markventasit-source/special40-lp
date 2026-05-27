@@ -41,7 +41,7 @@ export default function AdmissionPathSteps() {
     ];
 
     return (
-        <section className="w-full bg-white font-inter py-16 md:py-24 px-6 md:px-12 lg:px-16">
+        <section className="w-full bg-white font-inter py-10 md:py-24 px-6 md:px-12 lg:px-16">
             <div className="mx-auto flex flex-col items-center">
 
                 {/* Header Labels */}

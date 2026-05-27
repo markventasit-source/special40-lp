@@ -7,7 +7,7 @@ export default function BrandQuoteFooter() {
         <footer className="w-full bg-[#09636E] text-white font-inter antialiased">
             
             {/* Top Quote & Subtext Content Block */}
-            <div className="mx-auto px-6 py-16 md:py-20 flex flex-col items-center text-center space-y-6">
+            <div className="mx-auto px-6 py-8 md:py-20 flex flex-col items-center text-center space-y-6">
                 
                 {/* Main Hero Vision Quote */}
                 <h2 className="text-white font-bold text-2xl md:text-[36px] md:leading-[46px] tracking-tight max-w-5xl">

@@ -58,7 +58,7 @@ export default function CounselorScheduler() {
 
     return (
         <section className="w-full bg-white font-inter px-6 md:px-12 lg:px-16 mb-10">
-            <div className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            <div className="mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start">
 
                 {/* Left Column */}
                 <div className="lg:col-span-5 flex flex-col space-y-8">
