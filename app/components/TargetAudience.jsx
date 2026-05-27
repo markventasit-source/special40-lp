@@ -142,8 +142,8 @@ export default function TargetAudience() {
                                         Current Pain
                                     </span>
                                     <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[18px] max-[450px]:leading-[22px]
-              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                                         {card.pain}
                                     </p>
                                 </div>
@@ -156,8 +156,8 @@ export default function TargetAudience() {
                                         Transformation
                                     </span>
                                     <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[18px] max-[450px]:leading-[22px]
-              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                                         {card.trans}
                                     </p>
                                 </div>
@@ -170,8 +170,8 @@ export default function TargetAudience() {
                                         Career Outcome
                                     </span>
                                     <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[18px] max-[450px]:leading-[22px]
-              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                                         {card.outcome}
                                     </p>
                                 </div>

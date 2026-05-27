@@ -62,7 +62,7 @@ export default function CareerTransformations() {
 
     return (
         <section className="w-full font-inter py-4 md:py-2 overflow-hidden">
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Centered Header Block */}
                 <motion.div
