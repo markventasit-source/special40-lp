@@ -227,7 +227,7 @@ export default function ProgramFeatures() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="lg:col-span-7 flex flex-col space-y-3"
                     >
-                        <span className="text-[#F9A53C] font-sm text-[15px] leading-none tracking-[0.1em] uppercase">
+                        <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase">
                             Inside the Program
                         </span>
                         <h2 className="text-[#242424] max-w-[500px] font-semibold tracking-normal
@@ -246,8 +246,8 @@ export default function ProgramFeatures() {
                         className="lg:col-span-5 lg:pt-8"
                     >
                         <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                             Step inside SPECIAL40. Real corporate environments, focused batch and
                             CA-led sessions designed to feel like work, not class.
                         </p>
@@ -298,7 +298,7 @@ export default function ProgramFeatures() {
                                     Corporate
                                 </span>
                             </div>
-                            <h4 className="text-[#09636E] font-semibold 
+                            <h4 className="text-[#09636E] font-bold 
                text-[18px] leading-[24px] tracking-normal">
                                 Real office-like training environment
                             </h4>
@@ -316,7 +316,7 @@ export default function ProgramFeatures() {
                 text-[15px] leading-[100%] tracking-[0.1em] uppercase
                 font-normal">Live</span>
                             </div>
-                            <h4 className="text-[#09636E] font-semibold 
+                            <h4 className="text-[#09636E] font-bold 
                text-[18px] leading-[24px] tracking-normal">
                                 Industry projects and case work
                             </h4>
@@ -334,7 +334,7 @@ export default function ProgramFeatures() {
                 text-[15px] leading-[100%] tracking-[0.1em] uppercase
                 font-normal">Mentor-Led</span>
                             </div>
-                            <h4 className="text-[#09636E] font-semibold 
+                            <h4 className="text-[#09636E] font-bold 
                text-[18px] leading-[24px] tracking-normal">
                                 Chartered Accountants from CAPITAIRE
                             </h4>

@@ -15,7 +15,7 @@ export default function WhyWeExist() {
     return (
         <section className="w-full bg-[#FBF4EA] font-inter py-16 md:py-24 overflow-hidden">
             {/* Aligns with your exact header and hero section content limits */}
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Upper Grid Area: Main statement vs descriptions */}
                 <div className="grid mt-16 lg:mt-20 grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-start">
@@ -56,16 +56,16 @@ export default function WhyWeExist() {
                         className="flex flex-col space-y-4 md:space-y-6 lg:pt-8 text-[#555454]"
                     >
                         <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                             Most commerce graduates struggle not because they lack talent but
                             because they lack practical exposure to how finance actually works
                             inside a real business. Companies don't hire degrees. They hire
                             professionals who can think, execute and deliver from day one.
                         </p>
                         <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                             SPECIAL40 was built to close that gap. It is not a coaching center. It is
                             not a Tally class. It is not mass-market education. It is a selective
                             transformation ecosystem engineered to turn ambitious commerce

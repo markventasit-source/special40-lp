@@ -47,7 +47,7 @@ export default function StatsStrip() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="w-full px-3 md:px-8 lg:px-10 overflow-hidden"
+            className="w-full px-4 md:px-8 lg:px-10 overflow-hidden"
         >
 
             {/* Mobile: 2x2 grid */}
@@ -55,72 +55,72 @@ export default function StatsStrip() {
                 className="grid grid-cols-2 gap-y-4 md:hidden py-10"
                 style={{ borderTop: '1px solid #E5E5E5' }}
             >
-                <div className="flex flex-col space-y-1 py-4 pr-8"
-                    style={{ borderRight: '1px solid #E5E5E5' }}
-                >
-                    <span
-                        className="text-[#09636E] text-[32px] leading-none font-semibold"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        <AnimatedNumber value="40" uniqueKey="mobile-seats" />
-                    </span>
-                    <span
-                        className="text-[#242424] text-[14.74px] leading-none font-normal"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        Seats
-                    </span>
+                <div className="flex flex-col space-y-1 py-4">
+                    <div className="pr-8" style={{ borderRight: '1px solid #E5E5E5' }}>
+                        <span
+                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            <AnimatedNumber value="40" uniqueKey="mobile-seats" />
+                        </span>
+                        <span
+                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            Seats
+                        </span>
+                    </div>
                 </div>
 
-                <div className="flex flex-col space-y-1 py-4 pl-8"
-                    style={{ borderLeft: '1px solid #E5E5E5' }}
-                >
-                    <span
-                        className="text-[#09636E] text-[32px] leading-none font-semibold"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        <AnimatedNumber value="100%" uniqueKey="mobile-placement" />
-                    </span>
-                    <span
-                        className="text-[#242424] text-[14.74px] leading-none font-normal"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        Placement Support
-                    </span>
+                <div className="flex flex-col space-y-1 py-4">
+                    <div className="pl-8" style={{ borderLeft: '1px solid #E5E5E5' }}>
+                        <span
+                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            <AnimatedNumber value="100%" uniqueKey="mobile-placement" />
+                        </span>
+                        <span
+                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            Placement Support
+                        </span>
+                    </div>
                 </div>
 
-                <div className="flex flex-col space-y-1 py-4 pr-8"
-                    style={{ borderRight: '1px solid #E5E5E5' }}
-                >
-                    <span
-                        className="text-[#09636E] text-[32px] leading-none font-semibold"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        <AnimatedNumber value="4.5 month" uniqueKey="mobile-duration" />
-                    </span>
-                    <span
-                        className="text-[#242424] text-[14.74px] leading-none font-normal"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        Intensive Program
-                    </span>
+                <div className="flex flex-col space-y-1 py-4">
+                    <div className="pr-8" style={{ borderRight: '1px solid #E5E5E5' }}>
+                        <span
+                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            <AnimatedNumber value="4.5 month" uniqueKey="mobile-duration" />
+                        </span>
+                        <span
+                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            Intensive Program
+                        </span>
+                    </div>
                 </div>
 
-                <div className="flex flex-col space-y-1 py-4 pl-8"
-                    style={{ borderLeft: '1px solid #E5E5E5' }}
-                >
-                    <span
-                        className="text-[#09636E] text-[32px] leading-none font-semibold"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        <AnimatedNumber value="10+ yrs" uniqueKey="mobile-experience" />
-                    </span>
-                    <span
-                        className="text-[#242424] text-[14.74px] leading-none font-normal"
-                        style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                    >
-                        Mentor Experience
-                    </span>
+                <div className="flex flex-col space-y-1 py-4">
+                    <div className="pl-8" style={{ borderLeft: '1px solid #E5E5E5' }}>
+                        <span
+                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            <AnimatedNumber value="10+ yrs" uniqueKey="mobile-experience" />
+                        </span>
+                        <span
+                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
+                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
+                        >
+                            Mentor Experience
+                        </span>
+                    </div>
                 </div>
             </div>
 

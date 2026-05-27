@@ -71,7 +71,7 @@ export default function TargetAudience() {
     return (
         <section className="w-full bg-white font-inter py-8 md:py-16 lg:py-24">
             {/* Shared layout width container */}
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Top Split Header */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-16">
@@ -90,8 +90,8 @@ export default function TargetAudience() {
 
                     <div className="lg:col-span-5 lg:pt-8">
                         <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                             SPECIAL40 selects ambitious individuals who want more than a job—they want a professional finance identity.
                         </p>
                     </div>
