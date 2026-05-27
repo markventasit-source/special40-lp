@@ -223,7 +223,7 @@ export default function ProgramFeatures() {
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="lg:col-span-7 flex flex-col space-y-3"
                     >
@@ -241,7 +241,7 @@ export default function ProgramFeatures() {
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
                         className="lg:col-span-5 lg:pt-8"
                     >
@@ -261,7 +261,7 @@ export default function ProgramFeatures() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.98 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="lg:col-span-7 relative w-full bg-gray-900 overflow-hidden shadow-sm aspect-video lg:aspect-auto lg:min-h-[300px] md:min-h-[440px] -mt-4 md:mt-0"
                     >
@@ -280,7 +280,7 @@ export default function ProgramFeatures() {
                         variants={cardContainerVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         className="lg:col-span-5 flex flex-col justify-between space-y-2"
                     >
 

@@ -55,7 +55,7 @@ export default function TransformationJourney() {
                         variants={leftContainerVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 md:space-y-8"
                     >
                         <motion.div variants={leftItemVariants} className="space-y-3">
@@ -164,7 +164,7 @@ export default function TransformationJourney() {
                             className="flex flex-col"
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-60px 0px" }}
+                            viewport={{ once: true, margin: "-15px" }}
                             variants={{
                                 hidden: {},
                                 visible: {

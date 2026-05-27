@@ -1,5 +1,4 @@
-import React from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function PlacementSupport() {
     const stats = [
@@ -95,7 +94,7 @@ export default function PlacementSupport() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
                 >
                     <div className="col-span-1 lg:col-span-8 space-y-6 md:space-y-8">
@@ -144,7 +143,7 @@ export default function PlacementSupport() {
         md:leading-[30px]
     "
                         >
-                            Placement isn't a separate service we sell. It is the outcome the entire SPECIAL40 program is built around from selection to mentorship to live project exposure.
+                            Placement isn&apos;t a separate service we sell. It is the outcome the entire SPECIAL40 program is built around from selection to mentorship to live project exposure.
                         </motion.p>
 
                         {/* Stats */}

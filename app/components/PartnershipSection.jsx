@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function PartnershipSection() {
 
@@ -68,7 +68,7 @@ export default function PartnershipSection() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch"
                 >
                     {/* Left Column */}

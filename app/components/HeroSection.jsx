@@ -77,7 +77,7 @@ export default function HeroSection() {
                                     letterSpacing: '0%',
                                 }}
                             >
-                                Kerala's First Finance Career Program
+                                Kerala&apos;s First Finance Career Program
                             </span>
                         </motion.div>
 

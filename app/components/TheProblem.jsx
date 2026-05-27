@@ -77,7 +77,7 @@ export default function TheProblem() {
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-6"
                 >
@@ -102,7 +102,7 @@ export default function TheProblem() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6"
                 >
                     {issues.map((issue, index) => (

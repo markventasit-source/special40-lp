@@ -46,7 +46,7 @@ export default function StatsStrip() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "-15px" }}
             className="w-full px-4 md:px-8 lg:px-10 overflow-hidden"
         >
 

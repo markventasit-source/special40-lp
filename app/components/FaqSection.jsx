@@ -73,7 +73,7 @@ export default function FaqSection() {
                             variants={headerVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-50px" }}
+                            viewport={{ once: true, margin: "-15px" }}
                             className="lg:col-span-5 space-y-4 lg:sticky lg:top-12"
                         >
                             <motion.span
@@ -92,7 +92,7 @@ export default function FaqSection() {
                                 variants={headerVariants}
                                 className="text-[#555454] font-md text-md md:text-[18px] leading-relaxed max-w-xs pt-2"
                             >
-                                Still unsure? Reach out and we'll discuss whether you are a right fit for the program or not.
+                                Still unsure? Reach out and we&apos;ll discuss whether you are a right fit for the program or not.
                             </motion.p>
                         </motion.div>
 
@@ -101,7 +101,7 @@ export default function FaqSection() {
                             className="lg:col-span-7 border-t border-gray-200"
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-50px" }}
+                            viewport={{ once: true, margin: "-15px" }}
                         >
                             {faqData.map((faq, idx) => {
                                 const isOpen = openIndex === idx;
@@ -174,7 +174,7 @@ export default function FaqSection() {
                 className="w-full bg-[#FAF9F6]"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "-15px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 <Image

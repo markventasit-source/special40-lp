@@ -24,7 +24,7 @@ export default function WhyWeExist() {
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         variants={blockVariants}
                         className="flex flex-col space-y-3 md:space-y-4"
                     >
@@ -44,7 +44,7 @@ export default function WhyWeExist() {
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         variants={{
                             hidden: { opacity: 0, y: 25 },
                             visible: {
@@ -60,7 +60,7 @@ export default function WhyWeExist() {
               min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                             Most commerce graduates struggle not because they lack talent but
                             because they lack practical exposure to how finance actually works
-                            inside a real business. Companies don't hire degrees. They hire
+                            inside a real business. Companies don&apos;t hire degrees. They hire
                             professionals who can think, execute and deliver from day one.
                         </p>
                         <p className="text-[#555454] font-normal tracking-normal
@@ -80,14 +80,14 @@ export default function WhyWeExist() {
                 <motion.div
                     initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
                     className="mt-8 md:mt-16 lg:mt-24 pt-2 md:pt-4 lg:ml-30"
                 >
                     <p className="text-[#F9A53C] italic font-normal tracking-normal max-w-4xl
               max-[450px]:text-[26px] max-[450px]:leading-[30px]
               min-[451px]:text-[32px] min-[451px]:leading-[43px]">
-                        "We don't create job seekers. We build finance professionals companies cannot ignore."
+                        &ldquo;We don&apos;t create job seekers. We build finance professionals companies cannot ignore.&rdquo;
                     </p>
                 </motion.div>
 

@@ -80,18 +80,23 @@ export default function ProgramDifference() {
 
     const totalSlides = points.length + 1;
 
-    const autoplayPlugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: false })
+    const autoplayPlugin = React.useMemo(
+        () => Autoplay({ delay: 3000, stopOnInteraction: false }),
+        []
     );
 
     useEffect(() => {
         if (!api) return;
 
-        setCurrent(api.selectedScrollSnap());
+        const timer = setTimeout(() => {
+            setCurrent(api.selectedScrollSnap());
+        }, 0);
 
         api.on("select", () => {
             setCurrent(api.selectedScrollSnap());
         });
+
+        return () => clearTimeout(timer);
     }, [api]);
 
     const gridVariants = {
@@ -149,7 +154,7 @@ export default function ProgramDifference() {
                     variants={gridVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-80px 0px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="hidden min-[450px]:grid border border-gray-100 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
                 >
                     {points.slice(0, 6).map((point, index) => (
@@ -242,10 +247,10 @@ export default function ProgramDifference() {
                             align: "start",
                             loop: true,
                         }}
-                        plugins={[autoplayPlugin.current]}
+                        plugins={[autoplayPlugin]}
                         className="w-full"
-                        onMouseEnter={autoplayPlugin.current.stop}
-                        onMouseLeave={autoplayPlugin.current.reset}
+                        onMouseEnter={autoplayPlugin.stop}
+                        onMouseLeave={autoplayPlugin.reset}
                     >
                         <CarouselContent className="-ml-3">
                             {points.map((point, index) => (

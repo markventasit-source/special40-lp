@@ -102,7 +102,7 @@ export default function TargetAudience() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-100px 0px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 lg:gap-6"
                 >
                     {cards.map((card, index) => (

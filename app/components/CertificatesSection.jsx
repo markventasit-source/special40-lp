@@ -45,7 +45,7 @@ export default function CertificatesSection() {
                     variants={headerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="flex flex-col items-center text-center space-y-3 max-w-2xl mx-auto mb-12 md:mb-16"
                 >
                     <motion.span
@@ -71,7 +71,7 @@ export default function CertificatesSection() {
                             variants={cardVariants}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, margin: "-50px" }}
+                            viewport={{ once: true, margin: "-15px" }}
                             whileHover={{
                                 y: -8,
                                 transition: { duration: 0.3 }

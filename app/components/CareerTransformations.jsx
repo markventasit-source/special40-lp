@@ -37,8 +37,9 @@ export default function CareerTransformations() {
         }
     ];
 
-    const autoplayPlugin = React.useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: false })
+    const autoplayPlugin = React.useMemo(
+        () => Autoplay({ delay: 3000, stopOnInteraction: false }),
+        []
     );
 
     // Animation variants
@@ -69,7 +70,7 @@ export default function CareerTransformations() {
                     variants={headerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 md:mb-20"
                 >
                     <motion.span
@@ -99,7 +100,7 @@ export default function CareerTransformations() {
                     variants={headerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     className="w-full"
                 >
                     <Carousel
@@ -107,10 +108,10 @@ export default function CareerTransformations() {
                             loop: true,
                             align: "start",
                         }}
-                        plugins={[autoplayPlugin.current]}
+                        plugins={[autoplayPlugin]}
                         className="w-full"
-                        onMouseEnter={autoplayPlugin.current.stop}
-                        onMouseLeave={autoplayPlugin.current.reset}
+                        onMouseEnter={autoplayPlugin.stop}
+                        onMouseLeave={autoplayPlugin.reset}
                     >
                         <CarouselContent className="-ml-4 md:-ml-6 lg:-ml-8">
                             {testimonials.map((item, index) => (
@@ -122,7 +123,7 @@ export default function CareerTransformations() {
                                         variants={itemVariants}
                                         initial="hidden"
                                         whileInView="visible"
-                                        viewport={{ once: true, margin: "-50px" }}
+                                        viewport={{ once: true, margin: "-15px" }}
                                         whileHover={{
                                             y: -8,
                                             transition: { duration: 0.3 }

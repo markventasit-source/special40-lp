@@ -63,7 +63,7 @@ export default function SelectionProcess() {
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         transition={{ duration: 0.7, ease: "easeOut" }}
                         className="lg:col-span-5 flex flex-col space-y-6"
                     >
@@ -114,7 +114,7 @@ export default function SelectionProcess() {
                         variants={stepContainerVariants}
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         className="lg:col-span-7 flex flex-col space-y-2 lg:pt-4"
                     >
                         {steps.map((step, idx) => (

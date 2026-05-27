@@ -55,7 +55,7 @@ export default function OutcomeComparison() {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="flex flex-col items-center text-center space-y-3 max-w-3xl mx-auto mb-16"
                 >
@@ -74,7 +74,7 @@ export default function OutcomeComparison() {
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         variants={leftCardVariants}
                         className="w-full lg:flex-1 bg-[#FBF4EA]/60  p-8 md:p-10 flex flex-col justify-start border border-transparent"
                     >
@@ -98,7 +98,7 @@ export default function OutcomeComparison() {
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         variants={arrowVariants}
                         className="flex-shrink-0 bg-[#F9A53C] text-white w-12 h-12 flex items-center justify-center shadow-sm my-2 lg:my-0 transform rotate-90 lg:rotate-0 self-center"
                     >
@@ -111,7 +111,7 @@ export default function OutcomeComparison() {
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, margin: "-15px" }}
                         variants={rightCardVariants}
                         whileHover={{ y: -3, transition: { duration: 0.2 } }}
                         className="w-full lg:flex-1 bg-[#09636E] p-8 md:p-10 flex flex-col justify-start text-white shadow-md border border-transparent cursor-default"
@@ -138,7 +138,7 @@ export default function OutcomeComparison() {
                 <motion.div
                     initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
+                    viewport={{ once: true, margin: "-15px" }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     className="md:mt-16 md:ml-24 pl-6"
                 >
