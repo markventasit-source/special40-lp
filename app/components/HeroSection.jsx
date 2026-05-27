@@ -65,7 +65,7 @@ export default function HeroSection() {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="lg:col-span-7 flex flex-col space-y-4"
+                        className="lg:col-span-6 flex flex-col space-y-4"
                     >
                         {/* Pill Tag */}
                         <motion.div variants={itemVariants}>
@@ -219,7 +219,7 @@ export default function HeroSection() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-                        className="w-full hidden lg:block lg:col-span-5"
+                        className="w-full hidden lg:block lg:col-span-6"
                     >
                         <LeadForm />
                     </motion.div>
