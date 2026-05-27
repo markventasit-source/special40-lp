@@ -16,7 +16,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col space-y-1.5">
-            <label className="text-xs pl-2 font-medium text-gray-200">Your Name*</label>
+            <label className="text-[16px] pl-2 font-medium text-gray-200">Your Name*</label>
             <input
               type="text"
               placeholder="John Doe"
@@ -26,7 +26,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           </div>
 
           <div className="flex flex-col space-y-1.5">
-            <label className="text-xs pl-2 font-medium text-gray-200">Qualification*</label>
+            <label className="text-[16px] pl-2 font-medium text-gray-200">Qualification*</label>
             <Select required>
               <SelectTrigger className="w-full bg-black/15 text-white text-sm p-3 h-auto rounded border border-transparent focus:border-[#F9A53C] focus:ring-0 focus:outline-none transition-colors [&>svg]:text-gray-300">
                 <SelectValue placeholder="Select your qualification" className="text-gray-400" />
@@ -48,7 +48,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col space-y-1.5">
-            <label className="text-xs pl-2 font-medium text-gray-200">Phone (WhatsApp)*</label>
+            <label className="text-[16px] pl-2 font-medium text-gray-200">Phone (WhatsApp)*</label>
             <input
               type="tel"
               placeholder="+91 9995 1235 4565"
@@ -58,7 +58,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           </div>
 
           <div className="flex flex-col space-y-1.5">
-            <label className="text-xs pl-2 font-medium text-gray-200">Email*</label>
+            <label className="text-[16px] pl-2 font-medium text-gray-200">Email*</label>
             <input
               type="email"
               placeholder="Johndoe@testmail.com"
@@ -70,7 +70,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col space-y-1.5">
-            <label className="text-xs pl-2 font-medium text-gray-200">Location*</label>
+            <label className="text-[16px] pl-2 font-medium text-gray-200">Location*</label>
             <input
               type="text"
               placeholder="Ernakulam"
@@ -80,7 +80,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           </div>
 
           <div className="flex flex-col space-y-1.5">
-            <label className="text-xs pl-2 font-medium text-gray-200">Reason for choosing the program*</label>
+            <label className="text-[16px] pl-2 font-medium text-gray-200">Reason for choosing the program*</label>
             <Select required>
               <SelectTrigger className="w-full bg-black/15 text-white text-sm p-3 h-auto rounded border border-transparent focus:border-[#F9A53C] focus:ring-0 focus:outline-none transition-colors [&>svg]:text-gray-300">
                 <SelectValue placeholder="Select a reason" className="text-gray-400" />
@@ -100,7 +100,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
         </div>
 
         <div className="flex flex-col space-y-1.5">
-          <label className="text-xs pl-2 font-medium text-gray-200">Other</label>
+          <label className="text-[16px] pl-2 font-medium text-gray-200">Other</label>
           <textarea
             rows={2}
             className="bg-black/15 text-white text-sm p-3 rounded border border-transparent focus:border-[#F9A53C] focus:outline-none resize-none transition-colors"

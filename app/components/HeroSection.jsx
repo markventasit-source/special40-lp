@@ -160,7 +160,7 @@ export default function HeroSection() {
                             >
                                 Apply for Assessment <ArrowRight size={18} />
                             </button>
-                            <button
+                            <button onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
                                 className="
     border 
     border-[#09636E] 
