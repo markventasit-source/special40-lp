@@ -33,7 +33,7 @@ export default function RegistrationSuccess() {
             {/* Top Brand Banner Header */}
             <header className="w-full bg-[#1A4D54] px-4 py-3 md:px-12 md:py-4 flex justify-between items-center shadow-sm">
     <div className="flex flex-col">
-        <div className="flex items-center">
+        <a href="/" className="flex items-center">
             <Image
                 src="/whitelogo.png"
                 alt="Logo"
@@ -43,7 +43,7 @@ export default function RegistrationSuccess() {
                 priority
                 style={{ width: 'auto', height: 'auto' }}
             />
-        </div>
+        </a>
         <span className="text-gray-300 font-medium text-[13px] md:text-[18px] leading-5 md:leading-6 tracking-normal opacity-90 mt-0.5 md:mt-1">
             In partnership with Capitaire
         </span>
@@ -54,7 +54,6 @@ export default function RegistrationSuccess() {
         </span>
     </div>
 </header>
-
         
        {/* Main Content Layout Wrapper */}
 <main className="mx-auto px-6 pt-8 md:pt-12 pb-10 md:px-12 lg:px-16 flex flex-col space-y-8">
