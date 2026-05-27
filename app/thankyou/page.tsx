@@ -1,10 +1,16 @@
 'use client'
-import ProgramDifference from "../components/ThankyouHero"
+import ProgramDifference from "../components/ThankyouHero";
+import ThankyouAdmissionSteps from "../components/ThankyouAdmissionSteps";
+import ThankyouSchedule from "../components/ThankyouSchedule";
+import ThankyouFooter from "../components/ThankyouFooter"
 
 export default function Thankyou() {
-    return (
-      <>
-    <ProgramDifference/>
-      </>
-    );
-  }
+  return (
+    <>
+      <ProgramDifference />
+      <ThankyouAdmissionSteps />
+      <ThankyouSchedule />
+      <ThankyouFooter/>
+    </>
+  );
+}
