@@ -49,7 +49,7 @@ export default function HeroSection() {
                     </div>
                     <button
                         onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-[#09636E] text-white px-5 py-2.5  text-md font-semibold hover:bg-[#074f58] transition-colors hidden min-[431px]:block active:scale-95 duration-150"
+                        className="bg-[#09636E] text-white px-5 py-4  text-md font-semibold hover:bg-[#074f58] transition-colors hidden min-[431px]:block active:scale-95 duration-150"
                     >
                         Apply for Assessment
                     </button>
@@ -136,7 +136,7 @@ export default function HeroSection() {
     bg-[#09636E] 
     text-white 
     px-6 
-    py-4  
+    py-5  
     flex 
     items-center 
     justify-center 
@@ -167,7 +167,7 @@ export default function HeroSection() {
     text-gray-800 
     backdrop-blur-sm 
     px-6 
-    py-4  
+    py-5  
     transition-colors 
     shadow-sm 
     w-full 
