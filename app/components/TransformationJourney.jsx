@@ -59,7 +59,7 @@ export default function TransformationJourney() {
                         className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 md:space-y-8"
                     >
                         <motion.div variants={leftItemVariants} className="space-y-3">
-                            <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase block">
+                            <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase block">
                                 The Transformation Journey
                             </span>
                             <h2 className="text-[#242424] font-semibold
@@ -77,12 +77,35 @@ export default function TransformationJourney() {
                         </motion.p>
 
                         <motion.div variants={leftItemVariants}>
-                            <button
-                                onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-[#F9A53C] text-white px-6 py-3.5 text-sm font-medium hover:bg-[#e0912f] transition-colors shadow-sm w-full sm:w-auto"
-                            >
-                                Apply for Assessment
-                            </button>
+                        <button
+    onClick={() =>
+        document
+            .getElementById('assessment-form')
+            ?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="
+        bg-[#F9A53C]
+        text-white
+        px-6
+        py-3.5
+        hover:bg-[#e0912f]
+        transition-colors
+        shadow-sm
+        w-full
+        sm:w-auto
+        font-inter
+        tracking-normal
+
+        text-[20px]
+        font-semibold
+        leading-[100%]
+
+        md:text-[16px]
+        md:font-medium
+    "
+>
+    Apply for Assessment
+</button>
                         </motion.div>
 
                         {/* Pricing Box - Pop up entry */}
