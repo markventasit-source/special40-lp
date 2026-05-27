@@ -37,7 +37,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="w-full mx-auto px-3 md:px-8 lg:px-10 pt-5"
             >
-                <div className="w-full py-5 flex justify-between items-center border-b border-[#DEDBD7]">
+                <div className="w-full py-1 flex justify-between items-center border-b border-[#DEDBD7]">
                     <div className="relative h-14 w-48">
                         <Image
                             src="/logo.png"
@@ -49,7 +49,7 @@ export default function HeroSection() {
                     </div>
                     <button
                         onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-[#09636E] text-white px-5 py-2.5 rounded text-sm font-medium hover:bg-[#074f58] transition-colors hidden min-[431px]:block active:scale-95 duration-150"
+                        className="bg-[#09636E] text-white px-5 py-2.5  text-sm font-medium hover:bg-[#074f58] transition-colors hidden min-[431px]:block active:scale-95 duration-150"
                     >
                         Apply for Assessment
                     </button>
@@ -99,7 +99,7 @@ export default function HeroSection() {
                         {/* Sub-heading */}
                         <motion.p
                             variants={itemVariants}
-                            className="text-[#09636E] my-6 h-6 flex items-center opacity-100 tracking-normal"
+                            className="text-[#09636E] my-6 h-6 flex items-center opacity-100 tracking-normal max-[450px]:max-w-[300px]"
                             style={{
                                 fontFamily: 'Inter',
                                 fontWeight: '500',
@@ -132,11 +132,11 @@ export default function HeroSection() {
                         >
                             <button
                                 onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-[#09636E] text-white px-6 py-3 rounded flex items-center justify-center gap-2 font-medium hover:bg-[#074f58] transition-colors shadow-sm w-full sm:w-auto active:scale-[0.98] duration-100"
+                                className="bg-[#09636E] text-white px-6 py-4  flex items-center justify-center gap-2 font-semibold hover:bg-[#074f58] transition-colors shadow-sm w-full sm:w-auto active:scale-[0.98] duration-100"
                             >
                                 Apply for Assessment <ArrowRight size={18} />
                             </button>
-                            <button className="border border-[#09636E] text-gray-800 backdrop-blur-sm px-6 py-3 rounded font-medium hover:bg-white/80 transition-colors shadow-sm w-full sm:w-auto active:scale-[0.98] duration-100">
+                            <button className="border border-[#09636E] text-gray-800 backdrop-blur-sm px-6 py-4  font-semibold hover:bg-white/80 transition-colors shadow-sm w-full sm:w-auto active:scale-[0.98] duration-100">
                                 Book Career Consultation
                             </button>
                         </motion.div>
@@ -146,7 +146,7 @@ export default function HeroSection() {
                             variants={itemVariants}
                             className="flex flex-row gap-4 pt-4"
                         >
-                            <div className="border border-[#F9A53C] bg-[#FFE5C2]/20 max-w-[200px] backdrop-blur-sm rounded p-3 flex flex-col justify-center flex-1 min-w-0 hover:bg-[#FFE5C2]/40 transition-colors">
+                            <div className="border border-[#F9A53C] bg-[#FFE5C2]/20 max-w-[200px] backdrop-blur-sm  p-3 flex flex-col justify-center flex-1 min-w-0 hover:bg-[#FFE5C2]/40 transition-colors">
                                 <div className="flex text-[#F9A53C] gap-0.5 mb-1 justify-center sm:justify-start">
                                     {[...Array(5)].map((_, i) => (
                                         <Star key={i} size={14} fill="#F9A53C" strokeWidth={0} />
@@ -158,7 +158,7 @@ export default function HeroSection() {
                                 </p>
                             </div>
 
-                            <div className="border border-[#F9A53C] max-w-[200px] bg-[#FFE5C2]/20 backdrop-blur-sm rounded p-3 flex flex-col justify-center flex-1 min-w-0 hover:bg-[#FFE5C2]/40 transition-colors">
+                            <div className="border border-[#F9A53C] max-w-[200px] bg-[#FFE5C2]/20 backdrop-blur-sm  p-3 flex flex-col justify-center flex-1 min-w-0 hover:bg-[#FFE5C2]/40 transition-colors">
                                 <p className="text-xs text-gray-500 text-center sm:text-left truncate">Powered by CAPITAIRE</p>
                                 <p className="text-xs font-bold text-gray-800 text-center sm:text-left whitespace-nowrap">Consulting CAs</p>
                             </div>

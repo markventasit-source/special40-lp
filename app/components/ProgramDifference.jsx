@@ -217,14 +217,14 @@ export default function ProgramDifference() {
                         className="bg-[#09636E] p-4 md:p-8 flex flex-col justify-between min-h-[160px] md:min-h-[220px] text-white lg:col-span-1"
                     >
                         <div className="space-y-2">
-                            <span className="text-[#F9A53C] block font-light uppercase tracking-wider text-[11px]">
+                            <span className="text-[#F9A53C] block font-md uppercase tracking-wider text-[11px]">
                                 In Summary
                             </span>
                             <h3 className="text-white font-md text-[22px] leading-tight">
                                 A premium ecosystem, not a course catalogue.
                             </h3>
                         </div>
-                        <p className="text-[#555454] font-normal tracking-normal pt-2
+                        <p className="text-[#FFF] font-normal tracking-normal pt-2
               max-[450px]:text-[16px] max-[450px]:leading-[22px]
               min-[451px]:text-[16px] min-[451px]:leading-[24px]">
                             Every Batch is selected, mentored and tracked individually.
