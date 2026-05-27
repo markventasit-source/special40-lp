@@ -49,7 +49,7 @@ export default function HeroSection() {
                     </div>
                     <button
                         onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="bg-[#09636E] text-white px-5 py-2.5  text-sm font-medium hover:bg-[#074f58] transition-colors hidden min-[431px]:block active:scale-95 duration-150"
+                        className="bg-[#09636E] text-white px-5 py-2.5  text-md font-semibold hover:bg-[#074f58] transition-colors hidden min-[431px]:block active:scale-95 duration-150"
                     >
                         Apply for Assessment
                     </button>
@@ -132,11 +132,59 @@ export default function HeroSection() {
                         >
                             <button
                                 onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-[#09636E] text-white px-6 py-4  flex items-center justify-center gap-2 font-semibold hover:bg-[#074f58] transition-colors shadow-sm w-full sm:w-auto active:scale-[0.98] duration-100"
+                                className="
+    bg-[#09636E] 
+    text-white 
+    px-6 
+    py-4  
+    flex 
+    items-center 
+    justify-center 
+    gap-2 
+    transition-colors 
+    shadow-sm 
+    w-full 
+    sm:w-auto 
+    active:scale-[0.98] 
+    duration-100
+    
+    /* Typography styles matching your specs */
+    font-['Inter'] 
+    font-semibold  /* font-weight: 600 */
+    text-[18px]    /* font-size: 18px */
+    leading-[100%] /* line-height: 100% */
+    tracking-normal /* letter-spacing: 0% (normal) */
+    
+    hover:bg-[#074f58]
+  "
                             >
                                 Apply for Assessment <ArrowRight size={18} />
                             </button>
-                            <button className="border border-[#09636E] text-gray-800 backdrop-blur-sm px-6 py-4  font-semibold hover:bg-white/80 transition-colors shadow-sm w-full sm:w-auto active:scale-[0.98] duration-100">
+                            <button
+                                className="
+    border 
+    border-[#09636E] 
+    text-gray-800 
+    backdrop-blur-sm 
+    px-6 
+    py-4  
+    transition-colors 
+    shadow-sm 
+    w-full 
+    sm:w-auto 
+    active:scale-[0.98] 
+    duration-100
+    
+    /* Typography styles matching your specs */
+    font-['Inter'] 
+    font-bold      /* font-weight: 600 (or 700 for bold) */
+    text-[18px]    /* font-size: 18px */
+    leading-[100%] /* line-height: 100% */
+    tracking-normal /* letter-spacing: 0% */
+    
+    hover:bg-white/80
+  "
+                            >
                                 Book Career Consultation
                             </button>
                         </motion.div>
