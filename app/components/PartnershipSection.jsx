@@ -85,7 +85,7 @@ export default function PartnershipSection() {
 
                             <motion.h2
                                 variants={itemVariants}
-                                className="text-[#242424] font-bold text-3xl md:text-[48px] md:leading-[57px] tracking-normal"
+                                className="text-[#242424] font-bold text-3xl md:text-[48px] leading-[44px] md:leading-[57px] tracking-normal"
                             >
                                 In partnership with <span className="text-[#F9A53C]">CAPITAIRE.</span>
                             </motion.h2>

@@ -225,7 +225,7 @@ export default function PlacementSupport() {
         max-w-xl
 
         text-[18px]
-        leading-[28px]
+        leading-[24px]
 
         md:leading-[30px]
     ">
