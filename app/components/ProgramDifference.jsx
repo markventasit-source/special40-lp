@@ -6,6 +6,7 @@ import {
     CarouselItem,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import { ArrowRight } from 'lucide-react';
 
 export default function ProgramDifference() {
     const [api, setApi] = useState(null);
@@ -300,13 +301,43 @@ export default function ProgramDifference() {
 
                     {/* Green Call-To-Action Button (Strictly below 430px) */}
                     <div className="max-[430px]:flex hidden w-full justify-center mt-6">
-                        <button
-                            type="button"
-                            onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="w-full bg-[#09636E] text-white text-sm font-semibold py-3 px-6  text-center shadow-md hover:brightness-110 active:scale-[0.99] transition-all tracking-wide"
-                        >
-                            Apply for Assessment
-                        </button>
+                    <button
+    onClick={() =>
+        document
+            .getElementById('assessment-form')
+            ?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="
+        bg-[#09636E]
+        text-white
+        px-5
+        md:px-6
+        py-3
+        md:py-3.5
+        hover:bg-[#074f58]
+        transition-colors
+        shadow-sm
+        w-full
+        sm:w-auto
+        inline-flex
+        items-center
+        justify-center
+        whitespace-nowrap
+        gap-2
+        font-inter
+        tracking-normal
+
+        text-[18px]
+        font-semibold
+        leading-[100%]
+
+        md:text-[16px]
+        md:font-medium
+    "
+>
+    <span>Apply for Assessment</span>
+    <ArrowRight className="shrink-0" size={18} />
+</button>
                     </div>
                 </div>
 

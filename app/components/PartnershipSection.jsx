@@ -78,7 +78,7 @@ export default function PartnershipSection() {
                         <div className="space-y-3">
                             <motion.span
                                 variants={itemVariants}
-                                className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase block"
+                                className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase block"
                             >
                                 Powered by Industry Expertise
                             </motion.span>
@@ -94,7 +94,7 @@ export default function PartnershipSection() {
                         {/* Description */}
                         <motion.div
                             variants={itemVariants}
-                            className="space-y-3 md:space-y-4 text-[#555454] font-light text-sm md:text-[16px] md:leading-[24px] tracking-normal"
+                            className="space-y-3 md:space-y-4 text-[#555454] font-md text-md md:text-[16px] md:leading-[24px] tracking-normal"
                         >
                             <p>
                                 Capitaire is a trusted finance and advisory firm of experienced Chartered Accountants and real business consultants with over a decade of industry experience.
@@ -162,12 +162,43 @@ export default function PartnershipSection() {
                             transition={{ duration: 0.2 }}
                             className="pt-1 md:pt-2"
                         >
-                            <button
-                                onClick={() => document.getElementById('assessment-form')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-[#09636E] text-white px-5 md:px-6 py-3 md:py-3.5 text-sm font-medium  hover:bg-[#074f58] transition-colors shadow-sm w-full sm:w-auto inline-flex items-center justify-center gap-2"
-                            >
-                                Apply for Assessment <ArrowRight size={18} />
-                            </button>
+<button
+    onClick={() =>
+        document
+            .getElementById('assessment-form')
+            ?.scrollIntoView({ behavior: 'smooth' })
+    }
+    className="
+        bg-[#09636E]
+        text-white
+        px-5
+        md:px-6
+        py-3
+        md:py-3.5
+        hover:bg-[#074f58]
+        transition-colors
+        shadow-sm
+        w-full
+        sm:w-auto
+        inline-flex
+        items-center
+        justify-center
+        whitespace-nowrap
+        gap-2
+        font-inter
+        tracking-normal
+
+        text-[18px]
+        font-semibold
+        leading-[100%]
+
+        md:text-[16px]
+        md:font-medium
+    "
+>
+    <span>Apply for Assessment</span>
+    <ArrowRight className="shrink-0" size={18} />
+</button>
                         </motion.div>
 
                     </motion.div>

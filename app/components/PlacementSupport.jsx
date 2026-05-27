@@ -104,25 +104,48 @@ export default function PlacementSupport() {
                         <motion.div variants={itemVariants} className="space-y-3">
                             <motion.span
                                 variants={itemVariants}
-                                className="text-[#F9A53C] font-light text-xs md:text-[13px] tracking-[0.15em] uppercase block"
+                                className="text-[#F9A53C] font-md text-xs md:text-[13px] tracking-[0.15em] uppercase block"
                             >
                                 Placement Support
                             </motion.span>
-                            <motion.h2
-                                variants={itemVariants}
-                                className="text-white font-medium text-2xl md:text-3xl lg:text-[44px] lg:leading-[52px] tracking-tight max-w-2xl"
-                            >
-                                100% placement support engineered into the program.
-                            </motion.h2>
+                      <motion.h2
+    variants={itemVariants}
+    className="
+        text-white
+        font-semibold
+        font-inter
+        tracking-normal
+        max-w-2xl
+
+        max-[450px]:text-[32px]
+        max-[450px]:leading-[36px]
+
+        min-[451px]:text-[48px]
+        min-[451px]:leading-[57px]
+    "
+>
+    100% placement support engineered into the program.
+</motion.h2>
                         </motion.div>
 
                         {/* Description */}
                         <motion.p
-                            variants={itemVariants}
-                            className="text-gray-200/90 font-light text-sm md:text-[15px] leading-relaxed max-w-xl"
-                        >
-                            Placement isn't a separate service we sell. It is the outcome the entire SPECIAL40 program is built around from selection to mentorship to live project exposure.
-                        </motion.p>
+    variants={itemVariants}
+    className="
+        text-gray-200/90
+        font-normal
+        font-inter
+        tracking-normal
+        max-w-xl
+
+        text-[16px]
+        leading-[22px]
+
+        md:leading-[24px]
+    "
+>
+    Placement isn't a separate service we sell. It is the outcome the entire SPECIAL40 program is built around from selection to mentorship to live project exposure.
+</motion.p>
 
                         {/* Stats */}
                         <motion.div
@@ -147,7 +170,19 @@ export default function PlacementSupport() {
                                         >
                                             {stat.value}
                                         </motion.span>
-                                        <span className="text-gray-300 text-xs md:text-[13px] font-light tracking-wide mt-1">
+                                        <span     className="
+        text-gray-200/90
+        font-normal
+        font-inter
+        tracking-normal
+        max-w-xl
+
+        text-[16px]
+        leading-[22px]
+
+        md:leading-[24px]
+    "
+>
                                             {stat.label}
                                         </span>
                                     </div>
@@ -183,7 +218,18 @@ export default function PlacementSupport() {
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                                         </svg>
                                     </motion.div>
-                                    <span className="text-white text-xs md:text-[13px] font-light tracking-wide">
+                                    <span   className="
+        text-gray-200/90
+        font-normal
+        font-inter
+        tracking-normal
+        max-w-xl
+
+        text-[16px]
+        leading-[22px]
+
+        md:leading-[24px]
+    ">
                                         {feature}
                                     </span>
                                 </motion.div>

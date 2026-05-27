@@ -49,21 +49,21 @@ export default function FinalCtaSection() {
                 >
                     <motion.span
                         variants={itemVariants}
-                        className="text-[#F9A53C] font-light text-xs md:text-[13px] tracking-[0.15em] uppercase block"
+                        className="text-[#F9A53C] font-md text-xs md:text-[13px] tracking-[0.15em] uppercase block"
                     >
                         Limited Selective Seats Available
                     </motion.span>
 
                     <motion.h2
                         variants={itemVariants}
-                        className="text-white font-md text-3xl md:text-[48px] md:leading-[56px] tracking-tight"
+                        className="text-white font-semibold text-3xl md:text-[48px] md:leading-[56px] tracking-tight"
                     >
                         Your finance career deserves more than just a degree.
                     </motion.h2>
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-gray-200/90 font-light text-sm md:text-[16px] leading-relaxed max-w-2xl"
+                        className="text-gray-200/90 font-md text-md md:text-[16px] leading-relaxed max-w-2xl"
                     >
                         Apply now and begin your journey toward becoming a corporate-ready finance professional with Kerala's most selective transformation program.
                     </motion.p>

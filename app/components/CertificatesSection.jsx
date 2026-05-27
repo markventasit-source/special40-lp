@@ -50,13 +50,13 @@ export default function CertificatesSection() {
                 >
                     <motion.span
                         variants={headerVariants}
-                        className="text-[#F9A53C] font-light text-xs md:text-[13px] tracking-[0.15em] uppercase block"
+                        className="text-[#F9A53C] font-md text-xs md:text-[13px] tracking-[0.15em] uppercase block"
                     >
                         Certificates
                     </motion.span>
                     <motion.h2
                         variants={headerVariants}
-                        className="text-[#242424] font-md text-3xl md:text-[44px] md:leading-[52px] tracking-tight"
+                        className="text-[#242424] font-semibold text-3xl md:text-[44px] md:leading-[52px] tracking-tight"
                     >
                         Course Completion Certificates
                     </motion.h2>

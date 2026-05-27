@@ -74,21 +74,21 @@ export default function CareerTransformations() {
                 >
                     <motion.span
                         variants={headerVariants}
-                        className="text-[#F5A63A] font-light text-xs md:text-[13px] tracking-[0.18em] uppercase mb-4"
+                        className="text-[#F5A63A] font-md text-xs md:text-[13px] tracking-[0.18em] uppercase mb-4"
                     >
                         Career Transformations
                     </motion.span>
 
                     <motion.h2
                         variants={headerVariants}
-                        className="text-[#1A1A1A] font-md text-3xl md:text-[46px] md:leading-[54px] tracking-tight mb-6"
+                        className="text-[#1A1A1A] font-semibold text-3xl md:text-[46px] md:leading-[54px] tracking-tight mb-6"
                     >
                         Real students.<br className="hidden sm:inline" /> Real corporate journeys.
                     </motion.h2>
 
                     <motion.p
                         variants={headerVariants}
-                        className="text-[#555454] font-light text-sm md:text-[15px] leading-relaxed max-w-xl"
+                        className="text-[#555454] font-md text-md md:text-[15px] leading-relaxed max-w-xl"
                     >
                         Selected stories from past SPECIAL40 batch professionals who walked in as graduates and walked out as hires.
                     </motion.p>
