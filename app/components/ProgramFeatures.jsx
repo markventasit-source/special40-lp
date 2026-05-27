@@ -215,7 +215,7 @@ export default function ProgramFeatures() {
     return (
         <section className="w-full bg-white font-inter py-6 pb-[200px] -mb-[300px] overflow-hidden">
             {/* Main Container matching the Hero layout width bounds */}
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Top Header Grid Area */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-12">

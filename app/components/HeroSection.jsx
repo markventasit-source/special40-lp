@@ -35,7 +35,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="w-full mx-auto px-3 md:px-8 lg:px-10 pt-5"
+                className="w-full mx-auto px-4 md:px-8 lg:px-10 pt-5"
             >
                 <div className="w-full py-1 flex justify-between items-center border-b border-[#DEDBD7]">
                     <div className="relative h-14 w-48">
@@ -57,7 +57,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Main Content Container */}
-            <div className="w-full mx-auto px-3 md:px-8 lg:px-10 py-6 md:py-12 flex-grow flex items-center">
+            <div className="w-full mx-auto px-4 md:px-8 lg:px-10 py-6 md:py-12 flex-grow flex items-center">
                 <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                     {/* Left Column: Marketing Copy with Staggered Elements */}
@@ -70,7 +70,7 @@ export default function HeroSection() {
                         {/* Pill Tag */}
                         <motion.div variants={itemVariants}>
                             <span
-                                className="bg-[#F9A53C] text-white px-3 py-1 text-[18px] leading-[24px] tracking-normal font-medium inline-block w-full sm:w-auto text-center sm:text-left whitespace-nowrap"
+                                className="bg-[#F9A53C] text-white px-4 py-1 text-[18px] leading-[24px] tracking-normal font-medium inline-block w-full sm:w-auto text-center sm:text-left whitespace-nowrap"
                                 style={{
                                     fontFamily: 'Inter',
                                     fontStyle: 'Medium',
