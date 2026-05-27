@@ -25,10 +25,10 @@ export const metadata: Metadata = {
     siteName: "SPECIAL40",
     images: [
       {
-        url: "https://join.special40.com/favicon-spl.png",
-        width: 512,
-        height: 512,
-        alt: "SPECIAL40 — Corporate Finance Program by Capitaire",
+        url: "https://join.special40.com/og-image.png",
+        width: 1200,
+        height: 1200,
+        alt: "SPECIAL40 — Premium Corporate Finance Program by Capitaire",
       },
     ],
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SPECIAL40 | Premium Corporate Finance Program for Commerce Graduates",
     description: "SPECIAL40 is a selective career transformation ecosystem by CAPITAIRE. We turn ambitious commerce graduates and ACCA/CMA students into corporate-ready finance professionals through practical, CA-led training in a real office environment.",
-    images: ["https://join.special40.com/favicon-spl.png"],
+    images: ["https://join.special40.com/og-image.png"],
   },
 };
 
