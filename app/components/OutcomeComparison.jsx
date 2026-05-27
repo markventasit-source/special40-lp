@@ -68,7 +68,7 @@ export default function OutcomeComparison() {
                 </motion.div>
 
                 {/* Before vs After Comparison Grid Block */}
-                <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-8 mx-auto mb-12">
+                <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-8 mx-auto mb-8">
 
                     {/* Left Card: Before State */}
                     <motion.div
@@ -140,7 +140,7 @@ export default function OutcomeComparison() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-                    className="md:mt-16 md:ml-24 border-l-2 border-[#F9A53C]/40 pl-6"
+                    className="md:mt-16 md:ml-24 pl-6"
                 >
                     <blockquote className="text-[#F9A53C] italic font-normal tracking-normal max-w-200
                       max-[450px]:text-[26px] max-[450px]:leading-[33px]
