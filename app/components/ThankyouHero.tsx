@@ -57,7 +57,7 @@ export default function RegistrationSuccess() {
 
         
        {/* Main Content Layout Wrapper */}
-<main className="mx-auto px-6 pt-4 md:pt-12 pb-20 md:px-12 lg:px-16 flex flex-col space-y-8 md:space-y-12">
+<main className="mx-auto px-6 pt-8 md:pt-12 pb-10 md:px-12 lg:px-16 flex flex-col space-y-8">
 
                 {/* Hero Split Frame Container */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -74,14 +74,14 @@ export default function RegistrationSuccess() {
                                 height={14}
                                 className="w-3.5 h-3.5 object-contain"
                             />
-                            <span className="text-[11px] md:text-xs font-semibold tracking-wide">
+                            <span className="text-[11px] md:text-sm font-semibold tracking-wide">
                                 Registration Confirmed
                             </span>
                         </div>
 
                         {/* Direct Thank You Header */}
                        {/* Direct Thank You Header */}
-<div className="space-y-1">
+                       <div className=" md:space-y-1">
     <h1 className="text-[#242424] font-semibold text-3xl md:text-[48px] leading-tight md:leading-[54px] tracking-normal">
         Thank you, <br className="hidden sm:block" />
         <span className="text-[#242424]">Farhan</span>

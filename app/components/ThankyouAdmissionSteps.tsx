@@ -49,9 +49,9 @@ export default function AdmissionPathSteps() {
                     <span className="text-[#F9A53C] font-normal text-[15px] leading-[100%] tracking-[0.15em] uppercase block">
                         What Happens Next
                     </span>
-                    <h2 className="text-[#242424] font-semibold text-[48px] leading-[57px] tracking-normal text-center">
-                        A guided, three-step path to admission.
-                    </h2>
+                    <h2 className="text-[#242424] font-semibold text-[32px] md:text-[48px] leading-tight md:leading-[57px] tracking-normal text-center">
+    A guided, three-step path to admission.
+</h2>
                 </div>
 
                 {/* Steps Cards Responsive Layout Grid */}

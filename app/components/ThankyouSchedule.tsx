@@ -65,7 +65,7 @@ export default function CounselorScheduler() {
                     <div className="space-y-3">
                     <span className="text-[#F9A53C] font-normal text-[15px] leading-[100%] tracking-[0.15em] uppercase block">
     SCHEDULE YOUR COUNSELOR CALL
-</span><h2 className="text-[#242424] font-semibold text-[48px] leading-[57px] tracking-normal">
+</span><h2 className="text-[#242424] font-semibold text-[32px] md:text-[48px] leading-tight md:leading-[57px] tracking-normal">
     Choose a time that respects your schedule.
 </h2><p className="text-[#555454] font-normal text-[16px] leading-6 tracking-normal pt-2">
     Share the slot that suits you best. Your counselor will call on <span className="font-semibold text-[#242424]">(+91 9995 1235 4565)</span> at the time you select. Slots are available Monday to Friday, IST.
