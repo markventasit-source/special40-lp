@@ -118,7 +118,7 @@ export default function ProgramDifference() {
 
     return (
         <section className="w-full bg-white font-inter py-8 md:py-24">
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Section Title Headers */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-16">
@@ -137,8 +137,8 @@ export default function ProgramDifference() {
                     <div className="lg:col-span-5 lg:pt-8">
 
                         <p className="text-[#555454] font-normal tracking-normal pt-2
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                             Every element of the program is designed around one outcome: producing finance professionals companies want to retain.
                         </p>
                     </div>
@@ -171,12 +171,12 @@ export default function ProgramDifference() {
                                 {point.icon}
                             </motion.div>
                             <div className="space-y-1.5">
-                                <h3 className="text-[#242424] font-md text-[18px] leading-snug">
+                                <h3 className="text-[#242424] font-md text-[18px] leading-normal">
                                     {point.title}
                                 </h3>
                                 <p className="text-[#555454] font-normal tracking-normal pt-2
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                                     {point.desc}
                                 </p>
                             </div>
@@ -200,13 +200,13 @@ export default function ProgramDifference() {
                             {points[6].icon}
                         </motion.div>
                         <div className="space-y-1.5">
-                            <h3 className="text-[#242424] font-md text-[18px] leading-snug">
+                            <h3 className="text-[#242424] font-md text-[18px] leading-normal">
                                 {points[6].title}
                             </h3>
 
                             <p className="text-[#555454] font-normal tracking-normal pt-2
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                                 {points[6].desc}
                             </p>
                         </div>
@@ -225,8 +225,8 @@ export default function ProgramDifference() {
                             </h3>
                         </div>
                         <p className="text-[#FFF] font-normal tracking-normal pt-2
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                             Every Batch is selected, mentored and tracked individually.
                         </p>
                     </motion.div>
@@ -255,7 +255,7 @@ export default function ProgramDifference() {
                                             {point.icon}
                                         </div>
                                         <div className="space-y-1">
-                                            <h3 className="text-[#242424] font-medium text-[16px] leading-snug">
+                                            <h3 className="text-[#242424] font-medium text-[18px] leading-normal">
                                                 {point.title}
                                             </h3>
                                             <p className="text-[#555454] font-normal text-[13px] leading-relaxed">
@@ -301,13 +301,13 @@ export default function ProgramDifference() {
 
                     {/* Green Call-To-Action Button (Strictly below 430px) */}
                     <div className="max-[430px]:flex hidden w-full justify-center mt-6">
-                    <button
-    onClick={() =>
-        document
-            .getElementById('assessment-form')
-            ?.scrollIntoView({ behavior: 'smooth' })
-    }
-    className="
+                        <button
+                            onClick={() =>
+                                document
+                                    .getElementById('assessment-form')
+                                    ?.scrollIntoView({ behavior: 'smooth' })
+                            }
+                            className="
         bg-[#09636E]
         text-white
         px-5
@@ -331,13 +331,13 @@ export default function ProgramDifference() {
         font-semibold
         leading-[100%]
 
-        md:text-[16px]
+        md:text-[18px]
         md:font-medium
     "
->
-    <span>Apply for Assessment</span>
-    <ArrowRight className="shrink-0" size={18} />
-</button>
+                        >
+                            <span>Apply for Assessment</span>
+                            <ArrowRight className="shrink-0" size={18} />
+                        </button>
                     </div>
                 </div>
 

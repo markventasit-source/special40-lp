@@ -116,8 +116,8 @@ export default function HeroSection() {
                         <motion.p
                             variants={itemVariants}
                             className="text-gray-600 mt-2 font-normal 
-             max-[450px]:text-[18px] max-[450px]:leading-[23px]
-             min-[451px]:text-[18px] min-[451px]:leading-[24px]
+             max-[450px]:text-[18px] max-[450px]:leading-[28px]
+             min-[451px]:text-[18px] min-[451px]:leading-[30px]
              tracking-normal"
                         >
                             SPECIAL40 is an exclusive finance career acceleration program that

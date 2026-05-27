@@ -246,8 +246,8 @@ export default function ProgramFeatures() {
                         className="lg:col-span-5 lg:pt-8"
                     >
                         <p className="text-[#555454] font-normal tracking-normal
-              max-[450px]:text-[18px] max-[450px]:leading-[22px]
-              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[28px]
+              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
                             Step inside SPECIAL40. Real corporate environments, focused batch and
                             CA-led sessions designed to feel like work, not class.
                         </p>
@@ -299,7 +299,7 @@ export default function ProgramFeatures() {
                                 </span>
                             </div>
                             <h4 className="text-[#09636E] font-bold 
-               text-[18px] leading-[24px] tracking-normal">
+               text-[18px] leading-[28px] tracking-normal">
                                 Real office-like training environment
                             </h4>
                         </motion.div>
@@ -317,7 +317,7 @@ export default function ProgramFeatures() {
                 font-normal">Live</span>
                             </div>
                             <h4 className="text-[#09636E] font-bold 
-               text-[18px] leading-[24px] tracking-normal">
+               text-[18px] leading-[28px] tracking-normal">
                                 Industry projects and case work
                             </h4>
                         </motion.div>
@@ -335,7 +335,7 @@ export default function ProgramFeatures() {
                 font-normal">Mentor-Led</span>
                             </div>
                             <h4 className="text-[#09636E] font-bold 
-               text-[18px] leading-[24px] tracking-normal">
+               text-[18px] leading-[28px] tracking-normal">
                                 Chartered Accountants from CAPITAIRE
                             </h4>
                         </motion.div>

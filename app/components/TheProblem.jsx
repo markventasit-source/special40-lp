@@ -71,7 +71,7 @@ export default function TheProblem() {
     return (
         <section className="w-full bg-[#09636E] font-inter py-16 md:py-24 text-white overflow-hidden">
             {/* Container aligned with all previous landing page sections */}
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Top Centered Header Area - Animates smoothly on scroll */}
                 <motion.div
@@ -90,8 +90,8 @@ export default function TheProblem() {
                         Why most commerce graduates struggle in the job market.
                     </h2>
                     <p className="text-gray-200/90 font-normal tracking-normal pt-2
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                         The gap between what is taught in classrooms and what companies actually need has
                         widened sharply. SPECIAL40 was built to close it deliberately and selectively.
                     </p>
@@ -128,8 +128,8 @@ export default function TheProblem() {
                                     {issue.title}
                                 </h3>
                                 <p className="text-gray-200/90 font-normal tracking-normal pt-2
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                                     {issue.desc}
                                 </p>
                             </div>

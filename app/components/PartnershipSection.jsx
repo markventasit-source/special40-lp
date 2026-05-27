@@ -62,7 +62,7 @@ export default function PartnershipSection() {
     return (
         <section className="w-full bg-white font-inter py-10 md:py-24 overflow-hidden">
 
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 <motion.div
                     variants={containerVariants}
@@ -94,7 +94,14 @@ export default function PartnershipSection() {
                         {/* Description */}
                         <motion.div
                             variants={itemVariants}
-                            className="space-y-3 md:space-y-4 text-[#555454] font-md text-md md:text-[16px] md:leading-[24px] tracking-normal"
+                            className="space-y-3 md:space-y-4 text-[#555454] tracking-normal"
+                            style={{
+                                fontFamily: 'Inter',
+                                fontWeight: '400',
+                                fontSize: '18px',
+                                lineHeight: '26px',
+                                letterSpacing: '0%'
+                            }}
                         >
                             <p>
                                 Capitaire is a trusted finance and advisory firm of experienced Chartered Accountants and real business consultants with over a decade of industry experience.
@@ -162,13 +169,13 @@ export default function PartnershipSection() {
                             transition={{ duration: 0.2 }}
                             className="pt-1 md:pt-2"
                         >
-<button
-    onClick={() =>
-        document
-            .getElementById('assessment-form')
-            ?.scrollIntoView({ behavior: 'smooth' })
-    }
-    className="
+                            <button
+                                onClick={() =>
+                                    document
+                                        .getElementById('assessment-form')
+                                        ?.scrollIntoView({ behavior: 'smooth' })
+                                }
+                                className="
         bg-[#09636E]
         text-white
         px-5
@@ -192,13 +199,13 @@ export default function PartnershipSection() {
         font-semibold
         leading-[100%]
 
-        md:text-[16px]
+        md:text-[18px]
         md:font-medium
     "
->
-    <span>Apply for Assessment</span>
-    <ArrowRight className="shrink-0" size={18} />
-</button>
+                            >
+                                <span>Apply for Assessment</span>
+                                <ArrowRight className="shrink-0" size={18} />
+                            </button>
                         </motion.div>
 
                     </motion.div>

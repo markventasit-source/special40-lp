@@ -65,7 +65,7 @@ export default function FaqSection() {
     return (
         <>
             <section className="w-full bg-[#FAF9F6] font-inter py-12 md:py-16">
-                <div className="mx-auto px-3 md:px-8 lg:px-10">
+                <div className="mx-auto px-4 md:px-8 lg:px-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
                         {/* Left Header */}
@@ -119,7 +119,7 @@ export default function FaqSection() {
                                             aria-expanded={isOpen}
                                         >
                                             <motion.span
-                                                className="text-[#242424] font-md text-md md:text-[16px] md:leading-[22px] tracking-normal group-hover:text-[#09636E] transition-colors duration-150"
+                                                className="text-[#242424] font-md text-md md:text-[18px] md:leading-[22px] tracking-normal group-hover:text-[#09636E] transition-colors duration-150"
                                                 animate={{ color: isOpen ? "#09636E" : "#242424" }}
                                                 transition={{ duration: 0.2 }}
                                             >

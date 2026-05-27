@@ -55,7 +55,7 @@ export default function SelectionProcess() {
     return (
         <section className="w-full bg-white font-inter py-8 md:py-10 overflow-hidden">
             {/* Aligns tightly with your master layout grid bounds */}
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
@@ -79,14 +79,14 @@ export default function SelectionProcess() {
                         </div>
 
                         <p className="text-[#555454] font-normal tracking-normal pt-2
-              max-[450px]:text-[16px] max-[450px]:leading-[22px]
-              min-[451px]:text-[16px] min-[451px]:leading-[24px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                             We believe serious career transformation begins with selecting serious candidates. Every seat is earned, not bought.
                         </p>
 
                         {/* Custom Tag Pill Element */}
                         <div className="self-start">
-                            <span className="inline-flex items-center gap-1.5 bg-[#F9A53C] text-white px-3 py-1.5 text-xs font-md uppercase tracking-wider">
+                            <span className="inline-flex items-center gap-1.5 bg-[#F9A53C] text-white px-4 py-1.5 text-xs font-md uppercase tracking-wider">
                                 <span className="w-2 h-2 bg-white rounded-full opacity-90 animate-pulse" />
                                 Limited Selective Seats
                             </span>

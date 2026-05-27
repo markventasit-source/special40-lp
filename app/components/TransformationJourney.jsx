@@ -46,7 +46,7 @@ export default function TransformationJourney() {
 
     return (
         <section className="w-full bg-[#FBF4EA] font-inter py-16 md:py-24">
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 
@@ -71,19 +71,19 @@ export default function TransformationJourney() {
 
                         <motion.p variants={leftItemVariants}
                             className="text-[#555454] font-normal tracking-normal
-                     text-[16px] leading-[22px]
-                     md:leading-[24px]">
+                     text-[18px] leading-[28px]
+                     md:leading-[30px]">
                             The SPECIAL40 curriculum mirrors the real workflow inside a modern finance team from practical accounting and ERP tooling to corporate communication, GST compliance and live business projects.
                         </motion.p>
 
                         <motion.div variants={leftItemVariants}>
-                        <button
-    onClick={() =>
-        document
-            .getElementById('assessment-form')
-            ?.scrollIntoView({ behavior: 'smooth' })
-    }
-    className="
+                            <button
+                                onClick={() =>
+                                    document
+                                        .getElementById('assessment-form')
+                                        ?.scrollIntoView({ behavior: 'smooth' })
+                                }
+                                className="
         bg-[#F9A53C]
         text-white
         px-6
@@ -100,12 +100,12 @@ export default function TransformationJourney() {
         font-semibold
         leading-[100%]
 
-        md:text-[16px]
+        md:text-[18px]
         md:font-medium
     "
->
-    Apply for Assessment
-</button>
+                            >
+                                Apply for Assessment
+                            </button>
                         </motion.div>
 
                         {/* Pricing Box - Pop up entry */}
@@ -203,7 +203,7 @@ export default function TransformationJourney() {
                                         <div className="flex flex-col space-y-1">
                                             <span className="text-[#242424] capitalize tracking-normal
                 max-[450px]:text-[21px] max-[450px]:leading-snug
-                min-[451px]:text-[18px] min-[451px]:leading-snug">
+                min-[451px]:text-[18px] min-[451px]:leading-normal">
                                                 {mod.name}
                                             </span>
                                             <span className="text-gray-400 font-normal uppercase
