@@ -115,7 +115,7 @@ export default function SelectionProcess() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
-                        className="lg:col-span-7 flex flex-col space-y-4 lg:pt-4"
+                        className="lg:col-span-7 flex flex-col space-y-2 lg:pt-4"
                     >
                         {steps.map((step, idx) => (
                             <motion.div
