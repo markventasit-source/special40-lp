@@ -68,10 +68,10 @@ export default function SelectionProcess() {
                         className="lg:col-span-5 flex flex-col space-y-6"
                     >
                         <div className="space-y-3">
-                            <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase block">
+                            <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase block">
                                 Our Selection Process
                             </span>
-                            <h2 className="text-[#242424] font-semibold
+                            <h2 className="text-[#242424] font-bold
                text-[32px] leading-[38px] tracking-normal
                md:text-[48px] md:leading-[57px]">
                                 Selective by design.
@@ -139,7 +139,7 @@ export default function SelectionProcess() {
                                 {/* Step Narrative Details */}
                                 <div className="space-y-2">
 
-                                    <span className="text-[#F9A53C] mb-6 text-[11px] font-light tracking-wider uppercase block whitespace-nowrap">
+                                    <span className="text-[#F9A53C] mb-6 text-[13px] font-md tracking-wider uppercase block whitespace-nowrap">
                                         {step.stepNum}
                                     </span>
                                     <h3
@@ -167,7 +167,7 @@ export default function SelectionProcess() {
                                             fontFamily: 'Inter',
                                             fontWeight: '400',
                                             fontStyle: 'Regular',
-                                            fontSize: '16px',
+                                            fontSize: '18px',
                                             lineHeight: '22px',
                                             letterSpacing: '0%',
                                         }}

@@ -230,7 +230,7 @@ export default function ProgramFeatures() {
                         <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase">
                             Inside the Program
                         </span>
-                        <h2 className="text-[#242424] max-w-[500px] font-semibold tracking-normal
+                        <h2 className="text-[#242424] max-w-[500px] font-bold tracking-normal
                max-[450px]:text-[32px] max-[450px]:leading-[38px]
                min-[451px]:text-[48px] min-[451px]:leading-[57px]">
                             A premium corporate classroom not a coaching center.
@@ -299,7 +299,7 @@ export default function ProgramFeatures() {
                                 </span>
                             </div>
                             <h4 className="text-[#09636E] font-bold 
-               text-[18px] leading-[28px] tracking-normal">
+               text-[20px] leading-[28px] tracking-normal">
                                 Real office-like training environment
                             </h4>
                         </motion.div>
@@ -317,7 +317,7 @@ export default function ProgramFeatures() {
                 font-normal">Live</span>
                             </div>
                             <h4 className="text-[#09636E] font-bold 
-               text-[18px] leading-[28px] tracking-normal">
+               text-[20px] leading-[28px] tracking-normal">
                                 Industry projects and case work
                             </h4>
                         </motion.div>
@@ -335,7 +335,7 @@ export default function ProgramFeatures() {
                 font-normal">Mentor-Led</span>
                             </div>
                             <h4 className="text-[#09636E] font-bold 
-               text-[18px] leading-[28px] tracking-normal">
+               text-[20px] leading-[28px] tracking-normal">
                                 Chartered Accountants from CAPITAIRE
                             </h4>
                         </motion.div>

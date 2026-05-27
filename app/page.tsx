@@ -44,7 +44,7 @@ export default function Home() {
         <TheProblem />
       </ScrollReveal>
 
-      <ScrollReveal className="w-full">
+      <ScrollReveal className="w-full mt-8">
         <ProgramDifference />
       </ScrollReveal>
 

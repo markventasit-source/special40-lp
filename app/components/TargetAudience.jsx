@@ -69,7 +69,7 @@ export default function TargetAudience() {
     };
 
     return (
-        <section className="w-full bg-white font-inter py-8 md:py-16 lg:py-24">
+        <section className="w-full mt-10 bg-white font-inter py-8 md:py-16 lg:py-24">
             {/* Shared layout width container */}
             <div className="mx-auto px-4 md:px-8 lg:px-10">
 
@@ -103,7 +103,7 @@ export default function TargetAudience() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px 0px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-4 lg:gap-6"
                 >
                     {cards.map((card, index) => (
                         <motion.div
@@ -116,7 +116,7 @@ export default function TargetAudience() {
                                 backgroundColor: "rgba(251, 244, 234, 0.8)",
                             }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="bg-[#FBF4EA]/50 p-3 md:p-8 flex flex-col space-y-4 md:space-y-5 border border-transparent transition-colors cursor-pointer"
+                            className="bg-[#FBF4EA]/50 p-6 md:p-8 flex flex-col md:space-y-5 border border-transparent transition-colors cursor-pointer"
                         >
                             {/* Card Numbering & Heading */}
                             <div className="space-y-2">

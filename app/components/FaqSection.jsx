@@ -78,19 +78,19 @@ export default function FaqSection() {
                         >
                             <motion.span
                                 variants={headerVariants}
-                                className="text-[#F9A53C] font-md text-xs md:text-[13px] tracking-[0.15em] uppercase block"
+                                className="text-[#F9A53C] font-md text-sm md:text-[13px] tracking-[0.15em] uppercase block"
                             >
                                 Frequently Asked
                             </motion.span>
                             <motion.h2
                                 variants={headerVariants}
-                                className="text-[#242424] font-semibold text-3xl md:text-[44px] md:leading-[52px] tracking-tight max-w-sm"
+                                className="text-[#242424] font-bold text-3xl md:text-[44px] md:leading-[52px] tracking-tight max-w-sm"
                             >
                                 Answers, mostly asked
                             </motion.h2>
                             <motion.p
                                 variants={headerVariants}
-                                className="text-[#555454] font-md text-md md:text-[15px] leading-relaxed max-w-xs pt-2"
+                                className="text-[#555454] font-md text-md md:text-[18px] leading-relaxed max-w-xs pt-2"
                             >
                                 Still unsure? Reach out and we'll discuss whether you are a right fit for the program or not.
                             </motion.p>
@@ -119,7 +119,7 @@ export default function FaqSection() {
                                             aria-expanded={isOpen}
                                         >
                                             <motion.span
-                                                className="text-[#242424] font-md text-md md:text-[18px] md:leading-[22px] tracking-normal group-hover:text-[#09636E] transition-colors duration-150"
+                                                className="text-[#242424] font-semibold text-md md:text-[18px] md:leading-[22px] tracking-normal group-hover:text-[#09636E] transition-colors duration-150"
                                                 animate={{ color: isOpen ? "#09636E" : "#242424" }}
                                                 transition={{ duration: 0.2 }}
                                             >
@@ -153,7 +153,7 @@ export default function FaqSection() {
                                                         animate={{ y: 0 }}
                                                         exit={{ y: 8 }}
                                                         transition={{ duration: 0.3, ease: "easeOut" }}
-                                                        className="text-[#555454] font-light text-sm leading-relaxed pr-8 pb-6"
+                                                        className="text-[#555454] font-md text-md leading-relaxed pr-8 pb-6"
                                                     >
                                                         {faq.answer}
                                                     </motion.p>

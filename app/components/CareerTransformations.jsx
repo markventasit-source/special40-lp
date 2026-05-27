@@ -81,7 +81,7 @@ export default function CareerTransformations() {
 
                     <motion.h2
                         variants={headerVariants}
-                        className="text-[#1A1A1A] font-semibold text-3xl md:text-[46px] md:leading-[54px] tracking-tight mb-6"
+                        className="text-[#1A1A1A] font-bold text-3xl md:text-[46px] md:leading-[54px] tracking-tight mb-6"
                     >
                         Real students.<br className="hidden sm:inline" /> Real corporate journeys.
                     </motion.h2>

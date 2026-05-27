@@ -60,7 +60,7 @@ export default function PartnershipSection() {
     };
 
     return (
-        <section className="w-full bg-white font-inter py-10 md:py-24 overflow-hidden">
+        <section className="w-full mt-6 bg-white font-inter py-10 md:py-24 overflow-hidden">
 
             <div className="mx-auto px-4 md:px-8 lg:px-10">
 
@@ -85,7 +85,7 @@ export default function PartnershipSection() {
 
                             <motion.h2
                                 variants={itemVariants}
-                                className="text-[#242424] font-medium text-3xl md:text-[48px] md:leading-[57px] tracking-normal"
+                                className="text-[#242424] font-bold text-3xl md:text-[48px] md:leading-[57px] tracking-normal"
                             >
                                 In partnership with <span className="text-[#F9A53C]">CAPITAIRE.</span>
                             </motion.h2>

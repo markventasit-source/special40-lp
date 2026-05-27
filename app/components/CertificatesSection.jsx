@@ -38,7 +38,7 @@ export default function CertificatesSection() {
 
     return (
         <section className="w-full font-inter py-6 md:py-16">
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Header */}
                 <motion.div
@@ -50,13 +50,13 @@ export default function CertificatesSection() {
                 >
                     <motion.span
                         variants={headerVariants}
-                        className="text-[#F9A53C] font-md text-xs md:text-[13px] tracking-[0.15em] uppercase block"
+                        className="text-[#F9A53C] font-md text-sm md:text-[13px] tracking-[0.15em] uppercase block"
                     >
                         Certificates
                     </motion.span>
                     <motion.h2
                         variants={headerVariants}
-                        className="text-[#242424] font-semibold text-3xl md:text-[44px] md:leading-[52px] tracking-tight"
+                        className="text-[#242424] font-bold text-3xl md:text-[44px] md:leading-[52px] tracking-tight"
                     >
                         Course Completion Certificates
                     </motion.h2>

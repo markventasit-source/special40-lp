@@ -63,7 +63,7 @@ export default function FinalCtaSection() {
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-gray-200/90 font-md text-md md:text-[16px] leading-relaxed max-w-2xl"
+                        className="text-gray-200/90 font-md text-md md:text-[18px] leading-relaxed max-w-2xl"
                     >
                         Apply now and begin your journey toward becoming a corporate-ready finance professional with Kerala's most selective transformation program.
                     </motion.p>

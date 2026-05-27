@@ -123,11 +123,11 @@ export default function ProgramDifference() {
                 {/* Section Title Headers */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-16">
                     <div className="lg:col-span-7 flex flex-col space-y-3">
-                        <span className="text-[#F9A53C] font-light uppercase
+                        <span className="text-[#F9A53C] font-md uppercase
                 text-[15px] leading-[100%] tracking-[0.1em]">
                             The Special40 Difference
                         </span>
-                        <h2 className="text-[#242424] font-semibold
+                        <h2 className="text-[#242424] font-bold
                text-[32px] leading-[38px] tracking-normal
                md:text-[48px] md:leading-[57px]">
                             Engineered to make you valuable not just employable.
@@ -171,12 +171,12 @@ export default function ProgramDifference() {
                                 {point.icon}
                             </motion.div>
                             <div className="space-y-1.5">
-                                <h3 className="text-[#242424] font-md text-[18px] leading-normal">
+                                <h3 className="text-[#242424] font-md text-[18px] leading-snug">
                                     {point.title}
                                 </h3>
                                 <p className="text-[#555454] font-normal tracking-normal pt-2
-              max-[450px]:text-[18px] max-[450px]:leading-[28px]
-              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                                     {point.desc}
                                 </p>
                             </div>
@@ -200,13 +200,13 @@ export default function ProgramDifference() {
                             {points[6].icon}
                         </motion.div>
                         <div className="space-y-1.5">
-                            <h3 className="text-[#242424] font-md text-[18px] leading-normal">
+                            <h3 className="text-[#242424] font-md text-[18px] leading-snug">
                                 {points[6].title}
                             </h3>
 
                             <p className="text-[#555454] font-normal tracking-normal pt-2
-              max-[450px]:text-[18px] max-[450px]:leading-[28px]
-              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                                 {points[6].desc}
                             </p>
                         </div>
@@ -225,8 +225,8 @@ export default function ProgramDifference() {
                             </h3>
                         </div>
                         <p className="text-[#FFF] font-normal tracking-normal pt-2
-              max-[450px]:text-[18px] max-[450px]:leading-[28px]
-              min-[451px]:text-[18px] min-[451px]:leading-[30px]">
+              max-[450px]:text-[18px] max-[450px]:leading-[22px]
+              min-[451px]:text-[18px] min-[451px]:leading-[24px]">
                             Every Batch is selected, mentored and tracked individually.
                         </p>
                     </motion.div>
@@ -255,10 +255,10 @@ export default function ProgramDifference() {
                                             {point.icon}
                                         </div>
                                         <div className="space-y-1">
-                                            <h3 className="text-[#242424] font-medium text-[18px] leading-normal">
+                                            <h3 className="text-[#242424] pr-10 font-medium text-[18px] leading-snug">
                                                 {point.title}
                                             </h3>
-                                            <p className="text-[#555454] font-normal text-[13px] leading-relaxed">
+                                            <p className="text-[#555454] font-normal text-[14px] leading-relaxed">
                                                 {point.desc}
                                             </p>
                                         </div>
@@ -276,7 +276,7 @@ export default function ProgramDifference() {
                                             A premium ecosystem, not a course catalogue.
                                         </h3>
                                     </div>
-                                    <p className="text-gray-200/90 font-normal text-[12px] leading-relaxed pt-2">
+                                    <p className="text-gray-200/90 font-normal text-[14px] leading-relaxed pt-2">
                                         Every Batch is selected, mentored and tracked individually.
                                     </p>
                                 </div>

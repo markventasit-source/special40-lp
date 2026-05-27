@@ -62,7 +62,7 @@ export default function TransformationJourney() {
                             <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase block">
                                 The Transformation Journey
                             </span>
-                            <h2 className="text-[#242424] font-semibold
+                            <h2 className="text-[#242424] font-bold
                text-[32px] leading-[38px] tracking-normal
                md:text-[48px] md:leading-[57px]">
                                 4.5 months. Intensive. Built like a corporate finance function.
@@ -140,7 +140,7 @@ export default function TransformationJourney() {
                     </motion.div>
 
                     {/* Right Column: Curriculum */}
-                    <div className="lg:col-span-7 bg-white border border-[#F9A53C]/30 p-3 md:p-10 shadow-sm">
+                    <div className="lg:col-span-7 pt-6 bg-white border border-[#F9A53C]/30 p-3 md:p-10 shadow-sm">
 
                         <div className="flex flex-col sm:flex-row sm:items-center justify-between items-center border-b border-gray-100 pb-5 mb-2 gap-4">
                             <h3 className="text-[#09636E] font-bold capitalize tracking-normal
@@ -148,7 +148,7 @@ export default function TransformationJourney() {
                min-[451px]:text-[26px] min-[451px]:leading-[100%]">
                                 Curriculum Modules
                             </h3>
-                            <div className="flex items-center gap-3 text-[11px] font-light tracking-wider uppercase">
+                            <div className="flex items-center gap-1 text-[11px] font-light tracking-wider uppercase">
                                 <span className="bg-[#FBF4EA] text-[#F9A53C] px-2.5 py-1 font-semibold
                  text-[13px] leading-[24px] tracking-normal">
                                     Offline • 2.5 Months

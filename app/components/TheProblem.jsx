@@ -79,9 +79,9 @@ export default function TheProblem() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-16"
+                    className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-6"
                 >
-                    <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase">
+                    <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase">
                         The Problem
                     </span>
                     <h2 className="text-white font-semibold
@@ -103,7 +103,7 @@ export default function TheProblem() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6"
                 >
                     {issues.map((issue, index) => (
                         <motion.div
@@ -124,7 +124,7 @@ export default function TheProblem() {
 
                             {/* Issue Heading and Description */}
                             <div className="space-y-2">
-                                <h3 className="text-white font-md text-[22px] leading-tight tracking-tight">
+                                <h3 className="text-white pr-20 font-md text-[22px] leading-tight tracking-tight">
                                     {issue.title}
                                 </h3>
                                 <p className="text-gray-200/90 font-normal tracking-normal pt-2

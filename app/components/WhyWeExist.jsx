@@ -13,7 +13,7 @@ export default function WhyWeExist() {
     };
 
     return (
-        <section className="w-full bg-[#FBF4EA] font-inter py-16 md:py-24 overflow-hidden">
+        <section className="w-full bg-[#FBF4EA] mt-10 font-inter py-16 md:py-24 overflow-hidden">
             {/* Aligns with your exact header and hero section content limits */}
             <div className="mx-auto px-4 md:px-8 lg:px-10">
 

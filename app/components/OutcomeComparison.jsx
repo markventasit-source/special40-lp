@@ -49,7 +49,7 @@ export default function OutcomeComparison() {
     return (
         <section className="w-full bg-white font-inter py-12 md:py-24 overflow-hidden">
             {/* Container matches exact layout constraints */}
-            <div className="mx-auto px-3 md:px-8 lg:px-10">
+            <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Header Sequence */}
                 <motion.div
@@ -59,10 +59,10 @@ export default function OutcomeComparison() {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     className="flex flex-col items-center text-center space-y-3 max-w-3xl mx-auto mb-16"
                 >
-                    <span className="text-[#F9A53C] font-light text-[15px] leading-none tracking-[0.1em] uppercase">
+                    <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase">
                         Outcome
                     </span>
-                    <h2 className="text-[#242424] font-semibold text-3xl md:text-[40px] md:leading-[46px] tracking-normal max-w-150">
+                    <h2 className="text-[#242424] px-6 font-bold text-3xl md:text-[40px] md:leading-[46px] tracking-normal max-w-150">
                         Become industry-ready. Become irreplaceable.
                     </h2>
                 </motion.div>
