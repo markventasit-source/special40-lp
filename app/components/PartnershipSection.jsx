@@ -85,7 +85,7 @@ export default function PartnershipSection() {
 
                             <motion.h2
                                 variants={itemVariants}
-                                className="text-[#242424] font-bold text-3xl md:text-[48px] md:leading-[57px] tracking-normal"
+                                className="text-[#242424] font-bold text-3xl md:text-[48px] leading-[42px] md:leading-[57px] tracking-normal"
                             >
                                 In partnership with <span className="text-[#F9A53C]">CAPITAIRE.</span>
                             </motion.h2>
@@ -180,8 +180,8 @@ export default function PartnershipSection() {
         text-white
         px-5
         md:px-6
-        py-3
-        md:py-3.5
+        py-5
+        md:py-4
         hover:bg-[#074f58]
         transition-colors
         shadow-sm

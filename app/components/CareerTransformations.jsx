@@ -71,7 +71,7 @@ export default function CareerTransformations() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-15px" }}
-                    className="flex flex-col items-center text-center max-w-3xl mx-auto mb-14 md:mb-20"
+                    className="flex flex-col items-center text-center max-w-3xl mx-auto mb-6 md:mb-20"
                 >
                     <motion.span
                         variants={headerVariants}

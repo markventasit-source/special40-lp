@@ -200,15 +200,15 @@ export default function HeroSection() {
                                         <Star key={i} size={14} fill="#F9A53C" strokeWidth={0} />
                                     ))}
                                 </div>
-                                <p className="text-xs font-bold text-gray-800 text-center sm:text-left whitespace-nowrap">
+                                <p className="text-sm font-bold text-gray-800 text-center sm:text-left whitespace-nowrap">
                                     4.9/5 · <span className="hidden sm:inline">Experience rating</span>
                                     <span className="sm:hidden">Rating</span>
                                 </p>
                             </div>
 
                             <div className="border border-[#F9A53C] max-w-[200px] bg-[#FFE5C2]/20 backdrop-blur-sm  p-3 flex flex-col justify-center flex-1 min-w-0 hover:bg-[#FFE5C2]/40 transition-colors">
-                                <p className="text-xs text-gray-500 text-center sm:text-left truncate">Powered by CAPITAIRE</p>
-                                <p className="text-xs font-bold text-gray-800 text-center sm:text-left whitespace-nowrap">Consulting CAs</p>
+                                <p className="text-sm text-gray-500 text-center sm:text-left truncate">Powered by CAPITAIRE</p>
+                                <p className="text-sm font-bold text-gray-800 text-center sm:text-left whitespace-nowrap">Consulting CAs</p>
                             </div>
                         </motion.div>
                     </motion.div>

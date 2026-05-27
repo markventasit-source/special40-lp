@@ -124,7 +124,7 @@ export default function TheProblem() {
 
                             {/* Issue Heading and Description */}
                             <div className="space-y-2">
-                                <h3 className="text-white pr-20 font-md text-[22px] leading-tight tracking-tight">
+                                <h3 className="text-white pr-20 font-semibold text-[22px] leading-[130%] tracking-tight">
                                     {issue.title}
                                 </h3>
                                 <p className="text-gray-200/90 font-normal tracking-normal pt-2

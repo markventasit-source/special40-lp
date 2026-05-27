@@ -37,7 +37,7 @@ export default function CertificatesSection() {
     };
 
     return (
-        <section className="w-full font-inter py-6 md:py-16">
+        <section className="w-full font-inter py-12 md:py-16">
             <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Header */}
@@ -46,7 +46,7 @@ export default function CertificatesSection() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-15px" }}
-                    className="flex flex-col items-center text-center space-y-3 max-w-2xl mx-auto mb-12 md:mb-16"
+                    className="flex flex-col items-center text-center space-y-3 max-w-2xl mx-auto mb-6 md:mb-16"
                 >
                     <motion.span
                         variants={headerVariants}

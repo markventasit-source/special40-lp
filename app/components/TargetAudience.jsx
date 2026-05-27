@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export default function TargetAudience() {
     const cards = [
@@ -124,9 +125,9 @@ export default function TargetAudience() {
                 text-[26px] leading-[100%] tracking-normal">
                                     {card.num}
                                 </span>
-                                <h3 className="text-[#242424] font-semibold tracking-normal
-               max-[450px]:text-[21px] max-[450px]:leading-[100%]
-               min-[451px]:text-[26px] min-[451px]:leading-[100%]
+                                <h3 className="text-[#242424] mb-4 font-semibold tracking-normal
+               max-[450px]:text-[21px] max-[450px]:leading-[150%]
+               min-[451px]:text-[26px] min-[451px]:leading-[120%]
                min-h-[56px] flex items-start">
                                     {card.title}
                                 </h3>
@@ -180,6 +181,45 @@ export default function TargetAudience() {
                         </motion.div>
                     ))}
                 </motion.div>
+
+                {/* Green Call-To-Action Button (Strictly below 430px) */}
+                <div className="max-[430px]:flex hidden w-full justify-center mt-6">
+                    <button
+                        onClick={() =>
+                            document
+                                .getElementById('assessment-form')
+                                ?.scrollIntoView({ behavior: 'smooth' })
+                        }
+                        className="
+                            bg-[#09636E]
+                            text-white
+                            px-5
+                            md:px-6
+                            py-5
+                            md:py-3.5
+                            hover:bg-[#074f58]
+                            transition-colors
+                            shadow-sm
+                            w-full
+                            sm:w-auto
+                            inline-flex
+                            items-center
+                            justify-center
+                            whitespace-nowrap
+                            gap-2
+                            font-inter
+                            tracking-normal
+                            text-[18px]
+                            font-semibold
+                            leading-[100%]
+                            md:text-[18px]
+                            md:font-medium
+                        "
+                    >
+                        <span>Apply for Assessment</span>
+                        <ArrowRight className="shrink-0" size={18} />
+                    </button>
+                </div>
 
             </div>
         </section>

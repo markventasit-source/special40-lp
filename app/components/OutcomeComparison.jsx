@@ -57,12 +57,12 @@ export default function OutcomeComparison() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-15px" }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="flex flex-col items-center text-center space-y-3 max-w-3xl mx-auto mb-16"
+                    className="flex flex-col items-center text-center space-y-3 max-w-3xl mx-auto mb-6"
                 >
                     <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase">
                         Outcome
                     </span>
-                    <h2 className="text-[#242424] px-6 font-bold text-3xl md:text-[40px] md:leading-[46px] tracking-normal max-w-150">
+                    <h2 className="text-[#242424] font-bold text-3xl md:text-[40px] md:leading-[46px] tracking-normal max-w-150">
                         Become industry-ready. Become irreplaceable.
                     </h2>
                 </motion.div>

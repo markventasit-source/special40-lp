@@ -117,7 +117,7 @@ export default function PlacementSupport() {
         max-w-2xl
 
         max-[450px]:text-[32px]
-        max-[450px]:leading-[36px]
+        max-[450px]:leading-[44px]
 
         min-[451px]:text-[48px]
         min-[451px]:leading-[57px]

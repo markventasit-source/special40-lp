@@ -64,7 +64,7 @@ export default function FaqSection() {
 
     return (
         <>
-            <section className="w-full bg-[#FAF9F6] font-inter py-12 md:py-16">
+            <section className="w-full bg-[#FAF9F6] font-inter py-16 md:py-16">
                 <div className="mx-auto px-4 md:px-8 lg:px-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 

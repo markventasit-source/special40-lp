@@ -87,7 +87,7 @@ export default function TransformationJourney() {
         bg-[#F9A53C]
         text-white
         px-6
-        py-3.5
+        py-5
         hover:bg-[#e0912f]
         transition-colors
         shadow-sm
@@ -118,7 +118,7 @@ export default function TransformationJourney() {
                                 Easy EMI Available
                             </div>
 
-                            <div className="space-y-1 mt-6">
+                            <div className="space-y-1"> {/* Removed mt-6 */}
                                 <span className="text-[#F9A53C] line-through opacity-80 block leading-none uppercase font-extralight text-[34px] md:text-[48px] mb-4 tracking-normal">
                                     ₹85,000
                                 </span>

@@ -126,7 +126,7 @@ export default function ProgramDifference() {
             <div className="mx-auto px-4 md:px-8 lg:px-10">
 
                 {/* Section Title Headers */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-8">
                     <div className="lg:col-span-7 flex flex-col space-y-3">
                         <span className="text-[#F9A53C] font-md uppercase
                 text-[15px] leading-[100%] tracking-[0.1em]">
@@ -317,7 +317,7 @@ export default function ProgramDifference() {
         text-white
         px-5
         md:px-6
-        py-3
+        py-5
         md:py-3.5
         hover:bg-[#074f58]
         transition-colors

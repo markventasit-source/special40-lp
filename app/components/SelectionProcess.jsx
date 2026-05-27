@@ -149,7 +149,7 @@ export default function SelectionProcess() {
                                             fontWeight: '600',
                                             fontStyle: 'Semi Bold',
                                             fontSize: '24px',
-                                            lineHeight: '100%',
+                                            lineHeight: '130%',
                                             letterSpacing: '0%',
                                             '@media (min-width: 768px)': {
                                                 fontWeight: '700',

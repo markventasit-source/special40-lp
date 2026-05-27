@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import ScrollToTop from "./components/ScrollToTop";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-inter`}>
         <div className="relative w-full min-h-screen overflow-x-clip">
           {children}
+          <ScrollToTop />
         </div>
       </body>
     </html>
