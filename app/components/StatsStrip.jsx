@@ -52,77 +52,25 @@ export default function StatsStrip() {
 
             {/* Mobile: 2x2 grid */}
             <div
-                className="grid grid-cols-2 gap-y-4 md:hidden py-10"
-                style={{ borderTop: '1px solid #E5E5E5' }}
-            >
-                <div className="flex flex-col space-y-1 py-4">
-                    <div className="pr-8" style={{ borderRight: '1px solid #E5E5E5' }}>
-                        <span
-                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            <AnimatedNumber value="40" uniqueKey="mobile-seats" />
-                        </span>
-                        <span
-                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            Seats
-                        </span>
-                    </div>
-                </div>
-
-                <div className="flex flex-col space-y-1 py-4">
-                    <div className="pl-8" style={{ borderLeft: '1px solid #E5E5E5' }}>
-                        <span
-                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            <AnimatedNumber value="100%" uniqueKey="mobile-placement" />
-                        </span>
-                        <span
-                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            Placement Support
-                        </span>
-                    </div>
-                </div>
-
-                <div className="flex flex-col space-y-1 py-4">
-                    <div className="pr-8" style={{ borderRight: '1px solid #E5E5E5' }}>
-                        <span
-                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            <AnimatedNumber value="4.5 month" uniqueKey="mobile-duration" />
-                        </span>
-                        <span
-                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            Intensive Program
-                        </span>
-                    </div>
-                </div>
-
-                <div className="flex flex-col space-y-1 py-4">
-                    <div className="pl-8" style={{ borderLeft: '1px solid #E5E5E5' }}>
-                        <span
-                            className="text-[#09636E] text-[32px] leading-none font-semibold block"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            <AnimatedNumber value="10+ yrs" uniqueKey="mobile-experience" />
-                        </span>
-                        <span
-                            className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1"
-                            style={{ fontFamily: 'Inter', lineHeight: '100%', letterSpacing: '0%' }}
-                        >
-                            Mentor Experience
-                        </span>
-                    </div>
-                </div>
+    className="grid grid-cols-2 gap-y-4 md:hidden py-10"
+    style={{ borderTop: '1px solid #E5E5E5' }}
+>
+    {['40', '100%', '4.5 month', '10+ yrs'].map((value, idx) => (
+        <div key={idx} className="flex flex-col space-y-1 py-4">
+            <div className={`${idx % 2 === 0 ? 'pr-8 border-r' : 'pl-8'} border-[#E5E5E5] ${idx === 3 ? 'border-l-0' : ''}`}>
+                <span className="text-[#09636E] text-[32px] leading-none font-semibold block">
+                    <AnimatedNumber value={value} uniqueKey={`mobile-item-${idx}`} />
+                </span>
+                <span className="text-[#242424] text-[14.74px] leading-none font-normal block mt-1">
+                    {idx === 0 && 'Seats'}
+                    {idx === 1 && 'Placement Support'}
+                    {idx === 2 && 'Intensive Program'}
+                    {idx === 3 && 'Mentor Experience'}
+                </span>
             </div>
+        </div>
+    ))}
+</div>
 
             {/* Tablet + Desktop */}
             <div
