@@ -63,44 +63,44 @@ export default function CounselorScheduler() {
                 {/* Left Column */}
                 <div className="lg:col-span-5 flex flex-col space-y-8">
                     <div className="space-y-3">
-                    <span className="text-[#F9A53C] font-normal text-[15px] leading-[100%] tracking-[0.15em] uppercase block">
-    SCHEDULE YOUR COUNSELOR CALL
-</span><h2 className="text-[#242424] font-semibold text-[32px] md:text-[48px] leading-tight md:leading-[57px] tracking-normal">
-    Choose a time that respects your schedule.
-</h2><p className="text-[#555454] font-normal text-[16px] leading-6 tracking-normal pt-2">
-    Share the slot that suits you best. Your counselor will call on <span className="font-semibold text-[#242424]">(+91 9995 1235 4565)</span> at the time you select. Slots are available Monday to Friday, IST.
-</p>
+                        <span className="text-[#F9A53C] font-normal text-[15px] leading-[100%] tracking-[0.15em] uppercase block">
+                            SCHEDULE YOUR COUNSELOR CALL
+                        </span><h2 className="text-[#242424] font-semibold text-[32px] md:text-[48px] leading-tight md:leading-[57px] tracking-normal">
+                            Choose a time that respects your schedule.
+                        </h2><p className="text-[#555454] font-normal text-[16px] leading-6 tracking-normal pt-2">
+                            Share the slot that suits you best. Your counselor will call on <span className="font-semibold text-[#242424]">(+91 9946271580)</span> at the time you select. Slots are available Monday to Friday, IST.
+                        </p>
                     </div>
                     <div className="border border-[#F9A53C] p-6 space-y-4 max-w-md">
-    <div className="flex flex-col space-y-1">
-        <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
-            Registered name
-        </label>
-        <input type="text" readOnly value="John Doe"
-    className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden" />
-    </div>
-    <div className="flex flex-col space-y-1 border-t border-[#F2A33A]/10 pt-3">
-        <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
-            Email address
-        </label>
-        <input type="email" readOnly value="johndoe@testmail.com"
-               className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden"  />
-    </div>
-    <div className="flex flex-col space-y-1 border-t border-[#F2A33A]/10 pt-3">
-        <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
-            WhatsApp / Phone
-        </label>
-        <input type="text" readOnly value="+91 9995 1235 4565"
-               className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden" />
-    </div>
-    <div className="flex flex-col space-y-1 border-t border-[#F2A33A]/10 pt-3">
-        <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
-            Time zone
-        </label>
-        <input type="text" readOnly value="Asia / Kolkata (IST)"
-                className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden" />
-    </div>
-</div>
+                        <div className="flex flex-col space-y-1">
+                            <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
+                                Registered name
+                            </label>
+                            <input type="text" readOnly value="John Doe"
+                                className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden" />
+                        </div>
+                        <div className="flex flex-col space-y-1 border-t border-[#F2A33A]/10 pt-3">
+                            <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
+                                Email address
+                            </label>
+                            <input type="email" readOnly value="johndoe@testmail.com"
+                                className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden" />
+                        </div>
+                        <div className="flex flex-col space-y-1 border-t border-[#F2A33A]/10 pt-3">
+                            <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
+                                WhatsApp / Phone
+                            </label>
+                            <input type="text" readOnly value="+91 9995 1235 4565"
+                                className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden" />
+                        </div>
+                        <div className="flex flex-col space-y-1 border-t border-[#F2A33A]/10 pt-3">
+                            <label className="text-[#555454] font-normal text-[16px] leading-[22px] tracking-normal ">
+                                Time zone
+                            </label>
+                            <input type="text" readOnly value="Asia / Kolkata (IST)"
+                                className="bg-transparent border-0 p-0 text-[#F0A13D] font-normal text-[16px] leading-[22px] tracking-normal focus:ring-0 cursor-default focus:outline-hidden" />
+                        </div>
+                    </div>
                 </div>
 
                 {/* Right Column */}
@@ -110,8 +110,8 @@ export default function CounselorScheduler() {
                         <div className="flex justify-between items-center">
                             <h3 className="text-[#242424] font-bold text-base md:text-lg">Select a date</h3>
                             <span className="text-[#09636E] font-normal text-[14px] leading-[100%] tracking-normal">
-    Next 2 weeks
-</span>
+                                Next 2 weeks
+                            </span>
                         </div>
 
                         {/* Week 1 */}
