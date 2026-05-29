@@ -51,7 +51,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
             <label className="text-[16px] pl-2 font-medium text-gray-200">Phone (WhatsApp)*</label>
             <input
               type="tel"
-              placeholder="+91 9995 1235 4565"
+              placeholder="+91 9946271580"
               className="bg-black/15 text-white placeholder-gray-400 text-sm p-3 rounded border border-transparent focus:border-[#F9A53C] focus:outline-none transition-colors"
               required
             />
