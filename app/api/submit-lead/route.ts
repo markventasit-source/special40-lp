@@ -7,29 +7,33 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    // Send as URL-encoded form data — Pabbly parses field values correctly from this format.
-    // Fire-and-forget: do NOT await. We respond to the browser immediately and
-    // let the Pabbly call complete asynchronously so the user isn't kept waiting.
-    fetch(PABBLY_WEBHOOK_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        name: body.name ?? '',
-        qualification: body.qualification ?? '',
-        phone: body.phone ?? '',
-        email: body.email ?? '',
-        location: body.location ?? '',
-        reason: body.reason ?? '',
-        other: body.other ?? '',
-      }).toString(),
-    }).catch((err) => {
-      // Log quietly — we don't want a Pabbly hiccup to block the user
-      console.error('Pabbly webhook error (background):', err);
-    });
+    // Use a 5-second timeout so we never block the user longer than that.
+    // We MUST await — fire-and-forget gets killed by Next.js serverless before completing.
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
 
-    // Return success immediately — the browser redirects right away
+    try {
+      await fetch(PABBLY_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: body.name ?? '',
+          qualification: body.qualification ?? '',
+          phone: body.phone ?? '',
+          email: body.email ?? '',
+          location: body.location ?? '',
+          reason: body.reason ?? '',
+          other: body.other ?? '',
+        }),
+        signal: controller.signal,
+      });
+    } catch (pabblyErr: any) {
+      // Timeout or network error — log but don't block the redirect
+      console.error('Pabbly webhook error:', pabblyErr?.message);
+    } finally {
+      clearTimeout(timeout);
+    }
+
     return NextResponse.json({ success: true });
   } catch (error: any) {
     console.error('API submission error:', error);
