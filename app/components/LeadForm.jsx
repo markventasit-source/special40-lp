@@ -42,9 +42,9 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     setIsSubmitting(true);
 
     try {
-      // Send data to Pabbly Webhook
+      // Send data to our same-origin server proxy route to avoid CORS constraints
       const response = await fetch(
-        'https://connect.pabbly.com/webhook-listener/webhook/IjU3NjMwNTZkMDYzNjA0M2Q1MjY0NTUzMSI_3D_pc/IjU3NjcwNTZlMDYzZTA0M2Q1MjZlNTUzYzUxMzEi_pc',
+        '/api/submit-lead',
         {
           method: 'POST',
           headers: {
@@ -55,14 +55,15 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       );
 
       if (!response.ok) {
-        console.warn('Webhook responded with status', response.status);
+        console.warn('API route responded with status', response.status);
       }
     } catch (error) {
-      // Gracefully catch errors (e.g. ad-blocker blocking the webhook request)
-      console.error('Webhook submission error:', error);
+      // Gracefully catch errors
+      console.error('API submission error:', error);
     } finally {
       // Always redirect to the thankyou page to ensure optimal user experience
-      router.push('/thankyou');
+      const nameParam = formData.name ? `?name=${encodeURIComponent(formData.name.trim())}` : '';
+      router.push(`/thankyou${nameParam}`);
     }
   };
 

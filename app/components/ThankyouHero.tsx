@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Volume2, VolumeX } from 'lucide-react';
+import { useSearchParams } from 'next/navigation';
 
 interface RegistrationDetails {
     registrationId: string;
@@ -11,6 +12,12 @@ interface RegistrationDetails {
 }
 
 export default function RegistrationSuccess() {
+    const searchParams = useSearchParams();
+    const nameParam = searchParams.get('name') || '';
+    const name = nameParam
+      ? nameParam.charAt(0).toUpperCase() + nameParam.slice(1)
+      : 'there';
+
     const data: RegistrationDetails = {
         registrationId: "SP40-2026-SPF1245",
         programName: "Finance Career Transformation Program",
@@ -83,7 +90,7 @@ export default function RegistrationSuccess() {
                        <div className=" md:space-y-1">
     <h1 className="text-[#242424] font-semibold text-3xl md:text-[48px] leading-tight md:leading-[54px] tracking-normal">
         Thank you, <br className="hidden sm:block" />
-        <span className="text-[#242424]">Farhan</span>
+        <span className="text-[#242424]">{name}</span>
     </h1>
     <h2 className="text-[#242424] font-semibold text-3xl md:text-[48px] leading-tight md:leading-[54px] tracking-normal">
         Your seat for the upcoming session is secured.
