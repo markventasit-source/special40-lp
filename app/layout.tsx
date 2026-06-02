@@ -61,12 +61,13 @@ export default function RootLayout({
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '9018742848235297');
+          fbq('init', '3716886315229176');
           fbq('track', 'PageView');
+          fbq('track', 'ApplyNow');
         `}
       </Script>
       <noscript>
-        <img height="1" width="1" style={{display: "none"}} src="https://www.facebook.com/tr?id=9018742848235297&ev=PageView&noscript=1" alt="" />
+        <img height="1" width="1" style={{display: "none"}} src="https://www.facebook.com/tr?id=3716886315229176&ev=PageView&noscript=1" alt="" />
       </noscript>
       <body className={`${inter.variable} font-inter`}>
         <div className="relative w-full min-h-screen overflow-x-clip">
