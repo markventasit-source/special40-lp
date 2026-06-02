@@ -66,9 +66,7 @@ export default function RootLayout({
             fbq('track', 'PageView', {}, {test_event_code: 'TEST73879'});
           `}
         </Script>
-        <noscript>
-          <img height="1" width="1" style={{display: "none"}} src="https://www.facebook.com/tr?id=3716886315229176&ev=PageView&noscript=1" alt="" />
-        </noscript>
+
         <div className="relative w-full min-h-screen overflow-x-clip">
           {children}
           <ScrollToTop />
