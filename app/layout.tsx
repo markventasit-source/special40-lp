@@ -62,8 +62,8 @@ export default function RootLayout({
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '3716886315229176');
-          fbq('track', 'PageView');
-          fbq('track', 'ApplyNow');
+          fbq('track', 'PageView', {}, {test_event_code: 'TEST73879'});
+          fbq('track', 'ApplyNow', {}, {test_event_code: 'TEST73879'});
         `}
       </Script>
       <noscript>
