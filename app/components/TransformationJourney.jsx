@@ -4,14 +4,15 @@ import { motion } from 'framer-motion';
 export default function TransformationJourney() {
     const modules = [
         { id: "01", name: "Practical Accounting", tag: "TECHNICAL SKILLS" },
-        { id: "02", name: "GST & Income Tax - Practical Training", tag: "COMPLIANCE" },
-        { id: "03", name: "VAT, Zakat, Customs & Excise", tag: "COMPLIANCE" },
-        { id: "04", name: "Corporate Financial Reporting - P&L, B/S, Cashflow Statement", tag: "REPORTING" },
-        { id: "05", name: "ERP, MIS, Ratios & other Financial Tools", tag: "ANALYTICS" },
-        { id: "06", name: "Business Structure, Banking System and Payroll Compliance", tag: "STRUCTURE" },
-        { id: "07", name: "Business Communication and Office Etiquettes", tag: "SOFT SKILLS" },
-        { id: "08", name: "Interview and Aptitude Training", tag: "PROFESSIONALISM" },
-        { id: "09", name: "Live Projects-Development and Presentation", tag: "CORPORATE READINESS" },
+        { id: "02", name: "GST - Practical Training", tag: "COMPLIANCE" },
+        { id: "03", name: "Income Tax - Practical Training", tag: "COMPLIANCE" },
+        { id: "04", name: "VAT, Zakat, Customs & Excise", tag: "COMPLIANCE" },
+        { id: "05", name: "Corporate Financial Reporting - P&L, B/S, Cashflow Statement", tag: "REPORTING" },
+        { id: "06", name: "ERP, MIS, Ratios & other Financial Tools", tag: "ANALYTICS" },
+        { id: "07", name: "Business Structure, Banking System and Payroll Compliance", tag: "STRUCTURE" },
+        { id: "08", name: "Business Communication and Office Etiquettes", tag: "SOFT SKILLS" },
+        { id: "09", name: "Interview and Aptitude Training", tag: "PROFESSIONALISM" },
+        { id: "10", name: "Live Projects-Development and Presentation", tag: "CORPORATE READINESS" },
     ];
 
     // Left Column Content Animations
