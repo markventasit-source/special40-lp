@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Geist } from "next/font/google";
 import Script from "next/script";
-import Head from "next/head";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import ScrollToTop from "./components/ScrollToTop";
@@ -51,25 +50,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
-      <Script id="fb-pixel" strategy="beforeInteractive">
-        {`
-          !function(f,b,e,v,n,t,s)
-          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-          n.queue=[];t=b.createElement(e);t.async=!0;
-          t.src=v;s=b.getElementsByTagName(e)[0];
-          s.parentNode.insertBefore(t,s)}(window, document,'script',
-          'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '3716886315229176');
-          fbq('track', 'PageView', {}, {test_event_code: 'TEST73879'});
-          fbq('track', 'ApplyNow', {}, {test_event_code: 'TEST73879'});
-        `}
-      </Script>
-      <noscript>
-        <img height="1" width="1" style={{display: "none"}} src="https://www.facebook.com/tr?id=3716886315229176&ev=PageView&noscript=1" alt="" />
-      </noscript>
       <body className={`${inter.variable} font-inter`}>
+        {/* Meta Pixel — must live inside <body> for Next.js App Router */}
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '3716886315229176');
+            fbq('track', 'PageView', {}, {test_event_code: 'TEST73879'});
+          `}
+        </Script>
+        <noscript>
+          <img height="1" width="1" style={{display: "none"}} src="https://www.facebook.com/tr?id=3716886315229176&ev=PageView&noscript=1" alt="" />
+        </noscript>
         <div className="relative w-full min-h-screen overflow-x-clip">
           {children}
           <ScrollToTop />

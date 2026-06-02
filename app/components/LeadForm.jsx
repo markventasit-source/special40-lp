@@ -61,6 +61,10 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       // Gracefully catch errors
       console.error('API submission error:', error);
     } finally {
+      // Fire Meta Pixel lead event (browser-side) with test code
+      if (typeof window !== 'undefined' && window.fbq) {
+        window.fbq('track', 'Lead', {}, { test_event_code: 'TEST73879' });
+      }
       // Always redirect to the thankyou page to ensure optimal user experience
       const nameParam = formData.name ? `?name=${encodeURIComponent(formData.name.trim())}` : '';
       router.push(`/thankyou${nameParam}`);
