@@ -9,6 +9,8 @@ export default function Thankyou() {
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
+      (window as any).fbq('track', 'Lead');
+      (window as any).fbq('track', 'ApplyNow');
     }
   }, []);
 
