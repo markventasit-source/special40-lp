@@ -63,7 +63,14 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     } finally {
       // Fire Meta Pixel lead event (browser-side) with test code
       if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'Lead', {}, { test_event_code: 'TEST73879' });
+        window.fbq('track', 'Lead', {
+          em: formData.email,       // email (Meta hashes it automatically)
+          ph: formData.phone,       // phone
+          fn: formData.name,        // first name
+          ct: formData.location,    // city
+          content_name: formData.qualification,
+          status: formData.reason,
+        }, { test_event_code: 'TEST73879' });
       }
       // Always redirect to the thankyou page to ensure optimal user experience
       const nameParam = formData.name ? `?name=${encodeURIComponent(formData.name.trim())}` : '';
