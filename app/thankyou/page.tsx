@@ -7,6 +7,13 @@ import ThankyouFooter from "../components/ThankyouFooter"
 
 export default function Thankyou() {
   useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        send_to: 'AW-18178682920/O1z0CLy31rgcEKjgotxD',
+        value: 1.0,
+        currency: 'INR',
+      });
+    }
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView', {}, { test_event_code: 'TEST73879' });
       (window as any).fbq('track', 'Lead', {}, { test_event_code: 'TEST73879' });
