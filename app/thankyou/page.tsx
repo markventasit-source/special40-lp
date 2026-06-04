@@ -15,9 +15,9 @@ export default function Thankyou() {
       });
     }
     if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'PageView', {}, { test_event_code: 'TEST73879' });
-      (window as any).fbq('track', 'Lead', {}, { test_event_code: 'TEST73879' });
-      (window as any).fbq('track', 'ApplyNow', {}, { test_event_code: 'TEST73879' });
+      (window as any).fbq('track', 'PageView');
+      (window as any).fbq('track', 'Lead');
+      (window as any).fbq('track', 'ApplyNow');
     }
   }, []);
 

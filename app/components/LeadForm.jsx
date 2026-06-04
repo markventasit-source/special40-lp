@@ -61,7 +61,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       // Gracefully catch errors
       console.error('API submission error:', error);
     } finally {
-      // Fire Meta Pixel lead event (browser-side) with test code
+      // Fire Meta Pixel lead event (browser-side)
       if (typeof window !== 'undefined' && window.fbq) {
         window.fbq('track', 'Lead', {
           em: formData.email,       // email (Meta hashes it automatically)
@@ -70,7 +70,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           ct: formData.location,    // city
           content_name: formData.qualification,
           status: formData.reason,
-        }, { test_event_code: 'TEST73879' });
+        });
       }
       // Always redirect to the thankyou page to ensure optimal user experience
       const nameParam = formData.name ? `?name=${encodeURIComponent(formData.name.trim())}` : '';
