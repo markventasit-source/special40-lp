@@ -67,6 +67,20 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Ads Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18178682920"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18178682920');
+          `}
+        </Script>
+
         <div className="relative w-full min-h-screen overflow-x-clip">
           {children}
           <ScrollToTop />
