@@ -178,7 +178,7 @@ export default function FaqSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 <Image
-                    src="/capitaire.png"
+                    src="/capitaire-conclave.png"
                     alt="Capitaire"
                     width={1920}
                     height={200}

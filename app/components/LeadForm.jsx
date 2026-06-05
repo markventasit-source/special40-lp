@@ -108,14 +108,15 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
                 <SelectValue placeholder="Select your qualification" className="text-gray-400" />
               </SelectTrigger>
               <SelectContent className="bg-white text-gray-900">
-                <SelectItem value="ba-economics">BA Economics</SelectItem>
+                {/* <SelectItem value="ba-economics">BA Economics</SelectItem> */}
                 <SelectItem value="bcom">B.Com</SelectItem>
                 <SelectItem value="mcom">M.Com</SelectItem>
-                <SelectItem value="bba">BBA</SelectItem>
+                {/* <SelectItem value="bba">BBA</SelectItem> */}
                 <SelectItem value="mba">MBA</SelectItem>
                 <SelectItem value="ca-cma">CA / CMA (Inter or Final)</SelectItem>
-                <SelectItem value="bsc-maths">BSc Mathematics / Statistics</SelectItem>
-                <SelectItem value="plus-two-commerce">Plus Two (Commerce)</SelectItem>
+                <SelectItem value="ca-cma">ACCA (Qualified/Semi-Quallified)</SelectItem>
+                {/* <SelectItem value="bsc-maths">BSc Mathematics / Statistics</SelectItem> */}
+                {/* <SelectItem value="plus-two-commerce">Plus Two (Commerce)</SelectItem> */}
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
