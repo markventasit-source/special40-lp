@@ -16,6 +16,7 @@ const LEAD_NOTIFICATION_CC = [
   'adhil@capitaire.com',
   'kevinthomas0420@gmail.com',
   'akshay.renjith01@gmail.com',
+  'lakshmi@special40.com',
 ];
 
 function getTransporter() {

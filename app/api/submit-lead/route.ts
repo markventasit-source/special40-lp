@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import clientPromise from '@/lib/mongodb';
+import getMongoClient from '@/lib/mongodb';
 import { sendLeadNotificationEmail } from '@/lib/sendLeadEmail';
 
 const PABBLY_WEBHOOK_URL =
@@ -20,9 +20,13 @@ export async function POST(request: Request) {
       createdAt: new Date(),
     };
 
-    const client = await clientPromise;
-    const db = client.db('special40');
-    await db.collection('leads').insertOne(lead);
+    try {
+      const client = await getMongoClient();
+      const db = client.db('special40');
+      await db.collection('leads').insertOne(lead);
+    } catch (mongoErr: any) {
+      console.error('MongoDB save error:', mongoErr?.message);
+    }
 
     try {
       await sendLeadNotificationEmail(lead);
