@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import clientPromise from '@/lib/mongodb';
+import { sendLeadNotificationEmail } from '@/lib/sendLeadEmail';
 
 const PABBLY_WEBHOOK_URL =
   'https://connect.pabbly.com/webhook-listener/webhook/IjU3NjMwNTZkMDYzNjA0M2Q1MjY0NTUzMSI_3D_pc/IjU3NjcwNTZlMDYzZTA0M2Q1MjZlNTUzYzUxMzEi_pc';
@@ -7,24 +9,37 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    const lead = {
+      name: body.name ?? '',
+      qualification: body.qualification ?? '',
+      phone: body.phone ?? '',
+      email: body.email ?? '',
+      location: body.location ?? '',
+      reason: body.reason ?? '',
+      other: body.other ?? '',
+      createdAt: new Date(),
+    };
+
+    const client = await clientPromise;
+    const db = client.db('special40');
+    await db.collection('leads').insertOne(lead);
+
+    try {
+      await sendLeadNotificationEmail(lead);
+    } catch (emailErr: any) {
+      console.error('Lead notification email error:', emailErr?.message);
+    }
+
     // Use a 5-second timeout so we never block the user longer than that.
-    // We MUST await — fire-and-forget gets killed by Next.js serverless before completing.
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 5000);
 
     try {
+      const { createdAt, ...webhookPayload } = lead;
       await fetch(PABBLY_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: body.name ?? '',
-          qualification: body.qualification ?? '',
-          phone: body.phone ?? '',
-          email: body.email ?? '',
-          location: body.location ?? '',
-          reason: body.reason ?? '',
-          other: body.other ?? '',
-        }),
+        body: JSON.stringify(webhookPayload),
         signal: controller.signal,
       });
     } catch (pabblyErr: any) {
