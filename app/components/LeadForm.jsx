@@ -11,57 +11,27 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-const ATTRIBUTION_STORAGE_KEY = 'lead_attribution_v1';
-const ATTRIBUTION_KEYS = [
-  'source',
-  'utm_source',
-  'utm_medium',
-  'utm_campaign',
-  'utm_content',
-  'utm_term',
-  'fbclid',
-  'gclid',
-  'wbraid',
-  'gbraid',
-  'msclkid',
-  'referrer_url',
-  'landing_page',
-  'first_seen_at',
-];
+const SOURCE_STORAGE_KEY = 'lead_source_v1';
+const VALID_SOURCES = ['facebook', 'instagram', 'google', 'direct', 'unknown'];
 
-function detectSource(data) {
-  const utmSource = (data.utm_source || '').toLowerCase();
-  const referrer = (data.referrer_url || '').toLowerCase();
-
-  if (utmSource) return utmSource;
-  if (data.fbclid) return 'meta';
-  if (data.gclid || data.wbraid || data.gbraid) return 'google';
-  if (referrer.includes('facebook.com') || referrer.includes('instagram.com')) return 'meta-organic';
-  if (referrer.includes('google.')) return 'google-organic';
-  if (!referrer) return 'direct';
-  return 'unknown';
-}
-
-function getCurrentAttribution() {
-  if (typeof window === 'undefined') return {};
+function detectSource() {
+  if (typeof window === 'undefined') return 'unknown';
 
   const params = new URLSearchParams(window.location.search);
-  const attribution = {
-    utm_source: params.get('utm_source') || '',
-    utm_medium: params.get('utm_medium') || '',
-    utm_campaign: params.get('utm_campaign') || '',
-    utm_content: params.get('utm_content') || '',
-    utm_term: params.get('utm_term') || '',
-    fbclid: params.get('fbclid') || '',
-    gclid: params.get('gclid') || '',
-    wbraid: params.get('wbraid') || '',
-    gbraid: params.get('gbraid') || '',
-    msclkid: params.get('msclkid') || '',
-    referrer_url: document.referrer || '',
-    landing_page: window.location.href,
-  };
+  const sourceParam = (params.get('source') || '').toLowerCase();
 
-  return attribution;
+  if (VALID_SOURCES.includes(sourceParam)) return sourceParam;
+
+  if (params.get('fbclid')) return 'facebook';
+  if (params.get('gclid') || params.get('wbraid') || params.get('gbraid')) return 'google';
+
+  const referrer = (document.referrer || '').toLowerCase();
+  if (referrer.includes('instagram.com')) return 'instagram';
+  if (referrer.includes('facebook.com')) return 'facebook';
+  if (referrer.includes('google.')) return 'google';
+  if (!referrer) return 'direct';
+
+  return 'unknown';
 }
 
 // Added bgColor prop with your original hero-level teal color as the fallback default
@@ -79,34 +49,28 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [attributionData, setAttributionData] = useState({});
+  const [source, setSource] = useState('unknown');
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    let storedAttribution = {};
+    let storedSource = '';
     try {
-      const raw = window.localStorage.getItem(ATTRIBUTION_STORAGE_KEY);
-      storedAttribution = raw ? JSON.parse(raw) : {};
+      const raw = window.localStorage.getItem(SOURCE_STORAGE_KEY);
+      storedSource = raw ? JSON.parse(raw).source : '';
     } catch (error) {
-      console.warn('Failed to parse stored attribution data:', error);
+      console.warn('Failed to parse stored source:', error);
     }
 
-    const currentAttribution = getCurrentAttribution();
-    const mergedAttribution = {
-      ...storedAttribution,
-      ...currentAttribution,
-    };
+    const detectedSource = detectSource();
+    const params = new URLSearchParams(window.location.search);
+    const sourceParam = (params.get('source') || '').toLowerCase();
+    const hasExplicitSource = ['facebook', 'instagram', 'google'].includes(sourceParam);
 
-    mergedAttribution.first_seen_at =
-      storedAttribution.first_seen_at || new Date().toISOString();
-    mergedAttribution.source = detectSource(mergedAttribution);
+    const finalSource = hasExplicitSource ? sourceParam : (storedSource || detectedSource);
 
-    setAttributionData(mergedAttribution);
-    window.localStorage.setItem(
-      ATTRIBUTION_STORAGE_KEY,
-      JSON.stringify(mergedAttribution)
-    );
+    setSource(finalSource);
+    window.localStorage.setItem(SOURCE_STORAGE_KEY, JSON.stringify({ source: finalSource }));
   }, []);
 
   const handleSubmit = async (e) => {
@@ -126,10 +90,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     try {
       const payload = {
         ...formData,
-        ...ATTRIBUTION_KEYS.reduce((acc, key) => {
-          acc[key] = attributionData[key] || '';
-          return acc;
-        }, {}),
+        source,
       };
 
       // Send data to our same-origin server proxy route to avoid CORS constraints
