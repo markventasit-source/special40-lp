@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import {
@@ -10,6 +10,59 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+
+const ATTRIBUTION_STORAGE_KEY = 'lead_attribution_v1';
+const ATTRIBUTION_KEYS = [
+  'source',
+  'utm_source',
+  'utm_medium',
+  'utm_campaign',
+  'utm_content',
+  'utm_term',
+  'fbclid',
+  'gclid',
+  'wbraid',
+  'gbraid',
+  'msclkid',
+  'referrer_url',
+  'landing_page',
+  'first_seen_at',
+];
+
+function detectSource(data) {
+  const utmSource = (data.utm_source || '').toLowerCase();
+  const referrer = (data.referrer_url || '').toLowerCase();
+
+  if (utmSource) return utmSource;
+  if (data.fbclid) return 'meta';
+  if (data.gclid || data.wbraid || data.gbraid) return 'google';
+  if (referrer.includes('facebook.com') || referrer.includes('instagram.com')) return 'meta-organic';
+  if (referrer.includes('google.')) return 'google-organic';
+  if (!referrer) return 'direct';
+  return 'unknown';
+}
+
+function getCurrentAttribution() {
+  if (typeof window === 'undefined') return {};
+
+  const params = new URLSearchParams(window.location.search);
+  const attribution = {
+    utm_source: params.get('utm_source') || '',
+    utm_medium: params.get('utm_medium') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    utm_content: params.get('utm_content') || '',
+    utm_term: params.get('utm_term') || '',
+    fbclid: params.get('fbclid') || '',
+    gclid: params.get('gclid') || '',
+    wbraid: params.get('wbraid') || '',
+    gbraid: params.get('gbraid') || '',
+    msclkid: params.get('msclkid') || '',
+    referrer_url: document.referrer || '',
+    landing_page: window.location.href,
+  };
+
+  return attribution;
+}
 
 // Added bgColor prop with your original hero-level teal color as the fallback default
 export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
@@ -26,6 +79,35 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [attributionData, setAttributionData] = useState({});
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    let storedAttribution = {};
+    try {
+      const raw = window.localStorage.getItem(ATTRIBUTION_STORAGE_KEY);
+      storedAttribution = raw ? JSON.parse(raw) : {};
+    } catch (error) {
+      console.warn('Failed to parse stored attribution data:', error);
+    }
+
+    const currentAttribution = getCurrentAttribution();
+    const mergedAttribution = {
+      ...storedAttribution,
+      ...currentAttribution,
+    };
+
+    mergedAttribution.first_seen_at =
+      storedAttribution.first_seen_at || new Date().toISOString();
+    mergedAttribution.source = detectSource(mergedAttribution);
+
+    setAttributionData(mergedAttribution);
+    window.localStorage.setItem(
+      ATTRIBUTION_STORAGE_KEY,
+      JSON.stringify(mergedAttribution)
+    );
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +124,14 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     setIsSubmitting(true);
 
     try {
+      const payload = {
+        ...formData,
+        ...ATTRIBUTION_KEYS.reduce((acc, key) => {
+          acc[key] = attributionData[key] || '';
+          return acc;
+        }, {}),
+      };
+
       // Send data to our same-origin server proxy route to avoid CORS constraints
       const response = await fetch(
         '/api/submit-lead',
@@ -50,7 +140,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(payload),
         }
       );
 
