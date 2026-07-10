@@ -14,6 +14,87 @@ import {
 const SOURCE_STORAGE_KEY = 'lead_source_v1';
 const VALID_SOURCES = ['facebook', 'instagram', 'google', 'direct', 'unknown'];
 
+const FIELD_LIMITS = {
+  name: 80,
+  phone: 15,
+  email: 254,
+  location: 100,
+  other: 500,
+};
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const NAME_REGEX = /^[a-zA-Z\s.'-]+$/;
+
+function normalizePhone(phone) {
+  return phone.replace(/[\s-]/g, '');
+}
+
+function isValidPhone(phone) {
+  const normalized = normalizePhone(phone.trim());
+  return /^(\+91)?[6-9]\d{9}$/.test(normalized);
+}
+
+function validateField(field, value) {
+  const trimmed = value.trim();
+
+  switch (field) {
+    case 'name':
+      if (!trimmed) return 'Name is required.';
+      if (trimmed.length < 2) return 'Name must be at least 2 characters.';
+      if (trimmed.length > FIELD_LIMITS.name) return `Name must be at most ${FIELD_LIMITS.name} characters.`;
+      if (!NAME_REGEX.test(trimmed)) return 'Name can only contain letters, spaces, dots, hyphens and apostrophes.';
+      return '';
+    case 'phone':
+      if (!trimmed) return 'Phone number is required.';
+      if (trimmed.length > FIELD_LIMITS.phone) return `Phone must be at most ${FIELD_LIMITS.phone} characters.`;
+      if (!isValidPhone(trimmed)) return 'Enter a valid 10-digit Indian mobile number (e.g. 9876543210 or +91 9876543210).';
+      return '';
+    case 'email':
+      if (!trimmed) return 'Email is required.';
+      if (trimmed.length > FIELD_LIMITS.email) return `Email must be at most ${FIELD_LIMITS.email} characters.`;
+      if (!EMAIL_REGEX.test(trimmed)) return 'Enter a valid email address.';
+      return '';
+    case 'location':
+      if (!trimmed) return 'Location is required.';
+      if (trimmed.length < 2) return 'Location must be at least 2 characters.';
+      if (trimmed.length > FIELD_LIMITS.location) return `Location must be at most ${FIELD_LIMITS.location} characters.`;
+      return '';
+    case 'other':
+      if (value.length > FIELD_LIMITS.other) return `Other field must be at most ${FIELD_LIMITS.other} characters.`;
+      return '';
+    default:
+      return '';
+  }
+}
+
+function validateForm(data) {
+  const errors = {};
+
+  ['name', 'phone', 'email', 'location', 'other'].forEach((field) => {
+    const message = validateField(field, data[field]);
+    if (message) errors[field] = message;
+  });
+
+  if (!data.qualification) errors.qualification = 'Please select your qualification.';
+  if (!data.reason) errors.reason = 'Please select a reason for choosing the program.';
+
+  return errors;
+}
+
+function getInputClass(hasError, multiline = false) {
+  return `bg-black/15 text-white placeholder-gray-400 text-sm p-3 rounded border ${
+    hasError ? 'border-red-400' : 'border-transparent'
+  } focus:border-[#F9A53C] focus:outline-none transition-colors disabled:opacity-50${
+    multiline ? ' resize-none' : ''
+  }`;
+}
+
+function getSelectTriggerClass(hasError) {
+  return `w-full bg-black/15 text-white text-sm p-3 h-auto rounded border ${
+    hasError ? 'border-red-400' : 'border-transparent'
+  } focus:border-[#F9A53C] focus:ring-0 focus:outline-none transition-colors [&>svg]:text-gray-300 disabled:opacity-50`;
+}
+
 function detectSource() {
   if (typeof window === 'undefined') return 'unknown';
 
@@ -50,6 +131,15 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [source, setSource] = useState('unknown');
+  const [errors, setErrors] = useState({});
+
+  const handleFieldChange = (field, value) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: validateField(field, value) }));
+    }
+  };
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -76,15 +166,13 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.qualification) {
-      alert("Please select your qualification.");
-      return;
-    }
-    if (!formData.reason) {
-      alert("Please select a reason for choosing the program.");
+    const validationErrors = validateForm(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
+    setErrors({});
     setIsSubmitting(true);
 
     try {
@@ -139,23 +227,30 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
             <input
               type="text"
               placeholder="John Doe"
-              className="bg-black/15 text-white placeholder-gray-400 text-sm p-3 rounded border border-transparent focus:border-[#F9A53C] focus:outline-none transition-colors disabled:opacity-50"
+              className={getInputClass(errors.name)}
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) => handleFieldChange('name', e.target.value)}
+              maxLength={FIELD_LIMITS.name}
               disabled={isSubmitting}
               required
             />
+            {errors.name && <p className="text-red-300 text-xs pl-2">{errors.name}</p>}
           </div>
 
           <div className="flex flex-col space-y-1.5">
             <label className="text-[16px] pl-2 font-medium text-gray-200">Qualification*</label>
             <Select
               value={formData.qualification}
-              onValueChange={(val) => setFormData({ ...formData, qualification: val })}
+              onValueChange={(val) => {
+                setFormData({ ...formData, qualification: val });
+                if (errors.qualification) {
+                  setErrors((prev) => ({ ...prev, qualification: '' }));
+                }
+              }}
               disabled={isSubmitting}
               required
             >
-              <SelectTrigger className="w-full bg-black/15 text-white text-sm p-3 h-auto rounded border border-transparent focus:border-[#F9A53C] focus:ring-0 focus:outline-none transition-colors [&>svg]:text-gray-300 disabled:opacity-50">
+              <SelectTrigger className={getSelectTriggerClass(errors.qualification)}>
                 <SelectValue placeholder="Select your qualification" className="text-gray-400" />
               </SelectTrigger>
               <SelectContent className="bg-white text-gray-900">
@@ -171,6 +266,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
+            {errors.qualification && <p className="text-red-300 text-xs pl-2">{errors.qualification}</p>}
           </div>
         </div>
 
@@ -180,12 +276,15 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
             <input
               type="tel"
               placeholder="+91 9946271580"
-              className="bg-black/15 text-white placeholder-gray-400 text-sm p-3 rounded border border-transparent focus:border-[#F9A53C] focus:outline-none transition-colors disabled:opacity-50"
+              className={getInputClass(errors.phone)}
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={(e) => handleFieldChange('phone', e.target.value)}
+              maxLength={FIELD_LIMITS.phone}
+              inputMode="tel"
               disabled={isSubmitting}
               required
             />
+            {errors.phone && <p className="text-red-300 text-xs pl-2">{errors.phone}</p>}
           </div>
 
           <div className="flex flex-col space-y-1.5">
@@ -193,12 +292,14 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
             <input
               type="email"
               placeholder="Johndoe@testmail.com"
-              className="bg-black/15 text-white placeholder-gray-400 text-sm p-3 rounded border border-transparent focus:border-[#F9A53C] focus:outline-none transition-colors disabled:opacity-50"
+              className={getInputClass(errors.email)}
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) => handleFieldChange('email', e.target.value)}
+              maxLength={FIELD_LIMITS.email}
               disabled={isSubmitting}
               required
             />
+            {errors.email && <p className="text-red-300 text-xs pl-2">{errors.email}</p>}
           </div>
         </div>
 
@@ -208,23 +309,30 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
             <input
               type="text"
               placeholder="Ernakulam"
-              className="bg-black/15 text-white placeholder-gray-400 text-sm p-3 rounded border border-transparent focus:border-[#F9A53C] focus:outline-none transition-colors disabled:opacity-50"
+              className={getInputClass(errors.location)}
               value={formData.location}
-              onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+              onChange={(e) => handleFieldChange('location', e.target.value)}
+              maxLength={FIELD_LIMITS.location}
               disabled={isSubmitting}
               required
             />
+            {errors.location && <p className="text-red-300 text-xs pl-2">{errors.location}</p>}
           </div>
 
           <div className="flex flex-col space-y-1.5">
             <label className="text-[16px] pl-2 font-medium text-gray-200">Reason for choosing the program*</label>
             <Select
               value={formData.reason}
-              onValueChange={(val) => setFormData({ ...formData, reason: val })}
+              onValueChange={(val) => {
+                setFormData({ ...formData, reason: val });
+                if (errors.reason) {
+                  setErrors((prev) => ({ ...prev, reason: '' }));
+                }
+              }}
               disabled={isSubmitting}
               required
             >
-              <SelectTrigger className="w-full bg-black/15 text-white text-sm p-3 h-auto rounded border border-transparent focus:border-[#F9A53C] focus:ring-0 focus:outline-none transition-colors [&>svg]:text-gray-300 disabled:opacity-50">
+              <SelectTrigger className={getSelectTriggerClass(errors.reason)}>
                 <SelectValue placeholder="Select a reason" className="text-gray-400" />
               </SelectTrigger>
               <SelectContent className="bg-white text-gray-900">
@@ -238,6 +346,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
+            {errors.reason && <p className="text-red-300 text-xs pl-2">{errors.reason}</p>}
           </div>
         </div>
 
@@ -245,11 +354,13 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           <label className="text-[16px] pl-2 font-medium text-gray-200">Other</label>
           <textarea
             rows={2}
-            className="bg-black/15 text-white text-sm p-3 rounded border border-transparent focus:border-[#F9A53C] focus:outline-none resize-none transition-colors disabled:opacity-50"
+            className={getInputClass(errors.other, true)}
             value={formData.other}
-            onChange={(e) => setFormData({ ...formData, other: e.target.value })}
+            onChange={(e) => handleFieldChange('other', e.target.value)}
+            maxLength={FIELD_LIMITS.other}
             disabled={isSubmitting}
           />
+          {errors.other && <p className="text-red-300 text-xs pl-2">{errors.other}</p>}
         </div>
 
         <div className="pt-2">
