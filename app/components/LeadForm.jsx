@@ -39,28 +39,28 @@ function validateField(field, value) {
 
   switch (field) {
     case 'name':
-      if (!trimmed) return 'Name is required.';
-      if (trimmed.length < 2) return 'Name must be at least 2 characters.';
-      if (trimmed.length > FIELD_LIMITS.name) return `Name must be at most ${FIELD_LIMITS.name} characters.`;
-      if (!NAME_REGEX.test(trimmed)) return 'Name can only contain letters, spaces, dots, hyphens and apostrophes.';
+      if (!trimmed) return 'Please enter your name.';
+      if (trimmed.length < 2) return 'Name should be at least 2 characters.';
+      if (trimmed.length > FIELD_LIMITS.name) return `Name should not exceed ${FIELD_LIMITS.name} characters.`;
+      if (!NAME_REGEX.test(trimmed)) return 'Name can include only letters, spaces, dots, hyphens, and apostrophes.';
       return '';
     case 'phone':
-      if (!trimmed) return 'Phone number is required.';
-      if (trimmed.length > FIELD_LIMITS.phone) return `Phone must be at most ${FIELD_LIMITS.phone} characters.`;
-      if (!isValidPhone(trimmed)) return 'Enter a valid 10-digit Indian mobile number (e.g. 9876543210 or +91 9876543210).';
+      if (!trimmed) return 'Please enter your WhatsApp number.';
+      if (trimmed.length > FIELD_LIMITS.phone) return `Phone number should not exceed ${FIELD_LIMITS.phone} characters.`;
+      if (!isValidPhone(trimmed)) return 'Please enter a valid Indian mobile number, for example 9876543210 or +91 9876543210.';
       return '';
     case 'email':
-      if (!trimmed) return 'Email is required.';
-      if (trimmed.length > FIELD_LIMITS.email) return `Email must be at most ${FIELD_LIMITS.email} characters.`;
-      if (!EMAIL_REGEX.test(trimmed)) return 'Enter a valid email address.';
+      if (!trimmed) return 'Please enter your email address.';
+      if (trimmed.length > FIELD_LIMITS.email) return `Email should not exceed ${FIELD_LIMITS.email} characters.`;
+      if (!EMAIL_REGEX.test(trimmed)) return 'Please enter a valid email address, for example name@example.com.';
       return '';
     case 'location':
-      if (!trimmed) return 'Location is required.';
-      if (trimmed.length < 2) return 'Location must be at least 2 characters.';
-      if (trimmed.length > FIELD_LIMITS.location) return `Location must be at most ${FIELD_LIMITS.location} characters.`;
+      if (!trimmed) return 'Please enter your location.';
+      if (trimmed.length < 2) return 'Location should be at least 2 characters.';
+      if (trimmed.length > FIELD_LIMITS.location) return `Location should not exceed ${FIELD_LIMITS.location} characters.`;
       return '';
     case 'other':
-      if (value.length > FIELD_LIMITS.other) return `Other field must be at most ${FIELD_LIMITS.other} characters.`;
+      if (value.length > FIELD_LIMITS.other) return `Other details should not exceed ${FIELD_LIMITS.other} characters.`;
       return '';
     default:
       return '';
@@ -76,7 +76,7 @@ function validateForm(data) {
   });
 
   if (!data.qualification) errors.qualification = 'Please select your qualification.';
-  if (!data.reason) errors.reason = 'Please select a reason for choosing the program.';
+  if (!data.reason) errors.reason = 'Please select why you are choosing this program.';
 
   return errors;
 }
@@ -93,6 +93,16 @@ function getSelectTriggerClass(hasError) {
   return `w-full bg-black/15 text-white text-sm p-3 h-auto rounded border ${
     hasError ? 'border-red-400' : 'border-transparent'
   } focus:border-[#F9A53C] focus:ring-0 focus:outline-none transition-colors [&>svg]:text-gray-300 disabled:opacity-50`;
+}
+
+function FieldError({ id, message }) {
+  if (!message) return null;
+
+  return (
+    <p id={id} className="text-red-300 text-xs pl-2" role="alert">
+      {message}
+    </p>
+  );
 }
 
 function detectSource() {
@@ -219,7 +229,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
 
   return (
     <div className={`w-full ${bgColor} px-2 py-6 md:p-8 shadow-xl text-white transition-colors duration-300`}>
-      <form className="space-y-5" onSubmit={handleSubmit}>
+      <form className="space-y-5" onSubmit={handleSubmit} noValidate>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col space-y-1.5">
@@ -231,10 +241,12 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
               value={formData.name}
               onChange={(e) => handleFieldChange('name', e.target.value)}
               maxLength={FIELD_LIMITS.name}
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? 'name-error' : undefined}
               disabled={isSubmitting}
               required
             />
-            {errors.name && <p className="text-red-300 text-xs pl-2">{errors.name}</p>}
+            <FieldError id="name-error" message={errors.name} />
           </div>
 
           <div className="flex flex-col space-y-1.5">
@@ -266,7 +278,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
-            {errors.qualification && <p className="text-red-300 text-xs pl-2">{errors.qualification}</p>}
+            <FieldError id="qualification-error" message={errors.qualification} />
           </div>
         </div>
 
@@ -281,10 +293,12 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
               onChange={(e) => handleFieldChange('phone', e.target.value)}
               maxLength={FIELD_LIMITS.phone}
               inputMode="tel"
+              aria-invalid={Boolean(errors.phone)}
+              aria-describedby={errors.phone ? 'phone-error' : undefined}
               disabled={isSubmitting}
               required
             />
-            {errors.phone && <p className="text-red-300 text-xs pl-2">{errors.phone}</p>}
+            <FieldError id="phone-error" message={errors.phone} />
           </div>
 
           <div className="flex flex-col space-y-1.5">
@@ -296,10 +310,12 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
               value={formData.email}
               onChange={(e) => handleFieldChange('email', e.target.value)}
               maxLength={FIELD_LIMITS.email}
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? 'email-error' : undefined}
               disabled={isSubmitting}
               required
             />
-            {errors.email && <p className="text-red-300 text-xs pl-2">{errors.email}</p>}
+            <FieldError id="email-error" message={errors.email} />
           </div>
         </div>
 
@@ -313,10 +329,12 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
               value={formData.location}
               onChange={(e) => handleFieldChange('location', e.target.value)}
               maxLength={FIELD_LIMITS.location}
+              aria-invalid={Boolean(errors.location)}
+              aria-describedby={errors.location ? 'location-error' : undefined}
               disabled={isSubmitting}
               required
             />
-            {errors.location && <p className="text-red-300 text-xs pl-2">{errors.location}</p>}
+            <FieldError id="location-error" message={errors.location} />
           </div>
 
           <div className="flex flex-col space-y-1.5">
@@ -346,7 +364,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
-            {errors.reason && <p className="text-red-300 text-xs pl-2">{errors.reason}</p>}
+            <FieldError id="reason-error" message={errors.reason} />
           </div>
         </div>
 
@@ -358,9 +376,11 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
             value={formData.other}
             onChange={(e) => handleFieldChange('other', e.target.value)}
             maxLength={FIELD_LIMITS.other}
+            aria-invalid={Boolean(errors.other)}
+            aria-describedby={errors.other ? 'other-error' : undefined}
             disabled={isSubmitting}
           />
-          {errors.other && <p className="text-red-300 text-xs pl-2">{errors.other}</p>}
+          <FieldError id="other-error" message={errors.other} />
         </div>
 
         <div className="pt-2">
