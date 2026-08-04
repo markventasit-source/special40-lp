@@ -8,7 +8,7 @@ import ThankyouFooter from "../components/ThankyouFooter"
 export default function Thankyou() {
   useEffect(() => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'conversion', {
+      (window as any).gtag('event', 'Special_40_lead_form_submission', {
         send_to: 'AW-18354990280',
         value: 1.0,
         currency: 'INR',
