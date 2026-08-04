@@ -152,7 +152,6 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [source, setSource] = useState("unknown");
   const [errors, setErrors] = useState({});
 
@@ -250,255 +249,237 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           status: formData.reason,
         });
       }
-      // Show a brief success state before redirect, so the current page can capture the event.
-      setShowSuccessModal(true);
       const nameParam = formData.name
         ? `?name=${encodeURIComponent(formData.name.trim())}`
         : "";
       const thankyouUrl = `/thankyou${nameParam}`;
-      setTimeout(() => router.push(thankyouUrl), 1200);
+      if (typeof window !== "undefined" && window.gtag) {
+        setTimeout(() => router.push(thankyouUrl), 300);
+      } else {
+        router.push(thankyouUrl);
+      }
     }
   };
 
   return (
-    <>
-      {showSuccessModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm">
-          <div className="w-full max-w-md rounded-2xl border border-[#F9A53C]/30 bg-[#0A2F33] p-6 text-center shadow-2xl">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#F9A53C]/20 text-2xl text-[#F9A53C]">
-              ✓
-            </div>
-            <h3 className="text-2xl font-bold text-white">
-              Application Submitted
-            </h3>
-            <p className="mt-2 text-sm text-gray-200">
-              Thanks! Redirecting you to the next step...
-            </p>
-          </div>
-        </div>
-      )}
-
-      <div
-        className={`w-full ${bgColor} px-2 py-6 md:p-8 shadow-xl text-white transition-colors duration-300`}
-      >
-        <form className="space-y-5" onSubmit={handleSubmit} noValidate>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <label className="text-[16px] pl-2 font-medium text-gray-200">
-                Your Name*
-              </label>
-              <input
-                type="text"
-                placeholder="John Doe"
-                className={getInputClass(errors.name)}
-                value={formData.name}
-                onChange={(e) => handleFieldChange("name", e.target.value)}
-                maxLength={FIELD_LIMITS.name}
-                aria-invalid={Boolean(errors.name)}
-                aria-describedby={errors.name ? "name-error" : undefined}
-                disabled={isSubmitting}
-                required
-              />
-              <FieldError id="name-error" message={errors.name} />
-            </div>
-
-            <div className="flex flex-col space-y-1.5">
-              <label className="text-[16px] pl-2 font-medium text-gray-200">
-                Qualification*
-              </label>
-              <Select
-                value={formData.qualification}
-                onValueChange={(val) => {
-                  setFormData({ ...formData, qualification: val });
-                  if (errors.qualification) {
-                    setErrors((prev) => ({ ...prev, qualification: "" }));
-                  }
-                }}
-                disabled={isSubmitting}
-                required
-              >
-                <SelectTrigger
-                  className={getSelectTriggerClass(errors.qualification)}
-                >
-                  <SelectValue
-                    placeholder="Select your qualification"
-                    className="text-gray-400"
-                  />
-                </SelectTrigger>
-                <SelectContent className="bg-white text-gray-900">
-                  {/* <SelectItem value="ba-economics">BA Economics</SelectItem> */}
-                  <SelectItem value="bcom">B.Com</SelectItem>
-                  <SelectItem value="mcom">M.Com</SelectItem>
-                  {/* <SelectItem value="bba">BBA</SelectItem> */}
-                  <SelectItem value="mba">MBA</SelectItem>
-                  <SelectItem value="ca-cma">
-                    CA / CMA (Inter or Final)
-                  </SelectItem>
-                  <SelectItem value="acca">
-                    ACCA (Qualified/Semi-Qualified)
-                  </SelectItem>
-                  {/* <SelectItem value="bsc-maths">BSc Mathematics / Statistics</SelectItem> */}
-                  {/* <SelectItem value="plus-two-commerce">Plus Two (Commerce)</SelectItem> */}
-                  <SelectItem value="other">Other</SelectItem>
-                </SelectContent>
-              </Select>
-              <FieldError
-                id="qualification-error"
-                message={errors.qualification}
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <label className="text-[16px] pl-2 font-medium text-gray-200">
-                Phone (WhatsApp)*
-              </label>
-              <input
-                type="tel"
-                placeholder="+91 9946271580"
-                className={getInputClass(errors.phone)}
-                value={formData.phone}
-                onChange={(e) => handleFieldChange("phone", e.target.value)}
-                maxLength={FIELD_LIMITS.phone}
-                inputMode="tel"
-                aria-invalid={Boolean(errors.phone)}
-                aria-describedby={errors.phone ? "phone-error" : undefined}
-                disabled={isSubmitting}
-                required
-              />
-              <FieldError id="phone-error" message={errors.phone} />
-            </div>
-
-            <div className="flex flex-col space-y-1.5">
-              <label className="text-[16px] pl-2 font-medium text-gray-200">
-                Email*
-              </label>
-              <input
-                type="email"
-                placeholder="Johndoe@testmail.com"
-                className={getInputClass(errors.email)}
-                value={formData.email}
-                onChange={(e) => handleFieldChange("email", e.target.value)}
-                maxLength={FIELD_LIMITS.email}
-                aria-invalid={Boolean(errors.email)}
-                aria-describedby={errors.email ? "email-error" : undefined}
-                disabled={isSubmitting}
-                required
-              />
-              <FieldError id="email-error" message={errors.email} />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <label className="text-[16px] pl-2 font-medium text-gray-200">
-                Location*
-              </label>
-              <input
-                type="text"
-                placeholder="Ernakulam"
-                className={getInputClass(errors.location)}
-                value={formData.location}
-                onChange={(e) => handleFieldChange("location", e.target.value)}
-                maxLength={FIELD_LIMITS.location}
-                aria-invalid={Boolean(errors.location)}
-                aria-describedby={
-                  errors.location ? "location-error" : undefined
-                }
-                disabled={isSubmitting}
-                required
-              />
-              <FieldError id="location-error" message={errors.location} />
-            </div>
-
-            <div className="flex flex-col space-y-1.5">
-              <label className="text-[16px] pl-2 font-medium text-gray-200">
-                Reason for choosing the program*
-              </label>
-              <Select
-                value={formData.reason}
-                onValueChange={(val) => {
-                  setFormData({ ...formData, reason: val });
-                  if (errors.reason) {
-                    setErrors((prev) => ({ ...prev, reason: "" }));
-                  }
-                }}
-                disabled={isSubmitting}
-                required
-              >
-                <SelectTrigger className={getSelectTriggerClass(errors.reason)}>
-                  <SelectValue
-                    placeholder="Select a reason"
-                    className="text-gray-400"
-                  />
-                </SelectTrigger>
-                <SelectContent className="bg-white text-gray-900">
-                  <SelectItem value="career-switch">
-                    Looking to switch to a finance/accounting career
-                  </SelectItem>
-                  <SelectItem value="skill-upgrade">
-                    Want to upgrade my existing skills
-                  </SelectItem>
-                  <SelectItem value="placement">
-                    Seeking better placement & job opportunities
-                  </SelectItem>
-                  <SelectItem value="higher-studies">
-                    Preparing for higher studies (CA, MBA, etc.)
-                  </SelectItem>
-                  <SelectItem value="entrepreneurship">
-                    Planning to start or manage my own business
-                  </SelectItem>
-                  <SelectItem value="industry-relevance">
-                    Course is industry-relevant and job-ready
-                  </SelectItem>
-                  <SelectItem value="reputation">
-                    Reputation & quality of the institute
-                  </SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
-                </SelectContent>
-              </Select>
-              <FieldError id="reason-error" message={errors.reason} />
-            </div>
+    <div
+      className={`w-full ${bgColor} px-2 py-6 md:p-8 shadow-xl text-white transition-colors duration-300`}
+    >
+      <form className="space-y-5" onSubmit={handleSubmit} noValidate>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col space-y-1.5">
+            <label className="text-[16px] pl-2 font-medium text-gray-200">
+              Your Name*
+            </label>
+            <input
+              type="text"
+              placeholder="John Doe"
+              className={getInputClass(errors.name)}
+              value={formData.name}
+              onChange={(e) => handleFieldChange("name", e.target.value)}
+              maxLength={FIELD_LIMITS.name}
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? "name-error" : undefined}
+              disabled={isSubmitting}
+              required
+            />
+            <FieldError id="name-error" message={errors.name} />
           </div>
 
           <div className="flex flex-col space-y-1.5">
             <label className="text-[16px] pl-2 font-medium text-gray-200">
-              Other
+              Qualification*
             </label>
-            <textarea
-              rows={2}
-              className={getInputClass(errors.other, true)}
-              value={formData.other}
-              onChange={(e) => handleFieldChange("other", e.target.value)}
-              maxLength={FIELD_LIMITS.other}
-              aria-invalid={Boolean(errors.other)}
-              aria-describedby={errors.other ? "other-error" : undefined}
+            <Select
+              value={formData.qualification}
+              onValueChange={(val) => {
+                setFormData({ ...formData, qualification: val });
+                if (errors.qualification) {
+                  setErrors((prev) => ({ ...prev, qualification: "" }));
+                }
+              }}
               disabled={isSubmitting}
+              required
+            >
+              <SelectTrigger
+                className={getSelectTriggerClass(errors.qualification)}
+              >
+                <SelectValue
+                  placeholder="Select your qualification"
+                  className="text-gray-400"
+                />
+              </SelectTrigger>
+              <SelectContent className="bg-white text-gray-900">
+                {/* <SelectItem value="ba-economics">BA Economics</SelectItem> */}
+                <SelectItem value="bcom">B.Com</SelectItem>
+                <SelectItem value="mcom">M.Com</SelectItem>
+                {/* <SelectItem value="bba">BBA</SelectItem> */}
+                <SelectItem value="mba">MBA</SelectItem>
+                <SelectItem value="ca-cma">
+                  CA / CMA (Inter or Final)
+                </SelectItem>
+                <SelectItem value="acca">
+                  ACCA (Qualified/Semi-Qualified)
+                </SelectItem>
+                {/* <SelectItem value="bsc-maths">BSc Mathematics / Statistics</SelectItem> */}
+                {/* <SelectItem value="plus-two-commerce">Plus Two (Commerce)</SelectItem> */}
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+            <FieldError
+              id="qualification-error"
+              message={errors.qualification}
             />
-            <FieldError id="other-error" message={errors.other} />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col space-y-1.5">
+            <label className="text-[16px] pl-2 font-medium text-gray-200">
+              Phone (WhatsApp)*
+            </label>
+            <input
+              type="tel"
+              placeholder="+91 9946271580"
+              className={getInputClass(errors.phone)}
+              value={formData.phone}
+              onChange={(e) => handleFieldChange("phone", e.target.value)}
+              maxLength={FIELD_LIMITS.phone}
+              inputMode="tel"
+              aria-invalid={Boolean(errors.phone)}
+              aria-describedby={errors.phone ? "phone-error" : undefined}
+              disabled={isSubmitting}
+              required
+            />
+            <FieldError id="phone-error" message={errors.phone} />
           </div>
 
-          <div className="pt-2">
-            <button
-              type="submit"
+          <div className="flex flex-col space-y-1.5">
+            <label className="text-[16px] pl-2 font-medium text-gray-200">
+              Email*
+            </label>
+            <input
+              type="email"
+              placeholder="Johndoe@testmail.com"
+              className={getInputClass(errors.email)}
+              value={formData.email}
+              onChange={(e) => handleFieldChange("email", e.target.value)}
+              maxLength={FIELD_LIMITS.email}
+              aria-invalid={Boolean(errors.email)}
+              aria-describedby={errors.email ? "email-error" : undefined}
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-[#F9A53C] to-[#BA6502] text-[20px] text-white py-3.5 px-4 font-bold flex items-center justify-center gap-2 hover:brightness-110 shadow-md active:scale-[0.99] transition-all disabled:opacity-75 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? (
-                <>
-                  Submitting...
-                  <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                </>
-              ) : (
-                <>
-                  Apply Now <ArrowRight size={18} />
-                </>
-              )}
-            </button>
+              required
+            />
+            <FieldError id="email-error" message={errors.email} />
           </div>
-        </form>
-      </div>
-    </>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col space-y-1.5">
+            <label className="text-[16px] pl-2 font-medium text-gray-200">
+              Location*
+            </label>
+            <input
+              type="text"
+              placeholder="Ernakulam"
+              className={getInputClass(errors.location)}
+              value={formData.location}
+              onChange={(e) => handleFieldChange("location", e.target.value)}
+              maxLength={FIELD_LIMITS.location}
+              aria-invalid={Boolean(errors.location)}
+              aria-describedby={errors.location ? "location-error" : undefined}
+              disabled={isSubmitting}
+              required
+            />
+            <FieldError id="location-error" message={errors.location} />
+          </div>
+
+          <div className="flex flex-col space-y-1.5">
+            <label className="text-[16px] pl-2 font-medium text-gray-200">
+              Reason for choosing the program*
+            </label>
+            <Select
+              value={formData.reason}
+              onValueChange={(val) => {
+                setFormData({ ...formData, reason: val });
+                if (errors.reason) {
+                  setErrors((prev) => ({ ...prev, reason: "" }));
+                }
+              }}
+              disabled={isSubmitting}
+              required
+            >
+              <SelectTrigger className={getSelectTriggerClass(errors.reason)}>
+                <SelectValue
+                  placeholder="Select a reason"
+                  className="text-gray-400"
+                />
+              </SelectTrigger>
+              <SelectContent className="bg-white text-gray-900">
+                <SelectItem value="career-switch">
+                  Looking to switch to a finance/accounting career
+                </SelectItem>
+                <SelectItem value="skill-upgrade">
+                  Want to upgrade my existing skills
+                </SelectItem>
+                <SelectItem value="placement">
+                  Seeking better placement & job opportunities
+                </SelectItem>
+                <SelectItem value="higher-studies">
+                  Preparing for higher studies (CA, MBA, etc.)
+                </SelectItem>
+                <SelectItem value="entrepreneurship">
+                  Planning to start or manage my own business
+                </SelectItem>
+                <SelectItem value="industry-relevance">
+                  Course is industry-relevant and job-ready
+                </SelectItem>
+                <SelectItem value="reputation">
+                  Reputation & quality of the institute
+                </SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+            <FieldError id="reason-error" message={errors.reason} />
+          </div>
+        </div>
+
+        <div className="flex flex-col space-y-1.5">
+          <label className="text-[16px] pl-2 font-medium text-gray-200">
+            Other
+          </label>
+          <textarea
+            rows={2}
+            className={getInputClass(errors.other, true)}
+            value={formData.other}
+            onChange={(e) => handleFieldChange("other", e.target.value)}
+            maxLength={FIELD_LIMITS.other}
+            aria-invalid={Boolean(errors.other)}
+            aria-describedby={errors.other ? "other-error" : undefined}
+            disabled={isSubmitting}
+          />
+          <FieldError id="other-error" message={errors.other} />
+        </div>
+
+        <div className="pt-2">
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-gradient-to-r from-[#F9A53C] to-[#BA6502] text-[20px] text-white py-3.5 px-4 font-bold flex items-center justify-center gap-2 hover:brightness-110 shadow-md active:scale-[0.99] transition-all disabled:opacity-75 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? (
+              <>
+                Submitting...
+                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              </>
+            ) : (
+              <>
+                Apply Now <ArrowRight size={18} />
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
