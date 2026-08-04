@@ -46,7 +46,7 @@ jobs:
             --exclude='.env*' \
             --exclude='.next/cache' \
             --exclude='.git' \
-            ./ root@${{ secrets.LINODE_HOST }}:/var/www/special40.platform/
+            ./ root@${{ secrets.LINODE_HOST }}:/var/www/special40-lp/
 
       # ── Install prod deps + restart ────────────
       - name: Restart app
@@ -54,10 +54,10 @@ jobs:
           ssh -p 4974 root@${{ secrets.LINODE_HOST }} << 'EOF'
             set -e
 
-            cd /var/www/special40.platform
+            cd /var/www/special40-lp
             npm ci --omit=dev
             rm -rf .next/cache
 
-            pm2 restart special40 --update-env
+            pm2 restart special40-lp --update-env
             pm2 save
           EOF
