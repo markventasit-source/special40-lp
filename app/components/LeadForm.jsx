@@ -222,8 +222,8 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
         });
       }
       // Fire Google Ads lead form submission event (browser-side)
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'Special_40_lead_form_submission', {});
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'Special_40_lead_form_submission', {});
       }
       // Always redirect to the thankyou page to ensure optimal user experience
       const nameParam = formData.name ? `?name=${encodeURIComponent(formData.name.trim())}` : '';
