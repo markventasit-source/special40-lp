@@ -185,6 +185,15 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     setErrors({});
     setIsSubmitting(true);
 
+    // Fire Google Ads lead form submission event immediately (browser-side)
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'Special_40_lead_form_submission', {
+        send_to: 'AW-18354990280',
+        value: 1.0,
+        currency: 'INR',
+      });
+    }
+
     try {
       const payload = {
         ...formData,
@@ -221,13 +230,15 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           status: formData.reason,
         });
       }
-      // Fire Google Ads lead form submission event (browser-side)
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'Special_40_lead_form_submission', {});
-      }
       // Always redirect to the thankyou page to ensure optimal user experience
+      // Small delay lets gtag.js dispatch the lead event before client-side navigation
       const nameParam = formData.name ? `?name=${encodeURIComponent(formData.name.trim())}` : '';
-      router.push(`/thankyou${nameParam}`);
+      const thankyouUrl = `/thankyou${nameParam}`;
+      if (typeof window !== 'undefined' && window.gtag) {
+        setTimeout(() => router.push(thankyouUrl), 300);
+      } else {
+        router.push(thankyouUrl);
+      }
     }
   };
 
