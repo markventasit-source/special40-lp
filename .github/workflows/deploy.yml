@@ -29,10 +29,10 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SERVER_SSH_KEY }}" > ~/.ssh/id_ed25519
+          echo "${{ secrets.LINODE_SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p 4974 -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
-          echo "Host ${{ secrets.SERVER_HOST }}
+          ssh-keyscan -p 4974 -H ${{ secrets.LINODE_HOST }} >> ~/.ssh/known_hosts
+          echo "Host ${{ secrets.LINODE_HOST }}
             Port 4974
             IdentityFile ~/.ssh/id_ed25519
             StrictHostKeyChecking no" > ~/.ssh/config
@@ -46,12 +46,12 @@ jobs:
             --exclude='.env*' \
             --exclude='.next/cache' \
             --exclude='.git' \
-            ./ root@${{ secrets.SERVER_HOST }}:/var/www/special40.platform/
+            ./ root@${{ secrets.LINODE_HOST }}:/var/www/special40.platform/
 
       # ── Install prod deps + restart ────────────
       - name: Restart app
         run: |
-          ssh -p 4974 root@${{ secrets.SERVER_HOST }} << 'EOF'
+          ssh -p 4974 root@${{ secrets.LINODE_HOST }} << 'EOF'
             set -e
 
             cd /var/www/special40.platform
