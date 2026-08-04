@@ -13,7 +13,6 @@ export default function Thankyou() {
         value: 1.0,
         currency: 'INR',
       });
-      (window as any).gtag('event', 'Special_40_lead_form_submission', {});
     }
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
