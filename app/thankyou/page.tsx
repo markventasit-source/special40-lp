@@ -7,13 +7,20 @@ import ThankyouFooter from "../components/ThankyouFooter"
 
 export default function Thankyou() {
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'Special_40_lead_form_submission', {
-        send_to: 'AW-18354990280',
-        value: 1.0,
-        currency: 'INR',
-      });
+    if (typeof window !== 'undefined') {
+      const leadEventAlreadySent = window.sessionStorage.getItem('special40_lead_event_sent') === 'true';
+
+      if (!leadEventAlreadySent && (window as any).gtag) {
+        (window as any).gtag('event', 'Special_40_lead_form_submission', {
+          send_to: 'AW-18354990280',
+          value: 1.0,
+          currency: 'INR',
+        });
+      }
+
+      window.sessionStorage.removeItem('special40_lead_event_sent');
     }
+
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
       (window as any).fbq('track', 'Lead');
