@@ -21,10 +21,10 @@ export default function Thankyou() {
       window.sessionStorage.removeItem('special40_lead_event_sent');
     }
 
+    // Meta Lead / ApplyNow fire on form submit (main page), not here.
+    // Only track PageView for client-side navigation to this page.
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
-      (window as any).fbq('track', 'Lead');
-      (window as any).fbq('track', 'ApplyNow');
     }
   }, []);
 

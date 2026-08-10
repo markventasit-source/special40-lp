@@ -238,16 +238,18 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       // Gracefully catch errors
       console.error("API submission error:", error);
     } finally {
-      // Fire Meta Pixel lead event (browser-side)
+      // Fire Meta Pixel events on the main page (before redirect)
       if (typeof window !== "undefined" && window.fbq) {
-        window.fbq("track", "Lead", {
-          em: formData.email, // email (Meta hashes it automatically)
-          ph: formData.phone, // phone
-          fn: formData.name, // first name
-          ct: formData.location, // city
+        const pixelData = {
+          em: formData.email,
+          ph: formData.phone,
+          fn: formData.name,
+          ct: formData.location,
           content_name: formData.qualification,
           status: formData.reason,
-        });
+        };
+        window.fbq("track", "Lead", pixelData);
+        window.fbq("track", "ApplyNow", pixelData);
       }
       const nameParam = formData.name
         ? `?name=${encodeURIComponent(formData.name.trim())}`
