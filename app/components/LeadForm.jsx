@@ -204,9 +204,6 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     setErrors({});
     setIsSubmitting(true);
 
-    // Single shared event_id so the browser pixel and Conversion API de-duplicate
-    const eventId = `special40-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
-
     const pixelData = {
       em: formData.email,
       ph: formData.phone,
@@ -228,28 +225,17 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
         });
       }
 
-      // Meta Pixel events (browser-side) with eventID so Meta can de-dupe
-      // against the server-side Conversion API using the same event ID.
+      // Meta Pixel events (browser-side) — before the API round-trip
       if (window.fbq) {
-        window.fbq("track", "Lead", pixelData, { eventID: eventId });
-        window.fbq("track", "ApplyNow", pixelData, { eventID: eventId });
+        window.fbq("track", "Lead", pixelData);
+        window.fbq("track", "ApplyNow", pixelData);
       }
     }
 
     try {
-      const fbp = typeof document !== "undefined"
-        ? (document.cookie.match(/(?:^|; )_fbp=([^;]*)/) || [])[1] || ""
-        : "";
-      const fbc = typeof document !== "undefined"
-        ? (document.cookie.match(/(?:^|; )_fbc=([^;]*)/) || [])[1] || ""
-        : "";
-
       const payload = {
         ...formData,
         source,
-        event_id: eventId,
-        fbp,
-        fbc,
       };
 
       // Send data to our same-origin server proxy route to avoid CORS constraints
