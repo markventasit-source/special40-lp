@@ -204,9 +204,22 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     setErrors({});
     setIsSubmitting(true);
 
-    // Fire Google Ads lead form submission event immediately (browser-side)
+    // Single shared event_id so the browser pixel and Conversion API de-duplicate
+    const eventId = `special40-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+
+    const pixelData = {
+      em: formData.email,
+      ph: formData.phone,
+      fn: formData.name,
+      ct: formData.location,
+      content_name: formData.qualification,
+      status: formData.reason,
+    };
+
     if (typeof window !== "undefined") {
       window.sessionStorage.setItem("special40_lead_event_sent", "true");
+
+      // Google Ads lead event (browser-side) — before the API round-trip
       if (window.gtag) {
         window.gtag("event", "Special_40_lead_form_submission", {
           send_to: "AW-18354990280",
@@ -214,12 +227,29 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
           currency: "INR",
         });
       }
+
+      // Meta Pixel events (browser-side) with eventID so Meta can de-dupe
+      // against the server-side Conversion API using the same event ID.
+      if (window.fbq) {
+        window.fbq("track", "Lead", pixelData, { eventID: eventId });
+        window.fbq("track", "ApplyNow", pixelData, { eventID: eventId });
+      }
     }
 
     try {
+      const fbp = typeof document !== "undefined"
+        ? (document.cookie.match(/(?:^|; )_fbp=([^;]*)/) || [])[1] || ""
+        : "";
+      const fbc = typeof document !== "undefined"
+        ? (document.cookie.match(/(?:^|; )_fbc=([^;]*)/) || [])[1] || ""
+        : "";
+
       const payload = {
         ...formData,
         source,
+        event_id: eventId,
+        fbp,
+        fbc,
       };
 
       // Send data to our same-origin server proxy route to avoid CORS constraints
@@ -238,19 +268,6 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       // Gracefully catch errors
       console.error("API submission error:", error);
     } finally {
-      // Fire Meta Pixel events on the main page (before redirect)
-      if (typeof window !== "undefined" && window.fbq) {
-        const pixelData = {
-          em: formData.email,
-          ph: formData.phone,
-          fn: formData.name,
-          ct: formData.location,
-          content_name: formData.qualification,
-          status: formData.reason,
-        };
-        window.fbq("track", "Lead", pixelData);
-        window.fbq("track", "ApplyNow", pixelData);
-      }
       const nameParam = formData.name
         ? `?name=${encodeURIComponent(formData.name.trim())}`
         : "";
