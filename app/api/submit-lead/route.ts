@@ -29,30 +29,29 @@ export async function POST(request: Request) {
       console.error('MongoDB save error:', mongoErr?.message);
     }
 
-    sendLeadNotificationEmail(lead).catch((emailErr: any) => {
+    try {
+      await sendLeadNotificationEmail(lead);
+    } catch (emailErr: any) {
       console.error('Lead notification email error:', emailErr?.message);
-    });
+    }
 
-    // ── Pabbly webhook — lead sheet is the critical path ──
-    // Reliable timeout so a slow Pabbly workflow can never drop the lead.
-    const pabblyController = new AbortController();
-    const pabblyTimeout = setTimeout(() => pabblyController.abort(), 15000);
+    // Use a 5-second timeout so we never block the user longer than that.
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
 
     try {
       const { createdAt, ...webhookPayload } = lead;
-      const response = await fetch(PABBLY_WEBHOOK_URL, {
+      await fetch(PABBLY_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(webhookPayload),
-        signal: pabblyController.signal,
+        signal: controller.signal,
       });
-      const text = await response.text();
-      console.log('Pabbly webhook response:', response.status, text.slice(0, 300));
     } catch (pabblyErr: any) {
       // Timeout or network error — log but don't block the redirect
       console.error('Pabbly webhook error:', pabblyErr?.message);
     } finally {
-      clearTimeout(pabblyTimeout);
+      clearTimeout(timeout);
     }
 
     return NextResponse.json({ success: true });

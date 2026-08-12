@@ -204,31 +204,15 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     setErrors({});
     setIsSubmitting(true);
 
-    const pixelData = {
-      em: formData.email,
-      ph: formData.phone,
-      fn: formData.name,
-      ct: formData.location,
-      content_name: formData.qualification,
-      status: formData.reason,
-    };
-
+    // Fire Google Ads lead form submission event immediately (browser-side)
     if (typeof window !== "undefined") {
       window.sessionStorage.setItem("special40_lead_event_sent", "true");
-
-      // Google Ads lead event (browser-side) — before the API round-trip
       if (window.gtag) {
         window.gtag("event", "Special_40_lead_form_submission", {
           send_to: "AW-18354990280",
           value: 1.0,
           currency: "INR",
         });
-      }
-
-      // Meta Pixel events (browser-side) — before the API round-trip
-      if (window.fbq) {
-        window.fbq("track", "Lead", pixelData);
-        window.fbq("track", "ApplyNow", pixelData);
       }
     }
 
@@ -254,6 +238,17 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       // Gracefully catch errors
       console.error("API submission error:", error);
     } finally {
+      // Fire Meta Pixel lead event (browser-side)
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("track", "Lead", {
+          em: formData.email, // email (Meta hashes it automatically)
+          ph: formData.phone, // phone
+          fn: formData.name, // first name
+          ct: formData.location, // city
+          content_name: formData.qualification,
+          status: formData.reason,
+        });
+      }
       const nameParam = formData.name
         ? `?name=${encodeURIComponent(formData.name.trim())}`
         : "";

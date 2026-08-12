@@ -151,7 +151,7 @@ export default function SelectionProcess() {
                                             fontSize: '24px',
                                             lineHeight: '130%',
                                             letterSpacing: '0%',
-                                            '@media (minWidth: 768px)': {
+                                            '@media (min-width: 768px)': {
                                                 fontWeight: '700',
                                                 fontStyle: 'Bold',
                                                 fontSize: '26px',
