@@ -204,18 +204,6 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
     setErrors({});
     setIsSubmitting(true);
 
-    // Fire Google Ads lead form submission event immediately (browser-side)
-    if (typeof window !== "undefined") {
-      window.sessionStorage.setItem("special40_lead_event_sent", "true");
-      if (window.gtag) {
-        window.gtag("event", "Special_40_lead_form_submission", {
-          send_to: "AW-18354990280",
-          value: 1.0,
-          currency: "INR",
-        });
-      }
-    }
-
     try {
       const payload = {
         ...formData,
@@ -233,6 +221,17 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
 
       if (!response.ok) {
         console.warn("API route responded with status", response.status);
+      }
+      // Fire Google Ads lead form submission event immediately (browser-side)
+      if (typeof window !== "undefined") {
+        window.sessionStorage.setItem("special40_lead_event_sent", "true");
+        if (window.gtag) {
+          window.gtag("event", "conversion", {
+            send_to: 'AW-18354990280/KMJ8CLS2-OIcEMjZq7BE',
+            value: 1.0,
+            currency: "INR",
+          });
+        }
       }
     } catch (error) {
       // Gracefully catch errors
