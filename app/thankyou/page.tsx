@@ -21,6 +21,10 @@ export default function Thankyou() {
       window.sessionStorage.removeItem('special40_lead_event_sent');
     }
 
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'form_submit', {});
+    }
+
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
       (window as any).fbq('track', 'Lead');
