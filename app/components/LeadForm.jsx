@@ -222,7 +222,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       if (!response.ok) {
         console.warn("API route responded with status", response.status);
       }
-      // Fire Google Ads lead form submission event immediately (browser-side)
+      // Fire Google Ads / GA4 lead form submission events (browser-side)
       if (typeof window !== "undefined") {
         window.sessionStorage.setItem("special40_lead_event_sent", "true");
         if (window.gtag) {
@@ -231,6 +231,12 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
             value: 1.0,
             currency: "INR",
           });
+          // GA4-sourced conversion events (exact names from Google Ads)
+          window.gtag("event", "Special_40_lead_form_submission", {
+            value: 1.0,
+            currency: "INR",
+          });
+          window.gtag("event", "Special_40_Lead_track", {});
         }
       }
     } catch (error) {

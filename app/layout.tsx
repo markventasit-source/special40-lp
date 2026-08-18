@@ -78,6 +78,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-18354990280');
+            gtag('config', 'G-KQ0C3M286J');
             // gtag('config', 'AW-18354990280/VBBkCJOA_dccEMjZq7BE', {
             //   phone_conversion_number: '+91 9946 271 580'
             // });

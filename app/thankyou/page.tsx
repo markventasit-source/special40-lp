@@ -12,8 +12,7 @@ export default function Thankyou() {
         window.sessionStorage.getItem("special40_lead_event_sent") === "true";
 
       if (!leadEventAlreadySent && (window as any).gtag) {
-        (window as any).gtag("event", "conversion", {
-          send_to: "AW-18354990280/KMJ8CLS2-OIcEMjZq7BE",
+        (window as any).gtag("event", "Special_40_lead_form_submission", {
           value: 1.0,
           currency: "INR",
         });
