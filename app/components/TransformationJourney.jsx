@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function TransformationJourney() {
@@ -49,7 +50,7 @@ export default function TransformationJourney() {
         <section className="w-full bg-[#FBF4EA] font-inter py-16 md:py-24">
             <div className="mx-auto px-4 md:px-8 lg:px-10">
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start lg:items-stretch">
 
                     {/* Left Column - Staggered Slide In */}
                     <motion.div
@@ -111,15 +112,56 @@ export default function TransformationJourney() {
 
                         {/* Pricing Box - Pop up entry */}
                         <motion.div
-                            variants={pricingBoxVariants}
-                            className="bg-[#09636E] md:max-w-110 p-8 text-white relative overflow-hidden shadow-md"
-                        >
-                            {/* Desktop: top-right corner */}
+  variants={pricingBoxVariants}
+  className="relative w-full max-w-[492px] h-[253px] overflow-hidden bg-white shadow-md"
+>
+  {/* Top corner decoration */}
+  <Image
+    src="/top.png"
+    alt=""
+    width={220}
+    height={140}
+    className="pointer-events-none absolute -left-px -top-px z-[2] h-auto w-[28%] max-w-[222px]"
+    aria-hidden
+  />
+
+  {/* Background slide (includes onam avatar, bottom corner, gradient) */}
+  <Image
+    src="/Slide.png"
+    alt=""
+    fill
+    className="pointer-events-none object-fill"
+    aria-hidden
+  />
+
+  {/* Decorative mandala — bottom left */}
+  <Image
+    src="/decorative-golden-mandala-white-background 3.svg"
+    alt=""
+    width={240}
+    height={240}
+    className="pointer-events-none absolute -bottom-4 -left-4 z-[1] h-auto w-[52%]"
+    aria-hidden
+  />
+
+  {/* Festive pricing */}
+  <div className="relative z-[3] flex h-full min-h-[200px] flex-col justify-end px-5 pb-8 pt-2 sm:pl-16 sm:pr-6 md:pl-20 lg:pl-4 xl:pl-20">
+    <span className="relative mb-[0.4em] inline-block w-fit font-inter font-extralight uppercase leading-[100%] tracking-normal text-[#F9A53C]" style={{ fontSize: 'clamp(34px, 3.8vw, 52.83px)' }}>
+      ₹65,000
+      <span aria-hidden className="pointer-events-none absolute left-0 top-1/2 h-[2.5px] w-full bg-[#F9A53C]/70" />
+    </span>
+    <span className="block font-inter font-bold leading-none tracking-normal text-[#086270]" style={{ fontSize: 'clamp(44px, 5.8vw, 84px)' }}>
+      ₹35,000
+    </span>
+  </div>
+
+                            {/* --- ORIGINAL PRICING (restore after campaign) ---
+                            <div className="bg-[#09636E] md:max-w-110 p-8 text-white relative overflow-hidden shadow-md">
                             <div className="hidden md:block absolute top-4 right-4 bg-white text-[#09636E] text-[13px] font-normal tracking-normal uppercase px-2 py-1 leading-none">
                                 Easy EMI Available
                             </div>
 
-                            <div className="space-y-1"> {/* Removed mt-6 */}
+                            <div className="space-y-1">
                                 <span className="text-[#F9A53C] line-through opacity-80 block leading-none uppercase font-extralight text-[34px] md:text-[48px] mb-4 tracking-normal">
                                     ₹85,000
                                 </span>
@@ -131,12 +173,13 @@ export default function TransformationJourney() {
                                 </span>
                             </div>
 
-                            {/* Mobile: below GST text */}
                             <div className="block md:hidden mt-4">
                                 <div className="bg-white text-[#09636E] text-[13px] font-normal tracking-normal uppercase px-2 py-1 leading-none inline-block">
                                     Easy EMI Available
                                 </div>
                             </div>
+                            </div>
+                            --- END ORIGINAL PRICING --- */}
                         </motion.div>
                     </motion.div>
 
