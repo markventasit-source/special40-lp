@@ -16,7 +16,7 @@ const steps = [
   {
     num: '03',
     title: 'Selection & Admission',
-    desc: 'Seats Confirmed For The Current Batch.',
+    desc: 'Student Selection & Enrollment for the Eligible Candidate.',
   },
 ];
 

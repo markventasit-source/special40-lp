@@ -35,7 +35,7 @@ export default function MobileHero() {
         <div className="pb-4">
           <h1 className="text-[32.53px] font-semibold leading-[37.9px]">
             <span className="text-white">Become a corporate ready finance professional.</span>
-            <span className="font-bold text-[#F9A53C]">₹50,000 off this Onam.</span>
+            <span className="block font-bold text-[#F9A53C]">₹50,000 off this Onam.</span>
           </h1>
         </div>
 
