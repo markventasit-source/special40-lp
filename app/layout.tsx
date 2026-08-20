@@ -17,7 +17,12 @@ export const metadata: Metadata = {
   title: "SPECIAL40 | Premium Corporate Finance Program for Commerce Graduates",
   description: "SPECIAL40 is a selective career transformation ecosystem by CAPITAIRE. We turn ambitious commerce graduates and ACCA/CMA students into corporate-ready finance professionals through practical, CA-led training in a real office environment.",
   icons: {
-    icon: "/favicon-spl.png",
+    icon: [
+      { url: "/favicon-spl.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-spl.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon-spl.png",
+    apple: { url: "/favicon-spl.png", sizes: "180x180", type: "image/png" },
   },
   openGraph: {
     title: "SPECIAL40 | Premium Corporate Finance Program for Commerce Graduates",

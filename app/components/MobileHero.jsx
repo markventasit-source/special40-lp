@@ -1,21 +1,21 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
-import { ArrowRight, Play, Pause } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
 
 export default function MobileHero() {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
-  const togglePlay = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    const playPromise = video.play();
+    if (playPromise?.catch) {
+      playPromise.catch(() => {});
     }
-    setIsPlaying(!isPlaying);
-  };
+  }, []);
 
   return (
     <section className="flex w-full flex-col font-inter max-[499px]:flex min-[500px]:hidden">
@@ -49,31 +49,14 @@ export default function MobileHero() {
           <video
             ref={videoRef}
             src="/Special40Class.mp4"
+            autoPlay
+            muted
+            loop
             playsInline
+            preload="auto"
             className="h-full w-full object-cover"
             poster="/videothumb.jpg"
-            onClick={togglePlay}
           />
-          {!isPlaying && (
-            <button
-              onClick={togglePlay}
-              className="absolute inset-0 flex items-center justify-center"
-              aria-label="Play video"
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg">
-                <Play size={24} fill="#09636E" className="ml-1 text-[#09636E]" />
-              </div>
-            </button>
-          )}
-          {isPlaying && (
-            <button
-              onClick={togglePlay}
-              className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-black/50"
-              aria-label="Pause video"
-            >
-              <Pause size={16} className="text-white" />
-            </button>
-          )}
         </div>
 
         {/* CTA Button */}
