@@ -77,7 +77,7 @@ export default function MobileOffer() {
           <button
             onClick={() =>
               document
-                .getElementById('assessment-form')
+                .getElementById('mobile-assessment-form')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
             className="mt-5 flex w-full items-center justify-center gap-2 bg-[#09636E] px-6 py-4 text-[16px] font-normal leading-[100%] text-white active:scale-[0.98]"

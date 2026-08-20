@@ -64,7 +64,7 @@ export default function MobileHero() {
           <button
             onClick={() =>
               document
-                .getElementById('assessment-form')
+                .getElementById('mobile-assessment-form')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
             className="flex w-full items-center justify-center gap-2 bg-[#F9A53C] px-6 py-4 text-[18px] font-normal leading-[100%] text-white active:scale-[0.98]"

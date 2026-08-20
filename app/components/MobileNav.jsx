@@ -36,7 +36,7 @@ export default function MobileNav() {
             }
 
             document
-              .getElementById('assessment-form')
+              .getElementById('mobile-assessment-form')
               ?.scrollIntoView({ behavior: 'smooth' });
           }}
           aria-label="WhatsApp"

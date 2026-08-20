@@ -310,7 +310,7 @@ export default function MobileLeadForm() {
 
   return (
     <section
-      id="assessment-form"
+      id="mobile-assessment-form"
       className="w-full px-4 pb-24 font-inter max-[499px]:block min-[500px]:hidden"
     >
       <div

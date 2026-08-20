@@ -23,7 +23,7 @@ export default function MobileStickyBar() {
       <button
         onClick={() =>
           document
-            .getElementById('assessment-form')
+            .getElementById('mobile-assessment-form')
             ?.scrollIntoView({ behavior: 'smooth' })
         }
         className="flex min-w-0 flex-1 items-center justify-center gap-2 bg-[#09636E] px-4 py-3.5 text-[16px] font-normal leading-[100%] text-white"
