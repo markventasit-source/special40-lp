@@ -26,23 +26,23 @@ const modules = [
   },
   {
     name: 'Business Structure, Banking & Payroll',
-    desc: 'Module details.',
+    desc: 'Covers business setup, banking processes, payroll management, and compliance requirements.',
   },
   {
     name: 'Business Communication & Office Etiquette',
-    desc: 'Module details.',
+    desc: 'Builds professional communication skills and workplace etiquette for career success.',
   },
   {
     name: 'Interview & Aptitude Training',
-    desc: 'Module details.',
+    desc: 'Develops interview confidence, aptitude skills, and job-ready problem-solving abilities.',
   },
   {
     name: 'VAT, Zakat, Customs & Excise',
-    desc: 'Module details.',
+    desc: 'Understanding VAT, Zakat, customs duties, and excise regulations for business compliance.',
   },
   {
     name: 'Live Project Development & Presentation',
-    desc: 'Module details.',
+    desc: 'Builds practical skills through projects, development, teamwork, and presentations. ',
   },
 ];
 
