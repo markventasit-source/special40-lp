@@ -61,14 +61,14 @@ export default function MobileOffer() {
           </p>
 
           {/* Pills */}
-          <div className="mt-4 flex justify-center gap-2">
-            <span className="rounded-full  bg-white px-3 py-2 text-[11.5px] font-medium leading-[100%] text-[#F9A53C]">
+          <div className="-mx-2 mt-4 flex justify-center gap-1.5">
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-white px-2.5 py-2 text-[11px] font-medium leading-[100%] text-[#F9A53C]">
               Ends 31 Aug
             </span>
-            <span className="rounded-full  bg-white px-3 py-2 text-[11.5px] font-medium leading-[100%] text-[#F9A53C]">
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-white px-2.5 py-2 text-[11px] font-medium leading-[100%] text-[#F9A53C]">
               40 seats this batch
             </span>
-            <span className="rounded-full  bg-white px-3 py-2 text-[11.5px] font-medium leading-[100%] text-[#F9A53C]">
+            <span className="shrink-0 whitespace-nowrap rounded-full bg-white px-2.5 py-2 text-[11px] font-medium leading-[100%] text-[#F9A53C]">
               4.5 months
             </span>
           </div>
