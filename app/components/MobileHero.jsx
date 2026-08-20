@@ -40,7 +40,7 @@ export default function MobileHero() {
         </div>
 
         {/* Sub text */}
-        <p className="pb-4 text-[15px] font-normal leading-[21px] text-white/90">
+        <p className="pb-6 text-[15px] font-normal leading-[21px] text-white/90">
           4.5-month CA-mentored program for commerce graduates who want a real finance career, not another certificate.
         </p>
 
