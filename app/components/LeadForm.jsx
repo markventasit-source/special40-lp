@@ -225,6 +225,7 @@ export default function LeadForm({ bgColor = "bg-[#09636E]" }) {
       // Fire Google Ads / GA4 lead form submission events (browser-side)
       if (typeof window !== "undefined") {
         window.sessionStorage.setItem("special40_lead_event_sent", "true");
+        window.sessionStorage.setItem("special40_form_submitted", "true");
         if (window.gtag) {
           window.gtag("event", "conversion", {
             send_to: 'AW-18354990280/KMJ8CLS2-OIcEMjZq7BE',

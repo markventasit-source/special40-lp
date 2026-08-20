@@ -32,9 +32,10 @@ export default function ScrollToTop() {
                     whileTap={{ scale: 0.95 }}
                     className="
                         fixed bottom-6 right-5 z-50
+                        hidden min-[500px]:flex
                         bg-[#09636E] text-white
                         w-12 h-12
-                        flex items-center justify-center
+                        items-center justify-center
                         shadow-lg hover:bg-[#074f58]
                         transition-colors duration-200
                         rounded-full

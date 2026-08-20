@@ -28,7 +28,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#FFFFFF] to-[#FFE5C2] font-inter flex flex-col overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-[#FFFFFF] to-[#FFE5C2] font-inter flex flex-col overflow-hidden max-[499px]:hidden">
       {/* Top Header Row */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
