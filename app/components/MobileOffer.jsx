@@ -42,7 +42,7 @@ export default function MobileOffer() {
           </div>
 
           {/* Prices */}
-          <div className="flex items-baseline justify-center gap-3 pb-4">
+          <div className="flex items-baseline justify-center gap-3 pb-2">
             <span className="relative text-[28.2px] font-extralight uppercase leading-[100%] text-[#F9A53C]">
               ₹85,000
               <span
