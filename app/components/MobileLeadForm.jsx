@@ -339,7 +339,9 @@ export default function MobileLeadForm() {
           </h2>
 
           <p className="mt-3 max-w-[320px] text-[15px] font-normal leading-[23px] text-[#555454]">
-            ₹47,200, all taxes included. Offer ends , August 31. Start
+            ₹47,200, all taxes included. {" "}
+             {/* Offer ends , August 31.  */}
+             Start
             with two fields, we&apos;ll ask the rest after you&apos;ve applied.
           </p>
 
