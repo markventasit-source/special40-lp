@@ -322,24 +322,24 @@ export default function MobileLeadForm() {
       >
         {/* Top-right decorative image */}
         <div className="pointer-events-none absolute -right-0 -top-0">
-          <Image
+          {/* <Image
             src="/top.png"
             alt=""
             width={120}
             height={100}
             className="w-[150px] scale-x-[-1]"
-          />
+          /> */}
         </div>
 
         <div className="relative z-10">
           <h2 className="max-w-[260px] text-[26px] font-semibold leading-[29px] text-[#242424]">
-            Onam Offer
-            <br />
+            {/* Onam Offer
+            <br /> */}
             40 seats this batch
           </h2>
 
           <p className="mt-3 max-w-[320px] text-[15px] font-normal leading-[23px] text-[#555454]">
-            ₹35,000, all taxes included. Offer ends , August 31. Start
+            ₹47,200, all taxes included. Offer ends , August 31. Start
             with two fields, we&apos;ll ask the rest after you&apos;ve applied.
           </p>
 

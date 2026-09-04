@@ -58,7 +58,7 @@ export default function TransformationJourney() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-15px" }}
-                        className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 md:space-y-8"
+                        className="lg:col-span-5 flex flex-col justify-start h-full space-y-6 md:space-y-8"
                     >
                         <motion.div variants={leftItemVariants} className="space-y-3">
                             <span className="text-[#F9A53C] font-md text-[15px] leading-none tracking-[0.1em] uppercase block">
@@ -111,49 +111,49 @@ export default function TransformationJourney() {
                         </motion.div>
 
                         {/* Pricing Box - Pop up entry */}
-                        <motion.div
-  variants={pricingBoxVariants}
-  className="relative w-full max-w-[492px] h-[253px] overflow-hidden bg-white shadow-md"
->
-  {/* Top corner decoration */}
-  <Image
-    src="/top.png"
-    alt=""
-    width={220}
-    height={140}
-    className="pointer-events-none absolute -left-px -top-px z-[2] h-auto w-[28%] max-w-[222px]"
-    aria-hidden
-  />
+                        {/* <motion.div
+                            variants={pricingBoxVariants}
+                            className="relative w-full max-w-[492px] h-[253px] overflow-hidden bg-white shadow-md"
+                        > */}
+                            {/* Top corner decoration */}
+                            {/* <Image
+                                src="/top.png"
+                                alt=""
+                                width={220}
+                                height={140}
+                                className="pointer-events-none absolute -left-px -top-px z-[2] h-auto w-[28%] max-w-[222px]"
+                                aria-hidden
+                            /> */}
 
-  {/* Background slide (includes onam avatar, bottom corner, gradient) */}
-  <Image
-    src="/Slide.png"
-    alt=""
-    fill
-    className="pointer-events-none object-fill"
-    aria-hidden
-  />
+                            {/* Background slide (includes onam avatar, bottom corner, gradient) */}
+                            {/* <Image
+                                src="/Slide.png"
+                                alt=""
+                                fill
+                                className="pointer-events-none object-fill"
+                                aria-hidden
+                            /> */}
 
-  {/* Decorative mandala — bottom left */}
-  <Image
-    src="/decorative-golden-mandala-white-background 3.svg"
-    alt=""
-    width={240}
-    height={240}
-    className="pointer-events-none absolute -bottom-4 -left-4 z-[1] h-auto w-[52%]"
-    aria-hidden
-  />
+                            {/* Decorative mandala — bottom left */}
+                            {/* <Image
+                                src="/decorative-golden-mandala-white-background 3.svg"
+                                alt=""
+                                width={240}
+                                height={240}
+                                className="pointer-events-none absolute -bottom-4 -left-4 z-[1] h-auto w-[52%]"
+                                aria-hidden
+                            /> */}
 
-  {/* Festive pricing */}
-  <div className="relative z-[3] flex h-full min-h-[200px] flex-col justify-end px-5 pb-8 pt-2 sm:pl-16 sm:pr-6 md:pl-20 lg:pl-4 xl:pl-20">
-    <span className="relative mb-[0.4em] inline-block w-fit font-inter font-extralight uppercase leading-[100%] tracking-normal text-[#F9A53C]" style={{ fontSize: 'clamp(34px, 3.8vw, 52.83px)' }}>
-      ₹65,000
-      <span aria-hidden className="pointer-events-none absolute left-0 top-1/2 h-[2.5px] w-full bg-[#F9A53C]/70" />
-    </span>
-    <span className="block font-inter font-bold leading-none tracking-normal text-[#086270]" style={{ fontSize: 'clamp(44px, 5.8vw, 84px)' }}>
-      ₹35,000
-    </span>
-  </div>
+                            {/* Festive pricing */}
+                            {/* <div className="relative z-[3] flex h-full min-h-[200px] flex-col justify-end px-5 pb-8 pt-2 sm:pl-16 sm:pr-6 md:pl-20 lg:pl-4 xl:pl-20">
+                                <span className="relative mb-[0.4em] inline-block w-fit font-inter font-extralight uppercase leading-[100%] tracking-normal text-[#F9A53C]" style={{ fontSize: 'clamp(34px, 3.8vw, 52.83px)' }}>
+                                    ₹65,000
+                                    <span aria-hidden className="pointer-events-none absolute left-0 top-1/2 h-[2.5px] w-full bg-[#F9A53C]/70" />
+                                </span>
+                                <span className="block font-inter font-bold leading-none tracking-normal text-[#086270]" style={{ fontSize: 'clamp(44px, 5.8vw, 84px)' }}>
+                                    ₹35,000
+                                </span>
+                            </div> */}
 
                             {/* --- ORIGINAL PRICING (restore after campaign) ---
                             <div className="bg-[#09636E] md:max-w-110 p-8 text-white relative overflow-hidden shadow-md">
@@ -180,7 +180,7 @@ export default function TransformationJourney() {
                             </div>
                             </div>
                             --- END ORIGINAL PRICING --- */}
-                        </motion.div>
+                        {/* </motion.div> */}
                     </motion.div>
 
                     {/* Right Column: Curriculum */}

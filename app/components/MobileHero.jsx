@@ -25,17 +25,17 @@ export default function MobileHero() {
         style={{ background: 'linear-gradient(to bottom, #08606B, #044249)' }}
       >
         {/* Offer pill */}
-        <div className="mt-4 py-4">
+        {/* <div className="mt-4 py-4">
           <span className="block w-full rounded-full border border-white px-4 py-1.5 text-center text-[15px] font-medium leading-[24px] text-white">
             Onam Offer · Ends 31 Aug · 40 Seats / Batch
           </span>
-        </div>
+        </div> */}
 
         {/* Headline */}
         <div className="pb-4">
           <h1 className="text-[32.53px] font-semibold leading-[37.9px]">
             <span className="text-white">Become a corporate ready finance professional.</span>
-            <span className="block font-bold text-[#F9A53C]">₹50,000 off this Onam.</span>
+            {/* <span className="block font-bold text-[#F9A53C]">₹50,000 off this Onam.</span> */}
           </h1>
         </div>
 

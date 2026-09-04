@@ -35,7 +35,7 @@ export default function Home() {
       {/* Mobile-only components (below 500px) */}
       <MobileNav />
       <MobileHero />
-      <MobileOffer />
+      {/* <MobileOffer /> */}
       <MobileTestimonials />
       <MobileFeatures />
       <MobileTargetAudience />
